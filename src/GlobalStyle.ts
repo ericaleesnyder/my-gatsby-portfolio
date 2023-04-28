@@ -7,14 +7,17 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Poppins";
     box-sizing: border-box;
     margin-block-start: 0;
-    color: ${color.grey[900]}
+    margin-block-end: 0;
+  }
+  body {
+    color: ${color.grey[900]};
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
   a {
-    ${font("text", "med", 600)}
-    color: ${color.common.orange};
-    &:hover {
-      color: ${color.common.purple};
-    }
+    color: inherit;
+    text-decoration: inherit;
   }
 `
 
