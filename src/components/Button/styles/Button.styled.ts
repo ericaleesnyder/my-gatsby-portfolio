@@ -10,14 +10,15 @@ export const ButtonWrap = styled.div<Props>`
   border-radius: 20px;
   width: fit-content;
   text-decoration: none;
+  cursor: pointer;
   a {
     display: inline-block;
     width: 100%;
     height: 100%;
   }
   &:focus-visible, :focus {
-    border: 2px solid ${color.common.flamingo};
-    outline: none;
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: ${color.common.flamingo};
   }
   ${(props) => props.variant && 
     props.variant === "primary" && css`
@@ -52,6 +53,9 @@ export const ButtonWrap = styled.div<Props>`
       text-decoration: underline;
       &:hover {
         color: ${color.common.midnight};
+      }
+      &:focus-visible, :focus {
+        border-radius: 0;
       }
     `
   }
