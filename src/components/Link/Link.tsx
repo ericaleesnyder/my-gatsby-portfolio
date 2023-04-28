@@ -1,4 +1,6 @@
-import React, { FC, ReactNode, AnchorHTMLAttributes } from "react"
+import React from "react"
+import type {FC, ReactNode, AnchorHTMLAttributes} from "react"
+
 import { Link as GatsbyLink } from "gatsby"
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
