@@ -8,6 +8,8 @@ import { color } from "../atoms/colors";
 import { font } from "../atoms/typography";
 import Container from "../basics/Container.styled";
 
+import Link from "../components/Link/Link";
+
 interface TextProps {
   size?: string;
   weight?: 300 | 400 | 500 | 600 | 700 | 800 | 900;
@@ -116,6 +118,9 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Container>
+        <div>
+          <Link to="/404">This is a link</Link>
+        </div>
         <Title>Font Sizes</Title>
         <Text size={"small"}>Text Small</Text>
         <Text size={"med"}>Text Medium</Text>
@@ -140,12 +145,13 @@ const IndexPage: React.FC<PageProps> = () => {
         <Grid>
           <GridItem color={color.common.white} />
           <GridItem color={color.common.black} />
-          <GridItem color={color.common.midnightBlue} />
-          <GridItem color={color.common.blue} />
+          <GridItem color={color.common.babyPink} />
+          <GridItem color={color.common.fuchsia} />
+          <GridItem color={color.common.lavender} />
           <GridItem color={color.common.yellow} />
-          <GridItem color={color.common.sunshine} />
           <GridItem color={color.common.orange} />
-          <GridItem color={color.common.peach} />
+          <GridItem color={color.common.purple} />
+          <GridItem color={color.common.midnightBlue} />
           <GridItem color={color.grey[50]} />
           <GridItem color={color.grey[100]} />
           <GridItem color={color.grey[200]} />

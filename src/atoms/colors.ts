@@ -2,12 +2,13 @@ export const color = {
   common: {
     white: "#fff",
     black: "#000",
+    babyPink: "#F2BDD0",
+    fuchsia: "#F06DF2",
+    lavender: "#D89CD9",
+    yellow: "#F2B705",
+    orange: "#F27405",
+    purple: "#7d25f0",
     midnightBlue: "#191970",
-    blue: "#030A8C",
-    yellow: "#F2CB05",
-    sunshine: "#F2B705",
-    orange: "#F29F05",
-    peach: "#D9B4A7",
   },
   grey: {
     50: "#EAECEE",
