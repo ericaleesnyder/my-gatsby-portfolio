@@ -118,10 +118,18 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <Container>
-        <Button to="/" variant="primary">Home Page</Button>
-        <Button to="/" variant="secondary">Home Page</Button>
-        <Button to="/" variant="tertiary">Home Page</Button>
-        <Button to="/" variant="inline">Home Page</Button>
+        <Button to="/" variant="primary">
+          Home Page
+        </Button>
+        <Button to="/" variant="secondary">
+          Home Page
+        </Button>
+        <Button to="/" variant="tertiary">
+          Home Page
+        </Button>
+        <Button to="/" variant="inline">
+          Home Page
+        </Button>
       </Container>
       <Container>
         <Title>Font Sizes</Title>

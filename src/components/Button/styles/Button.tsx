@@ -9,11 +9,11 @@ import { ButtonWrap } from "./Button.styled";
 interface ButtonProps {
   to: string;
   children: ReactNode;
-  variant: 'primary' | 'secondary' | 'tertiary' | 'inline';
+  variant: "primary" | "secondary" | "tertiary" | "inline";
 }
 
 const Button: FC<ButtonProps> = ({ to, children, variant }) => (
-  <ButtonWrap 
+  <ButtonWrap
     role="button"
     variant={variant}
     tabIndex={1}
@@ -25,6 +25,6 @@ const Button: FC<ButtonProps> = ({ to, children, variant }) => (
       {children}
     </Link>
   </ButtonWrap>
-)
+);
 
-export default Button
+export default Button;

@@ -8,4 +8,4 @@ export const Wrapper = styled.header`
   right: 0;
   background: red;
   height: 50px;
-`
+`;
