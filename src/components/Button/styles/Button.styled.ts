@@ -7,17 +7,18 @@ type Props = {
 };
 
 export const ButtonWrap = styled.div<Props>`
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
   ${font("text", "med", 600)}
   padding: 8px 12px;
   border-radius: 20px;
   width: fit-content;
   text-decoration: none;
   cursor: pointer;
-  a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
+  transition: color 150ms ease, background-color 150ms ease, border 150ms ease;
   &:focus-visible,
   :focus {
     outline: -webkit-focus-ring-color auto 1px;
@@ -33,6 +34,7 @@ export const ButtonWrap = styled.div<Props>`
         &:hover {
           background-color: ${color.common.marigold};
           border: 2px solid ${color.common.marigold};
+          color: ${color.common.light};
         }
       `) ||
     (props.variant === "secondary" &&
@@ -52,6 +54,7 @@ export const ButtonWrap = styled.div<Props>`
         &:hover {
           border: 2px solid ${color.common.marigold};
           background-color: ${color.common.marigold};
+          color: ${color.common.light};
         }
       `) ||
     (props.variant === "inline" &&

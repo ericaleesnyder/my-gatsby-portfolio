@@ -1,10 +1,10 @@
 import React from "react";
 import type { ReactNode, FC } from "react";
 import { navigate } from "gatsby";
-import onKeyDown from "../../../utils/onKeyDown";
+import onKeyDown from "../../utils/onKeyDown";
 
-import Link from "../../Link/Link";
-import { ButtonWrap } from "./Button.styled";
+import Link from "../Link/Link";
+import { ButtonWrap } from "./styles/Button.styled";
 
 interface ButtonProps {
   to: string;
