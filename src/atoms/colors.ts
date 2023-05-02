@@ -11,6 +11,7 @@ export const color = {
     midnight: "#191970",
     charcoal: "#17202A",
     light: "#FAFCFE",
+    nav: "#FAFCFECC",
   },
   grey: {
     50: "#EAECEE",
