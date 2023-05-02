@@ -2,6 +2,8 @@ import styled, { css } from "styled-components";
 import { color } from "../../../atoms/colors";
 import { font } from "../../../atoms/typography";
 
+// TODO: fix button styles - inaccessible contrast right now
+
 type Props = {
   variant: "primary" | "secondary" | "tertiary" | "inline";
 };
@@ -42,8 +44,8 @@ export const ButtonWrap = styled.div<Props>`
         color: ${color.common.midnight};
         border: 2px solid ${color.common.midnight};
         &:hover {
-          color: ${color.common.lavender};
-          border: 2px solid ${color.common.lavender};
+          color: ${color.common.lavender}; // FIXME
+          border: 2px solid ${color.common.lavender}; // FIXME
         }
       `) ||
     (props.variant === "tertiary" &&
