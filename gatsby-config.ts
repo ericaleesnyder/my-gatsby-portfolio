@@ -32,7 +32,7 @@ const config: GatsbyConfig = {
       options: {
         // You can find your read-only API token under the Settings > API tokens
         // section of your administrative area. Make sure to grant both CDA and CMA permissions.
-        apiToken: process.env.READONLY_API_KEY,
+        apiToken: process.env.GATSBY_DATO_API_KEY,
 
         // The project environment to read from. Defaults to the primary environment:
         environment: `main`,

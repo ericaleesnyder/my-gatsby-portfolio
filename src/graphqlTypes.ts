@@ -417,6 +417,862 @@ export type DatoCmsColorFieldSortInput = {
   rgb?: InputMaybe<SortOrderEnum>;
 };
 
+export type DatoCmsComponentCallToAction = Node & {
+  __typename?: 'DatoCmsComponentCallToAction';
+  buttonType?: Maybe<Scalars['String']>;
+  children: Array<Node>;
+  hoverColor?: Maybe<Scalars['String']>;
+  icon?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  isDark?: Maybe<Scalars['Boolean']>;
+  label?: Maybe<Scalars['String']>;
+  link?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  size?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsComponentCallToActionConnection = {
+  __typename?: 'DatoCmsComponentCallToActionConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentCallToActionEdge>;
+  group: Array<DatoCmsComponentCallToActionGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentCallToAction>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentCallToActionConnectionDistinctArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionConnectionGroupArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentCallToActionConnectionMaxArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionConnectionMinArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionConnectionSumArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+export type DatoCmsComponentCallToActionEdge = {
+  __typename?: 'DatoCmsComponentCallToActionEdge';
+  next?: Maybe<DatoCmsComponentCallToAction>;
+  node: DatoCmsComponentCallToAction;
+  previous?: Maybe<DatoCmsComponentCallToAction>;
+};
+
+export type DatoCmsComponentCallToActionFieldSelector = {
+  buttonType?: InputMaybe<FieldSelectorEnum>;
+  children?: InputMaybe<NodeFieldSelector>;
+  hoverColor?: InputMaybe<FieldSelectorEnum>;
+  icon?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  isDark?: InputMaybe<FieldSelectorEnum>;
+  label?: InputMaybe<FieldSelectorEnum>;
+  link?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  size?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsComponentCallToActionFilterInput = {
+  buttonType?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  hoverColor?: InputMaybe<StringQueryOperatorInput>;
+  icon?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  isDark?: InputMaybe<BooleanQueryOperatorInput>;
+  label?: InputMaybe<StringQueryOperatorInput>;
+  link?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  size?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsComponentCallToActionFilterListInput = {
+  elemMatch?: InputMaybe<DatoCmsComponentCallToActionFilterInput>;
+};
+
+export type DatoCmsComponentCallToActionGroupConnection = {
+  __typename?: 'DatoCmsComponentCallToActionGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentCallToActionEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentCallToActionGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentCallToAction>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentCallToActionGroupConnectionDistinctArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionGroupConnectionGroupArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentCallToActionGroupConnectionMaxArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionGroupConnectionMinArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+
+export type DatoCmsComponentCallToActionGroupConnectionSumArgs = {
+  field: DatoCmsComponentCallToActionFieldSelector;
+};
+
+export type DatoCmsComponentCallToActionSortInput = {
+  buttonType?: InputMaybe<SortOrderEnum>;
+  children?: InputMaybe<NodeSortInput>;
+  hoverColor?: InputMaybe<SortOrderEnum>;
+  icon?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  isDark?: InputMaybe<SortOrderEnum>;
+  label?: InputMaybe<SortOrderEnum>;
+  link?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  size?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsComponentHero = Node & {
+  __typename?: 'DatoCmsComponentHero';
+  body?: Maybe<DatoCmsDatoCmsComponentHeroBodyStructuredText>;
+  children: Array<Node>;
+  ctas?: Maybe<Array<Maybe<DatoCmsComponentCallToAction>>>;
+  featuredImage?: Maybe<DatoCmsComponentImage>;
+  heading?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  secondaryImage?: Maybe<DatoCmsComponentImage>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  subheading?: Maybe<Scalars['String']>;
+  subheadingNode?: Maybe<DatoCmsTextNode>;
+  tertiaryImage?: Maybe<DatoCmsComponentImage>;
+};
+
+export type DatoCmsComponentHeroConnection = {
+  __typename?: 'DatoCmsComponentHeroConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentHeroEdge>;
+  group: Array<DatoCmsComponentHeroGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentHero>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentHeroConnectionDistinctArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroConnectionGroupArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentHeroConnectionMaxArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroConnectionMinArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroConnectionSumArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+export type DatoCmsComponentHeroEdge = {
+  __typename?: 'DatoCmsComponentHeroEdge';
+  next?: Maybe<DatoCmsComponentHero>;
+  node: DatoCmsComponentHero;
+  previous?: Maybe<DatoCmsComponentHero>;
+};
+
+export type DatoCmsComponentHeroFieldSelector = {
+  body?: InputMaybe<DatoCmsDatoCmsComponentHeroBodyStructuredTextFieldSelector>;
+  children?: InputMaybe<NodeFieldSelector>;
+  ctas?: InputMaybe<DatoCmsComponentCallToActionFieldSelector>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+  heading?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  secondaryImage?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  subheading?: InputMaybe<FieldSelectorEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  tertiaryImage?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+};
+
+export type DatoCmsComponentHeroFilterInput = {
+  body?: InputMaybe<DatoCmsDatoCmsComponentHeroBodyStructuredTextFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  ctas?: InputMaybe<DatoCmsComponentCallToActionFilterListInput>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  secondaryImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  tertiaryImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+};
+
+export type DatoCmsComponentHeroGroupConnection = {
+  __typename?: 'DatoCmsComponentHeroGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentHeroEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentHeroGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentHero>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentHeroGroupConnectionDistinctArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroGroupConnectionGroupArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentHeroGroupConnectionMaxArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroGroupConnectionMinArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+
+export type DatoCmsComponentHeroGroupConnectionSumArgs = {
+  field: DatoCmsComponentHeroFieldSelector;
+};
+
+export type DatoCmsComponentHeroSortInput = {
+  body?: InputMaybe<DatoCmsDatoCmsComponentHeroBodyStructuredTextSortInput>;
+  children?: InputMaybe<NodeSortInput>;
+  ctas?: InputMaybe<DatoCmsComponentCallToActionSortInput>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageSortInput>;
+  heading?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  secondaryImage?: InputMaybe<DatoCmsComponentImageSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  subheading?: InputMaybe<SortOrderEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  tertiaryImage?: InputMaybe<DatoCmsComponentImageSortInput>;
+};
+
+export type DatoCmsComponentImage = Node & {
+  __typename?: 'DatoCmsComponentImage';
+  alt?: Maybe<Scalars['String']>;
+  caption?: Maybe<Scalars['String']>;
+  captionNode?: Maybe<DatoCmsTextNode>;
+  children: Array<Node>;
+  description?: Maybe<Scalars['String']>;
+  descriptionNode?: Maybe<DatoCmsTextNode>;
+  desktopImage?: Maybe<DatoCmsFileField>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  mobileImage?: Maybe<DatoCmsFileField>;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsComponentImageConnection = {
+  __typename?: 'DatoCmsComponentImageConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentImageEdge>;
+  group: Array<DatoCmsComponentImageGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentImage>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentImageConnectionDistinctArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageConnectionGroupArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentImageConnectionMaxArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageConnectionMinArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageConnectionSumArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+export type DatoCmsComponentImageEdge = {
+  __typename?: 'DatoCmsComponentImageEdge';
+  next?: Maybe<DatoCmsComponentImage>;
+  node: DatoCmsComponentImage;
+  previous?: Maybe<DatoCmsComponentImage>;
+};
+
+export type DatoCmsComponentImageFieldSelector = {
+  alt?: InputMaybe<FieldSelectorEnum>;
+  caption?: InputMaybe<FieldSelectorEnum>;
+  captionNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  children?: InputMaybe<NodeFieldSelector>;
+  description?: InputMaybe<FieldSelectorEnum>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  desktopImage?: InputMaybe<DatoCmsFileFieldFieldSelector>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  mobileImage?: InputMaybe<DatoCmsFileFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  title?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsComponentImageFilterInput = {
+  alt?: InputMaybe<StringQueryOperatorInput>;
+  caption?: InputMaybe<StringQueryOperatorInput>;
+  captionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  desktopImage?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  mobileImage?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsComponentImageFilterListInput = {
+  elemMatch?: InputMaybe<DatoCmsComponentImageFilterInput>;
+};
+
+export type DatoCmsComponentImageGroupConnection = {
+  __typename?: 'DatoCmsComponentImageGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentImageEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentImageGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentImage>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentImageGroupConnectionDistinctArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageGroupConnectionGroupArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentImageGroupConnectionMaxArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageGroupConnectionMinArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+
+export type DatoCmsComponentImageGroupConnectionSumArgs = {
+  field: DatoCmsComponentImageFieldSelector;
+};
+
+export type DatoCmsComponentImageSortInput = {
+  alt?: InputMaybe<SortOrderEnum>;
+  caption?: InputMaybe<SortOrderEnum>;
+  captionNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  children?: InputMaybe<NodeSortInput>;
+  description?: InputMaybe<SortOrderEnum>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  desktopImage?: InputMaybe<DatoCmsFileFieldSortInput>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  mobileImage?: InputMaybe<DatoCmsFileFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  title?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsComponentStory = Node & {
+  __typename?: 'DatoCmsComponentStory';
+  children: Array<Node>;
+  heading?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  subheading?: Maybe<Scalars['String']>;
+  subheadingNode?: Maybe<DatoCmsTextNode>;
+  timelineItems?: Maybe<Array<Maybe<DatoCmsTimelineInstance>>>;
+};
+
+export type DatoCmsComponentStoryConnection = {
+  __typename?: 'DatoCmsComponentStoryConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentStoryEdge>;
+  group: Array<DatoCmsComponentStoryGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentStory>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentStoryConnectionDistinctArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryConnectionGroupArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentStoryConnectionMaxArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryConnectionMinArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryConnectionSumArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+export type DatoCmsComponentStoryEdge = {
+  __typename?: 'DatoCmsComponentStoryEdge';
+  next?: Maybe<DatoCmsComponentStory>;
+  node: DatoCmsComponentStory;
+  previous?: Maybe<DatoCmsComponentStory>;
+};
+
+export type DatoCmsComponentStoryFieldSelector = {
+  children?: InputMaybe<NodeFieldSelector>;
+  heading?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  subheading?: InputMaybe<FieldSelectorEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  timelineItems?: InputMaybe<DatoCmsTimelineInstanceFieldSelector>;
+};
+
+export type DatoCmsComponentStoryFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  timelineItems?: InputMaybe<DatoCmsTimelineInstanceFilterListInput>;
+};
+
+export type DatoCmsComponentStoryGroupConnection = {
+  __typename?: 'DatoCmsComponentStoryGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentStoryEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentStoryGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentStory>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsComponentStoryGroupConnectionDistinctArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryGroupConnectionGroupArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsComponentStoryGroupConnectionMaxArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryGroupConnectionMinArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+
+export type DatoCmsComponentStoryGroupConnectionSumArgs = {
+  field: DatoCmsComponentStoryFieldSelector;
+};
+
+export type DatoCmsComponentStorySortInput = {
+  children?: InputMaybe<NodeSortInput>;
+  heading?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  subheading?: InputMaybe<SortOrderEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  timelineItems?: InputMaybe<DatoCmsTimelineInstanceSortInput>;
+};
+
+export type DatoCmsDatoCmsComponentHeroBodyStructuredText = {
+  __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText';
+  blocks?: Maybe<Array<Maybe<Scalars['String']>>>;
+  links?: Maybe<Array<Maybe<DatoCmsComponentCallToAction>>>;
+  value?: Maybe<Scalars['JSON']>;
+};
+
+export type DatoCmsDatoCmsComponentHeroBodyStructuredTextFieldSelector = {
+  blocks?: InputMaybe<FieldSelectorEnum>;
+  links?: InputMaybe<DatoCmsComponentCallToActionFieldSelector>;
+  value?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsDatoCmsComponentHeroBodyStructuredTextFilterInput = {
+  blocks?: InputMaybe<StringQueryOperatorInput>;
+  links?: InputMaybe<DatoCmsComponentCallToActionFilterListInput>;
+  value?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type DatoCmsDatoCmsComponentHeroBodyStructuredTextSortInput = {
+  blocks?: InputMaybe<SortOrderEnum>;
+  links?: InputMaybe<DatoCmsComponentCallToActionSortInput>;
+  value?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsDatoCmsTemplateProjectBodyStructuredText = {
+  __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText';
+  blocks?: Maybe<Array<Maybe<Scalars['String']>>>;
+  links?: Maybe<Array<Maybe<DatoCmsComponentImage>>>;
+  value?: Maybe<Scalars['JSON']>;
+};
+
+export type DatoCmsDatoCmsTemplateProjectBodyStructuredTextFieldSelector = {
+  blocks?: InputMaybe<FieldSelectorEnum>;
+  links?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+  value?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsDatoCmsTemplateProjectBodyStructuredTextFilterInput = {
+  blocks?: InputMaybe<StringQueryOperatorInput>;
+  links?: InputMaybe<DatoCmsComponentImageFilterListInput>;
+  value?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type DatoCmsDatoCmsTemplateProjectBodyStructuredTextSortInput = {
+  blocks?: InputMaybe<SortOrderEnum>;
+  links?: InputMaybe<DatoCmsComponentImageSortInput>;
+  value?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsEntitySkill = Node & {
+  __typename?: 'DatoCmsEntitySkill';
+  children: Array<Node>;
+  id: Scalars['ID'];
+  internal: Internal;
+  logo?: Maybe<DatoCmsFileField>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsEntitySkillConnection = {
+  __typename?: 'DatoCmsEntitySkillConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsEntitySkillEdge>;
+  group: Array<DatoCmsEntitySkillGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsEntitySkill>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsEntitySkillConnectionDistinctArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillConnectionGroupArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsEntitySkillConnectionMaxArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillConnectionMinArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillConnectionSumArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+export type DatoCmsEntitySkillEdge = {
+  __typename?: 'DatoCmsEntitySkillEdge';
+  next?: Maybe<DatoCmsEntitySkill>;
+  node: DatoCmsEntitySkill;
+  previous?: Maybe<DatoCmsEntitySkill>;
+};
+
+export type DatoCmsEntitySkillFieldSelector = {
+  children?: InputMaybe<NodeFieldSelector>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  logo?: InputMaybe<DatoCmsFileFieldFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  title?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsEntitySkillFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  logo?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsEntitySkillGroupConnection = {
+  __typename?: 'DatoCmsEntitySkillGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsEntitySkillEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsEntitySkillGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsEntitySkill>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsEntitySkillGroupConnectionDistinctArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillGroupConnectionGroupArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsEntitySkillGroupConnectionMaxArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillGroupConnectionMinArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+
+export type DatoCmsEntitySkillGroupConnectionSumArgs = {
+  field: DatoCmsEntitySkillFieldSelector;
+};
+
+export type DatoCmsEntitySkillSortInput = {
+  children?: InputMaybe<NodeSortInput>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  logo?: InputMaybe<DatoCmsFileFieldSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  title?: InputMaybe<SortOrderEnum>;
+};
+
 export type DatoCmsFaviconMetaTags = {
   __typename?: 'DatoCmsFaviconMetaTags';
   tags?: Maybe<Scalars['JSON']>;
@@ -445,7 +1301,7 @@ export type DatoCmsField = Node & {
   internal: Internal;
   label?: Maybe<Scalars['String']>;
   localized?: Maybe<Scalars['Boolean']>;
-  originalId?: Maybe<Scalars['String']>;
+  originalId: Scalars['String'];
   parent?: Maybe<Node>;
   position?: Maybe<Scalars['Int']>;
   validators?: Maybe<Scalars['JSON']>;
@@ -528,6 +1384,10 @@ export type DatoCmsFieldFilterInput = {
   parent?: InputMaybe<NodeFilterInput>;
   position?: InputMaybe<IntQueryOperatorInput>;
   validators?: InputMaybe<JsonQueryOperatorInput>;
+};
+
+export type DatoCmsFieldFilterListInput = {
+  elemMatch?: InputMaybe<DatoCmsFieldFilterInput>;
 };
 
 export type DatoCmsFieldGroupConnection = {
@@ -684,6 +1544,105 @@ export type DatoCmsFileFieldUrlArgs = {
   imgixParams?: InputMaybe<DatoCmsImgixParams>;
 };
 
+export type DatoCmsFileFieldFieldSelector = {
+  alt?: InputMaybe<FieldSelectorEnum>;
+  author?: InputMaybe<FieldSelectorEnum>;
+  basename?: InputMaybe<FieldSelectorEnum>;
+  blurhash?: InputMaybe<FieldSelectorEnum>;
+  colors?: InputMaybe<DatoCmsColorFieldFieldSelector>;
+  copyright?: InputMaybe<FieldSelectorEnum>;
+  createdAt?: InputMaybe<FieldSelectorEnum>;
+  customData?: InputMaybe<FieldSelectorEnum>;
+  exifInfo?: InputMaybe<FieldSelectorEnum>;
+  filename?: InputMaybe<FieldSelectorEnum>;
+  fixed?: InputMaybe<DatoCmsFixedFieldSelector>;
+  fluid?: InputMaybe<DatoCmsFluidFieldSelector>;
+  focalPoint?: InputMaybe<DatoCmsFocalPointFieldSelector>;
+  format?: InputMaybe<FieldSelectorEnum>;
+  gatsbyImageData?: InputMaybe<FieldSelectorEnum>;
+  height?: InputMaybe<FieldSelectorEnum>;
+  isImage?: InputMaybe<FieldSelectorEnum>;
+  mimeType?: InputMaybe<FieldSelectorEnum>;
+  notes?: InputMaybe<FieldSelectorEnum>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  path?: InputMaybe<FieldSelectorEnum>;
+  resolutions?: InputMaybe<DatoCmsFixedFieldSelector>;
+  size?: InputMaybe<FieldSelectorEnum>;
+  sizes?: InputMaybe<DatoCmsFluidFieldSelector>;
+  smartTags?: InputMaybe<FieldSelectorEnum>;
+  tags?: InputMaybe<FieldSelectorEnum>;
+  title?: InputMaybe<FieldSelectorEnum>;
+  url?: InputMaybe<FieldSelectorEnum>;
+  video?: InputMaybe<DatoCmsAssetVideoFieldSelector>;
+  width?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsFileFieldFilterInput = {
+  alt?: InputMaybe<StringQueryOperatorInput>;
+  author?: InputMaybe<StringQueryOperatorInput>;
+  basename?: InputMaybe<StringQueryOperatorInput>;
+  blurhash?: InputMaybe<StringQueryOperatorInput>;
+  colors?: InputMaybe<DatoCmsColorFieldFilterListInput>;
+  copyright?: InputMaybe<StringQueryOperatorInput>;
+  createdAt?: InputMaybe<DateQueryOperatorInput>;
+  customData?: InputMaybe<JsonQueryOperatorInput>;
+  exifInfo?: InputMaybe<JsonQueryOperatorInput>;
+  filename?: InputMaybe<StringQueryOperatorInput>;
+  fixed?: InputMaybe<DatoCmsFixedFilterInput>;
+  fluid?: InputMaybe<DatoCmsFluidFilterInput>;
+  focalPoint?: InputMaybe<DatoCmsFocalPointFilterInput>;
+  format?: InputMaybe<StringQueryOperatorInput>;
+  gatsbyImageData?: InputMaybe<JsonQueryOperatorInput>;
+  height?: InputMaybe<IntQueryOperatorInput>;
+  isImage?: InputMaybe<BooleanQueryOperatorInput>;
+  mimeType?: InputMaybe<StringQueryOperatorInput>;
+  notes?: InputMaybe<StringQueryOperatorInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  path?: InputMaybe<StringQueryOperatorInput>;
+  resolutions?: InputMaybe<DatoCmsFixedFilterInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
+  sizes?: InputMaybe<DatoCmsFluidFilterInput>;
+  smartTags?: InputMaybe<StringQueryOperatorInput>;
+  tags?: InputMaybe<StringQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+  url?: InputMaybe<StringQueryOperatorInput>;
+  video?: InputMaybe<DatoCmsAssetVideoFilterInput>;
+  width?: InputMaybe<IntQueryOperatorInput>;
+};
+
+export type DatoCmsFileFieldSortInput = {
+  alt?: InputMaybe<SortOrderEnum>;
+  author?: InputMaybe<SortOrderEnum>;
+  basename?: InputMaybe<SortOrderEnum>;
+  blurhash?: InputMaybe<SortOrderEnum>;
+  colors?: InputMaybe<DatoCmsColorFieldSortInput>;
+  copyright?: InputMaybe<SortOrderEnum>;
+  createdAt?: InputMaybe<SortOrderEnum>;
+  customData?: InputMaybe<SortOrderEnum>;
+  exifInfo?: InputMaybe<SortOrderEnum>;
+  filename?: InputMaybe<SortOrderEnum>;
+  fixed?: InputMaybe<DatoCmsFixedSortInput>;
+  fluid?: InputMaybe<DatoCmsFluidSortInput>;
+  focalPoint?: InputMaybe<DatoCmsFocalPointSortInput>;
+  format?: InputMaybe<SortOrderEnum>;
+  gatsbyImageData?: InputMaybe<SortOrderEnum>;
+  height?: InputMaybe<SortOrderEnum>;
+  isImage?: InputMaybe<SortOrderEnum>;
+  mimeType?: InputMaybe<SortOrderEnum>;
+  notes?: InputMaybe<SortOrderEnum>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  path?: InputMaybe<SortOrderEnum>;
+  resolutions?: InputMaybe<DatoCmsFixedSortInput>;
+  size?: InputMaybe<SortOrderEnum>;
+  sizes?: InputMaybe<DatoCmsFluidSortInput>;
+  smartTags?: InputMaybe<SortOrderEnum>;
+  tags?: InputMaybe<SortOrderEnum>;
+  title?: InputMaybe<SortOrderEnum>;
+  url?: InputMaybe<SortOrderEnum>;
+  video?: InputMaybe<DatoCmsAssetVideoSortInput>;
+  width?: InputMaybe<SortOrderEnum>;
+};
+
 export type DatoCmsFixed = {
   __typename?: 'DatoCmsFixed';
   aspectRatio?: Maybe<Scalars['Float']>;
@@ -780,6 +1739,21 @@ export type DatoCmsFocalPoint = {
   y: Scalars['Float'];
 };
 
+export type DatoCmsFocalPointFieldSelector = {
+  x?: InputMaybe<FieldSelectorEnum>;
+  y?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsFocalPointFilterInput = {
+  x?: InputMaybe<FloatQueryOperatorInput>;
+  y?: InputMaybe<FloatQueryOperatorInput>;
+};
+
+export type DatoCmsFocalPointSortInput = {
+  x?: InputMaybe<SortOrderEnum>;
+  y?: InputMaybe<SortOrderEnum>;
+};
+
 export type DatoCmsGlobalSeo = {
   __typename?: 'DatoCmsGlobalSeo';
   facebookPageUrl?: Maybe<Scalars['String']>;
@@ -820,6 +1794,10 @@ export type DatoCmsImgixParams = {
   auto?: InputMaybe<Scalars['String']>;
   /** Colors the background of padded and partially-transparent images. (https://docs.imgix.com/apis/url/bg) */
   bg?: InputMaybe<Scalars['String']>;
+  /** Removes background from image. (https://docs.imgix.com/apis/rendering/background-removal/bg-remove) */
+  bgRemove?: InputMaybe<Scalars['Boolean']>;
+  /** Overrides default fallback behavior for bg-remove failures. (https://docs.imgix.com/apis/rendering/background-removal/bg-remove) */
+  bgRemoveFallback?: InputMaybe<Scalars['Boolean']>;
   /** Specifies the location of the blend image. (https://docs.imgix.com/apis/url/blending/blend) */
   blend?: InputMaybe<Scalars['String']>;
   /** Changes the blend alignment relative to the parent image. (https://docs.imgix.com/apis/url/blending/blend-align) */
@@ -904,6 +1882,16 @@ export type DatoCmsImgixParams = {
   fill?: InputMaybe<Scalars['String']>;
   /** Sets the fill color for images with additional space created by the fit setting (https://docs.imgix.com/apis/url/fill/fill-color) */
   fillColor?: InputMaybe<Scalars['String']>;
+  /** Sets the fallback behavior for generative fill. (https://docs.imgix.com/apis/rendering/fill/fill-gen-fallback) */
+  fillGenFallback?: InputMaybe<Scalars['Boolean']>;
+  /** Provides a negative text suggestion to the generative fill parameter. Used to reduce the probability of a subject, detail, or object appearing in generative output. (https://docs.imgix.com/apis/rendering/fill/fill-gen-neg-prompt) */
+  fillGenNegPrompt?: InputMaybe<Scalars['String']>;
+  /** Sets the position of the Origin Image in relation to the generative fill. (https://docs.imgix.com/apis/rendering/fill/fill-gen-pos) */
+  fillGenPos?: InputMaybe<Scalars['String']>;
+  /** Provides a text suggestion to the generative fill parameter. (https://docs.imgix.com/apis/rendering/fill/fill-gen-prompt) */
+  fillGenPrompt?: InputMaybe<Scalars['String']>;
+  /** Sets the generative seed value. Used to generate similar outputs from different prompts. (https://docs.imgix.com/apis/rendering/fill/fill-gen-seed) */
+  fillGenSeed?: InputMaybe<Scalars['Int']>;
   /** Specifies how to map the source image to the output image dimensions. (https://docs.imgix.com/apis/url/size/fit) */
   fit?: InputMaybe<Scalars['String']>;
   /** Flips an image on a specified axis. (https://docs.imgix.com/apis/url/rotation/flip) */
@@ -918,8 +1906,14 @@ export type DatoCmsImgixParams = {
   fpY?: InputMaybe<Scalars['Float']>;
   /** Sets the relative zoom value for the focal point of an image (https://docs.imgix.com/apis/url/focalpoint-crop/fp-z) */
   fpZ?: InputMaybe<Scalars['Float']>;
+  /** Specifies the framerate of the generated image. (undefined) */
+  fps?: InputMaybe<Scalars['Int']>;
+  /** Specifies the frame of an animated image to use. (undefined) */
+  frame?: InputMaybe<Scalars['String']>;
   /** Adjusts the gamma of the source image. (https://docs.imgix.com/apis/url/adjustment/gam) */
   gam?: InputMaybe<Scalars['Int']>;
+  /** Specifies the quality of the animated gif. The higher the value, the better more compression is applied. (undefined) */
+  gifQ?: InputMaybe<Scalars['Int']>;
   /** Sets grid colors for the transparency checkerboard grid. (undefined) */
   gridColors?: InputMaybe<Scalars['String']>;
   /** Sets grid size for the transparency checkerboard grid. (undefined) */
@@ -932,10 +1926,14 @@ export type DatoCmsImgixParams = {
   htn?: InputMaybe<Scalars['Int']>;
   /** Adjusts the hue of the source image. (https://docs.imgix.com/apis/url/adjustment/hue) */
   hue?: InputMaybe<Scalars['Int']>;
+  /** Displays every Nth frame starting with the first frame. (undefined) */
+  interval?: InputMaybe<Scalars['Int']>;
   /** Inverts the colors on the source image. (https://docs.imgix.com/apis/url/adjustment/invert) */
   invert?: InputMaybe<Scalars['Boolean']>;
   /** Determine if IPTC data should be passed for JPEG images. (undefined) */
   iptc?: InputMaybe<Scalars['String']>;
+  /** Specifies the number of times an animated image should repeat. A value of 0 means infinite looping. (undefined) */
+  loop?: InputMaybe<Scalars['Int']>;
   /** Specifies that the output image should be a lossless variant. (https://docs.imgix.com/apis/url/format/lossless) */
   lossless?: InputMaybe<Scalars['Boolean']>;
   /** Specifies the location of the watermark image. (https://docs.imgix.com/apis/url/watermark/mark) */
@@ -1008,6 +2006,8 @@ export type DatoCmsImgixParams = {
   q?: InputMaybe<Scalars['Int']>;
   /** Crops an image to a specified rectangle. (https://docs.imgix.com/apis/url/size/rect) */
   rect?: InputMaybe<Scalars['String']>;
+  /** Reverses the frame order on the source animation. (undefined) */
+  reverse?: InputMaybe<Scalars['Boolean']>;
   /** Rotates an image by a specified number of degrees. (https://docs.imgix.com/apis/url/rotation/rot) */
   rot?: InputMaybe<Scalars['Float']>;
   /** Adjusts the saturation of an image. (https://docs.imgix.com/apis/url/adjustment/sat) */
@@ -1018,6 +2018,8 @@ export type DatoCmsImgixParams = {
   shad?: InputMaybe<Scalars['Float']>;
   /** Adjusts the sharpness of the source image. (https://docs.imgix.com/apis/url/adjustment/sharp) */
   sharp?: InputMaybe<Scalars['Float']>;
+  /** Skips every Nth frame starting with the first frame. (undefined) */
+  skip?: InputMaybe<Scalars['Int']>;
   /** Adds checkerboard behind images which support transparency. (https://docs.imgix.com/apis/url/fill/transparency) */
   transparency?: InputMaybe<Scalars['String']>;
   /** Trims the source image. (https://docs.imgix.com/apis/url/trim/trim) */
@@ -1046,8 +2048,6 @@ export type DatoCmsImgixParams = {
   txtFont?: InputMaybe<Scalars['String']>;
   /** Sets the leading (line spacing) for rendered text. Only works on the multi-line text endpoint. (https://docs.imgix.com/apis/url/typesetting/txt-lead) */
   txtLead?: InputMaybe<Scalars['Int']>;
-  /** Controls the level of ligature substitution (https://docs.imgix.com/apis/url/text/txt-lig) */
-  txtLig?: InputMaybe<Scalars['Int']>;
   /** Outlines the rendered text with a specified color. (https://docs.imgix.com/apis/url/text/txt-line) */
   txtLine?: InputMaybe<Scalars['Int']>;
   /** Specifies a text outline color. (https://docs.imgix.com/apis/url/text/txt-line-color) */
@@ -1066,6 +2066,10 @@ export type DatoCmsImgixParams = {
   txtX?: InputMaybe<Scalars['Int']>;
   /** Sets the vertical (y) position of the text in pixels relative to the top edge of the base image. (https://docs.imgix.com/apis/url/text/txt-y) */
   txtY?: InputMaybe<Scalars['Int']>;
+  /** Uses generative AI fill to upscale low resolution images. (https://docs.imgix.com/apis/rendering/super-resolution/upscale) */
+  upscale?: InputMaybe<Scalars['Boolean']>;
+  /** Overrides default fallback behavior for super resolution failures (https://docs.imgix.com/apis/rendering/super-resolution/upscale-fallback) */
+  upscaleFallback?: InputMaybe<Scalars['Boolean']>;
   /** Sharpens the source image using an unsharp mask. (https://docs.imgix.com/apis/url/adjustment/usm) */
   usm?: InputMaybe<Scalars['Int']>;
   /** Specifies the radius for an unsharp mask operation. (https://docs.imgix.com/apis/url/adjustment/usmrad) */
@@ -1080,6 +2084,173 @@ export type DatoCmsLatLonField = {
   __typename?: 'DatoCmsLatLonField';
   latitude?: Maybe<Scalars['Float']>;
   longitude?: Maybe<Scalars['Float']>;
+};
+
+export type DatoCmsLayoutSection = Node & {
+  __typename?: 'DatoCmsLayoutSection';
+  children: Array<Node>;
+  component?: Maybe<DatoCmsUnionForDatoCmsLayoutSectionComponent>;
+  desktopBottomPadding?: Maybe<Scalars['String']>;
+  desktopTopPadding?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  mobileBottomPadding?: Maybe<Scalars['String']>;
+  mobileTopPadding?: Maybe<Scalars['String']>;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  tabletBottomPadding?: Maybe<Scalars['String']>;
+  tabletTopPadding?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsLayoutSectionConnection = {
+  __typename?: 'DatoCmsLayoutSectionConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsLayoutSectionEdge>;
+  group: Array<DatoCmsLayoutSectionGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsLayoutSection>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsLayoutSectionConnectionDistinctArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionConnectionGroupArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsLayoutSectionConnectionMaxArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionConnectionMinArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionConnectionSumArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+export type DatoCmsLayoutSectionEdge = {
+  __typename?: 'DatoCmsLayoutSectionEdge';
+  next?: Maybe<DatoCmsLayoutSection>;
+  node: DatoCmsLayoutSection;
+  previous?: Maybe<DatoCmsLayoutSection>;
+};
+
+export type DatoCmsLayoutSectionFieldSelector = {
+  children?: InputMaybe<NodeFieldSelector>;
+  desktopBottomPadding?: InputMaybe<FieldSelectorEnum>;
+  desktopTopPadding?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  mobileBottomPadding?: InputMaybe<FieldSelectorEnum>;
+  mobileTopPadding?: InputMaybe<FieldSelectorEnum>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  tabletBottomPadding?: InputMaybe<FieldSelectorEnum>;
+  tabletTopPadding?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsLayoutSectionFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  desktopBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  desktopTopPadding?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  mobileBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  mobileTopPadding?: InputMaybe<StringQueryOperatorInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  tabletBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  tabletTopPadding?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsLayoutSectionFilterListInput = {
+  elemMatch?: InputMaybe<DatoCmsLayoutSectionFilterInput>;
+};
+
+export type DatoCmsLayoutSectionGroupConnection = {
+  __typename?: 'DatoCmsLayoutSectionGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsLayoutSectionEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsLayoutSectionGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsLayoutSection>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsLayoutSectionGroupConnectionDistinctArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionGroupConnectionGroupArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsLayoutSectionGroupConnectionMaxArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionGroupConnectionMinArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+
+export type DatoCmsLayoutSectionGroupConnectionSumArgs = {
+  field: DatoCmsLayoutSectionFieldSelector;
+};
+
+export type DatoCmsLayoutSectionSortInput = {
+  children?: InputMaybe<NodeSortInput>;
+  desktopBottomPadding?: InputMaybe<SortOrderEnum>;
+  desktopTopPadding?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  mobileBottomPadding?: InputMaybe<SortOrderEnum>;
+  mobileTopPadding?: InputMaybe<SortOrderEnum>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  tabletBottomPadding?: InputMaybe<SortOrderEnum>;
+  tabletTopPadding?: InputMaybe<SortOrderEnum>;
 };
 
 export type DatoCmsMetaField = {
@@ -1158,14 +2329,14 @@ export type DatoCmsModel = Node & {
   children: Array<Node>;
   collectionAppeareance?: Maybe<Scalars['String']>;
   draftModeActive?: Maybe<Scalars['Boolean']>;
-  fields?: Maybe<DatoCmsFaviconMetaTags>;
+  fields?: Maybe<Array<DatoCmsField>>;
   hasSingletonItem?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   internal: Internal;
   modularBlock?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   orderingDirection?: Maybe<Scalars['String']>;
-  originalId?: Maybe<Scalars['String']>;
+  originalId: Scalars['String'];
   parent?: Maybe<Node>;
   singleton?: Maybe<Scalars['Boolean']>;
   sortable?: Maybe<Scalars['Boolean']>;
@@ -1225,7 +2396,7 @@ export type DatoCmsModelFieldSelector = {
   children?: InputMaybe<NodeFieldSelector>;
   collectionAppeareance?: InputMaybe<FieldSelectorEnum>;
   draftModeActive?: InputMaybe<FieldSelectorEnum>;
-  fields?: InputMaybe<DatoCmsFaviconMetaTagsFieldSelector>;
+  fields?: InputMaybe<DatoCmsFieldFieldSelector>;
   hasSingletonItem?: InputMaybe<FieldSelectorEnum>;
   id?: InputMaybe<FieldSelectorEnum>;
   internal?: InputMaybe<InternalFieldSelector>;
@@ -1245,7 +2416,7 @@ export type DatoCmsModelFilterInput = {
   children?: InputMaybe<NodeFilterListInput>;
   collectionAppeareance?: InputMaybe<StringQueryOperatorInput>;
   draftModeActive?: InputMaybe<BooleanQueryOperatorInput>;
-  fields?: InputMaybe<DatoCmsFaviconMetaTagsFilterInput>;
+  fields?: InputMaybe<DatoCmsFieldFilterListInput>;
   hasSingletonItem?: InputMaybe<BooleanQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
@@ -1307,7 +2478,7 @@ export type DatoCmsModelSortInput = {
   children?: InputMaybe<NodeSortInput>;
   collectionAppeareance?: InputMaybe<SortOrderEnum>;
   draftModeActive?: InputMaybe<SortOrderEnum>;
-  fields?: InputMaybe<DatoCmsFaviconMetaTagsSortInput>;
+  fields?: InputMaybe<DatoCmsFieldSortInput>;
   hasSingletonItem?: InputMaybe<SortOrderEnum>;
   id?: InputMaybe<SortOrderEnum>;
   internal?: InputMaybe<InternalSortInput>;
@@ -1529,6 +2700,7 @@ export type DatoCmsTemplatePage = Node & {
   id: Scalars['ID'];
   internal: Internal;
   internalName?: Maybe<Scalars['String']>;
+  layouts?: Maybe<Array<Maybe<DatoCmsLayoutSection>>>;
   meta: DatoCmsMetaField;
   model?: Maybe<DatoCmsModel>;
   originalId: Scalars['String'];
@@ -1591,6 +2763,7 @@ export type DatoCmsTemplatePageFieldSelector = {
   id?: InputMaybe<FieldSelectorEnum>;
   internal?: InputMaybe<InternalFieldSelector>;
   internalName?: InputMaybe<FieldSelectorEnum>;
+  layouts?: InputMaybe<DatoCmsLayoutSectionFieldSelector>;
   meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
   model?: InputMaybe<DatoCmsModelFieldSelector>;
   originalId?: InputMaybe<FieldSelectorEnum>;
@@ -1606,6 +2779,7 @@ export type DatoCmsTemplatePageFilterInput = {
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   internalName?: InputMaybe<StringQueryOperatorInput>;
+  layouts?: InputMaybe<DatoCmsLayoutSectionFilterListInput>;
   meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
   model?: InputMaybe<DatoCmsModelFilterInput>;
   originalId?: InputMaybe<StringQueryOperatorInput>;
@@ -1663,6 +2837,7 @@ export type DatoCmsTemplatePageSortInput = {
   id?: InputMaybe<SortOrderEnum>;
   internal?: InputMaybe<InternalSortInput>;
   internalName?: InputMaybe<SortOrderEnum>;
+  layouts?: InputMaybe<DatoCmsLayoutSectionSortInput>;
   meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
   model?: InputMaybe<DatoCmsModelSortInput>;
   originalId?: InputMaybe<SortOrderEnum>;
@@ -1671,6 +2846,200 @@ export type DatoCmsTemplatePageSortInput = {
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
   slug?: InputMaybe<SortOrderEnum>;
   title?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsTemplateProject = Node & {
+  __typename?: 'DatoCmsTemplateProject';
+  blurb?: Maybe<Scalars['String']>;
+  blurbNode?: Maybe<DatoCmsTextNode>;
+  body?: Maybe<DatoCmsDatoCmsTemplateProjectBodyStructuredText>;
+  children: Array<Node>;
+  cms?: Maybe<Scalars['String']>;
+  featured?: Maybe<Scalars['Boolean']>;
+  featuredImage?: Maybe<DatoCmsComponentImage>;
+  framework?: Maybe<Scalars['String']>;
+  github?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  link?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  role?: Maybe<Scalars['String']>;
+  searchEngineOptimization?: Maybe<DatoCmsSeoField>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  slug?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  year?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsTemplateProjectConnection = {
+  __typename?: 'DatoCmsTemplateProjectConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsTemplateProjectEdge>;
+  group: Array<DatoCmsTemplateProjectGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsTemplateProject>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsTemplateProjectConnectionDistinctArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectConnectionGroupArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsTemplateProjectConnectionMaxArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectConnectionMinArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectConnectionSumArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+export type DatoCmsTemplateProjectEdge = {
+  __typename?: 'DatoCmsTemplateProjectEdge';
+  next?: Maybe<DatoCmsTemplateProject>;
+  node: DatoCmsTemplateProject;
+  previous?: Maybe<DatoCmsTemplateProject>;
+};
+
+export type DatoCmsTemplateProjectFieldSelector = {
+  blurb?: InputMaybe<FieldSelectorEnum>;
+  blurbNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  body?: InputMaybe<DatoCmsDatoCmsTemplateProjectBodyStructuredTextFieldSelector>;
+  children?: InputMaybe<NodeFieldSelector>;
+  cms?: InputMaybe<FieldSelectorEnum>;
+  featured?: InputMaybe<FieldSelectorEnum>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+  framework?: InputMaybe<FieldSelectorEnum>;
+  github?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  link?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  role?: InputMaybe<FieldSelectorEnum>;
+  searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  slug?: InputMaybe<FieldSelectorEnum>;
+  title?: InputMaybe<FieldSelectorEnum>;
+  year?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsTemplateProjectFilterInput = {
+  blurb?: InputMaybe<StringQueryOperatorInput>;
+  blurbNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  body?: InputMaybe<DatoCmsDatoCmsTemplateProjectBodyStructuredTextFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  cms?: InputMaybe<StringQueryOperatorInput>;
+  featured?: InputMaybe<BooleanQueryOperatorInput>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  framework?: InputMaybe<StringQueryOperatorInput>;
+  github?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  link?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  role?: InputMaybe<StringQueryOperatorInput>;
+  searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  slug?: InputMaybe<StringQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+  year?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsTemplateProjectGroupConnection = {
+  __typename?: 'DatoCmsTemplateProjectGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsTemplateProjectEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsTemplateProjectGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsTemplateProject>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsTemplateProjectGroupConnectionDistinctArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectGroupConnectionGroupArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsTemplateProjectGroupConnectionMaxArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectGroupConnectionMinArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+
+export type DatoCmsTemplateProjectGroupConnectionSumArgs = {
+  field: DatoCmsTemplateProjectFieldSelector;
+};
+
+export type DatoCmsTemplateProjectSortInput = {
+  blurb?: InputMaybe<SortOrderEnum>;
+  blurbNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  body?: InputMaybe<DatoCmsDatoCmsTemplateProjectBodyStructuredTextSortInput>;
+  children?: InputMaybe<NodeSortInput>;
+  cms?: InputMaybe<SortOrderEnum>;
+  featured?: InputMaybe<SortOrderEnum>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageSortInput>;
+  framework?: InputMaybe<SortOrderEnum>;
+  github?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  link?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  role?: InputMaybe<SortOrderEnum>;
+  searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  slug?: InputMaybe<SortOrderEnum>;
+  title?: InputMaybe<SortOrderEnum>;
+  year?: InputMaybe<SortOrderEnum>;
 };
 
 export type DatoCmsTextNode = Node & {
@@ -1790,6 +3159,162 @@ export type DatoCmsTextNodeSortInput = {
   internal?: InputMaybe<InternalSortInput>;
   parent?: InputMaybe<NodeSortInput>;
 };
+
+export type DatoCmsTimelineInstance = Node & {
+  __typename?: 'DatoCmsTimelineInstance';
+  children: Array<Node>;
+  description?: Maybe<Scalars['String']>;
+  descriptionNode?: Maybe<DatoCmsTextNode>;
+  heading?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  year?: Maybe<Scalars['String']>;
+};
+
+export type DatoCmsTimelineInstanceConnection = {
+  __typename?: 'DatoCmsTimelineInstanceConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsTimelineInstanceEdge>;
+  group: Array<DatoCmsTimelineInstanceGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsTimelineInstance>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsTimelineInstanceConnectionDistinctArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceConnectionGroupArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsTimelineInstanceConnectionMaxArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceConnectionMinArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceConnectionSumArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+export type DatoCmsTimelineInstanceEdge = {
+  __typename?: 'DatoCmsTimelineInstanceEdge';
+  next?: Maybe<DatoCmsTimelineInstance>;
+  node: DatoCmsTimelineInstance;
+  previous?: Maybe<DatoCmsTimelineInstance>;
+};
+
+export type DatoCmsTimelineInstanceFieldSelector = {
+  children?: InputMaybe<NodeFieldSelector>;
+  description?: InputMaybe<FieldSelectorEnum>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+  heading?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  year?: InputMaybe<FieldSelectorEnum>;
+};
+
+export type DatoCmsTimelineInstanceFilterInput = {
+  children?: InputMaybe<NodeFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  year?: InputMaybe<StringQueryOperatorInput>;
+};
+
+export type DatoCmsTimelineInstanceFilterListInput = {
+  elemMatch?: InputMaybe<DatoCmsTimelineInstanceFilterInput>;
+};
+
+export type DatoCmsTimelineInstanceGroupConnection = {
+  __typename?: 'DatoCmsTimelineInstanceGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsTimelineInstanceEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsTimelineInstanceGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsTimelineInstance>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+};
+
+
+export type DatoCmsTimelineInstanceGroupConnectionDistinctArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceGroupConnectionGroupArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type DatoCmsTimelineInstanceGroupConnectionMaxArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceGroupConnectionMinArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+
+export type DatoCmsTimelineInstanceGroupConnectionSumArgs = {
+  field: DatoCmsTimelineInstanceFieldSelector;
+};
+
+export type DatoCmsTimelineInstanceSortInput = {
+  children?: InputMaybe<NodeSortInput>;
+  description?: InputMaybe<SortOrderEnum>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+  heading?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  year?: InputMaybe<SortOrderEnum>;
+};
+
+export type DatoCmsUnionForDatoCmsLayoutSectionComponent = DatoCmsComponentHero | DatoCmsComponentStory;
 
 export type DatoCmsVideoField = {
   __typename?: 'DatoCmsVideoField';
@@ -2562,11 +4087,19 @@ export type PageInfo = {
 export type Query = {
   __typename?: 'Query';
   allDatoCmsAsset: DatoCmsAssetConnection;
+  allDatoCmsComponentCallToAction: DatoCmsComponentCallToActionConnection;
+  allDatoCmsComponentHero: DatoCmsComponentHeroConnection;
+  allDatoCmsComponentImage: DatoCmsComponentImageConnection;
+  allDatoCmsComponentStory: DatoCmsComponentStoryConnection;
+  allDatoCmsEntitySkill: DatoCmsEntitySkillConnection;
   allDatoCmsField: DatoCmsFieldConnection;
+  allDatoCmsLayoutSection: DatoCmsLayoutSectionConnection;
   allDatoCmsModel: DatoCmsModelConnection;
   allDatoCmsSite: DatoCmsSiteConnection;
   allDatoCmsTemplatePage: DatoCmsTemplatePageConnection;
+  allDatoCmsTemplateProject: DatoCmsTemplateProjectConnection;
   allDatoCmsTextNode: DatoCmsTextNodeConnection;
+  allDatoCmsTimelineInstance: DatoCmsTimelineInstanceConnection;
   allDirectory: DirectoryConnection;
   allFile: FileConnection;
   allSite: SiteConnection;
@@ -2575,11 +4108,19 @@ export type Query = {
   allSitePage: SitePageConnection;
   allSitePlugin: SitePluginConnection;
   datoCmsAsset?: Maybe<DatoCmsAsset>;
+  datoCmsComponentCallToAction?: Maybe<DatoCmsComponentCallToAction>;
+  datoCmsComponentHero?: Maybe<DatoCmsComponentHero>;
+  datoCmsComponentImage?: Maybe<DatoCmsComponentImage>;
+  datoCmsComponentStory?: Maybe<DatoCmsComponentStory>;
+  datoCmsEntitySkill?: Maybe<DatoCmsEntitySkill>;
   datoCmsField?: Maybe<DatoCmsField>;
+  datoCmsLayoutSection?: Maybe<DatoCmsLayoutSection>;
   datoCmsModel?: Maybe<DatoCmsModel>;
   datoCmsSite?: Maybe<DatoCmsSite>;
   datoCmsTemplatePage?: Maybe<DatoCmsTemplatePage>;
+  datoCmsTemplateProject?: Maybe<DatoCmsTemplateProject>;
   datoCmsTextNode?: Maybe<DatoCmsTextNode>;
+  datoCmsTimelineInstance?: Maybe<DatoCmsTimelineInstance>;
   directory?: Maybe<Directory>;
   file?: Maybe<File>;
   site?: Maybe<Site>;
@@ -2600,6 +4141,56 @@ export type QueryAllDatoCmsAssetArgs = {
 };
 
 
+export type QueryAllDatoCmsComponentCallToActionArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentCallToActionFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentCallToActionSortInput>>>;
+};
+
+
+export type QueryAllDatoCmsComponentHeroArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentHeroFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentHeroSortInput>>>;
+};
+
+
+export type QueryAllDatoCmsComponentImageArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentImageSortInput>>>;
+};
+
+
+export type QueryAllDatoCmsComponentStoryArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentStoryFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentStorySortInput>>>;
+};
+
+
+export type QueryAllDatoCmsEntitySkillArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsEntitySkillFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsEntitySkillSortInput>>>;
+};
+
+
 export type QueryAllDatoCmsFieldArgs = {
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
   filter?: InputMaybe<DatoCmsFieldFilterInput>;
@@ -2607,6 +4198,16 @@ export type QueryAllDatoCmsFieldArgs = {
   locale?: InputMaybe<Scalars['String']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<DatoCmsFieldSortInput>>>;
+};
+
+
+export type QueryAllDatoCmsLayoutSectionArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsLayoutSectionFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsLayoutSectionSortInput>>>;
 };
 
 
@@ -2640,6 +4241,16 @@ export type QueryAllDatoCmsTemplatePageArgs = {
 };
 
 
+export type QueryAllDatoCmsTemplateProjectArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsTemplateProjectFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsTemplateProjectSortInput>>>;
+};
+
+
 export type QueryAllDatoCmsTextNodeArgs = {
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
   filter?: InputMaybe<DatoCmsTextNodeFilterInput>;
@@ -2647,6 +4258,16 @@ export type QueryAllDatoCmsTextNodeArgs = {
   locale?: InputMaybe<Scalars['String']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<DatoCmsTextNodeSortInput>>>;
+};
+
+
+export type QueryAllDatoCmsTimelineInstanceArgs = {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsTimelineInstanceFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsTimelineInstanceSortInput>>>;
 };
 
 
@@ -2742,6 +4363,108 @@ export type QueryDatoCmsAssetArgs = {
 };
 
 
+export type QueryDatoCmsComponentCallToActionArgs = {
+  buttonType?: InputMaybe<StringQueryOperatorInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  hoverColor?: InputMaybe<StringQueryOperatorInput>;
+  icon?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  isDark?: InputMaybe<BooleanQueryOperatorInput>;
+  label?: InputMaybe<StringQueryOperatorInput>;
+  link?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  size?: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryDatoCmsComponentHeroArgs = {
+  body?: InputMaybe<DatoCmsDatoCmsComponentHeroBodyStructuredTextFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  ctas?: InputMaybe<DatoCmsComponentCallToActionFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  secondaryImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  tertiaryImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+};
+
+
+export type QueryDatoCmsComponentImageArgs = {
+  alt?: InputMaybe<StringQueryOperatorInput>;
+  caption?: InputMaybe<StringQueryOperatorInput>;
+  captionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  desktopImage?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  mobileImage?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryDatoCmsComponentStoryArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  timelineItems?: InputMaybe<DatoCmsTimelineInstanceFilterListInput>;
+};
+
+
+export type QueryDatoCmsEntitySkillArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  logo?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 export type QueryDatoCmsFieldArgs = {
   apiKey?: InputMaybe<StringQueryOperatorInput>;
   appeareance?: InputMaybe<JsonQueryOperatorInput>;
@@ -2761,6 +4484,27 @@ export type QueryDatoCmsFieldArgs = {
 };
 
 
+export type QueryDatoCmsLayoutSectionArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  desktopBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  desktopTopPadding?: InputMaybe<StringQueryOperatorInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  mobileBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  mobileTopPadding?: InputMaybe<StringQueryOperatorInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  tabletBottomPadding?: InputMaybe<StringQueryOperatorInput>;
+  tabletTopPadding?: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 export type QueryDatoCmsModelArgs = {
   allLocalesRequired?: InputMaybe<BooleanQueryOperatorInput>;
   apiKey?: InputMaybe<StringQueryOperatorInput>;
@@ -2768,7 +4512,7 @@ export type QueryDatoCmsModelArgs = {
   collectionAppeareance?: InputMaybe<StringQueryOperatorInput>;
   draftModeActive?: InputMaybe<BooleanQueryOperatorInput>;
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
-  fields?: InputMaybe<DatoCmsFaviconMetaTagsFilterInput>;
+  fields?: InputMaybe<DatoCmsFieldFilterListInput>;
   hasSingletonItem?: InputMaybe<BooleanQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
@@ -2808,6 +4552,7 @@ export type QueryDatoCmsTemplatePageArgs = {
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   internalName?: InputMaybe<StringQueryOperatorInput>;
+  layouts?: InputMaybe<DatoCmsLayoutSectionFilterListInput>;
   locale?: InputMaybe<Scalars['String']>;
   meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
   model?: InputMaybe<DatoCmsModelFilterInput>;
@@ -2820,6 +4565,35 @@ export type QueryDatoCmsTemplatePageArgs = {
 };
 
 
+export type QueryDatoCmsTemplateProjectArgs = {
+  blurb?: InputMaybe<StringQueryOperatorInput>;
+  blurbNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  body?: InputMaybe<DatoCmsDatoCmsTemplateProjectBodyStructuredTextFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  cms?: InputMaybe<StringQueryOperatorInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  featured?: InputMaybe<BooleanQueryOperatorInput>;
+  featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
+  framework?: InputMaybe<StringQueryOperatorInput>;
+  github?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  link?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  role?: InputMaybe<StringQueryOperatorInput>;
+  searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  slug?: InputMaybe<StringQueryOperatorInput>;
+  title?: InputMaybe<StringQueryOperatorInput>;
+  year?: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 export type QueryDatoCmsTextNodeArgs = {
   children?: InputMaybe<NodeFilterListInput>;
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
@@ -2827,6 +4601,24 @@ export type QueryDatoCmsTextNodeArgs = {
   internal?: InputMaybe<InternalFilterInput>;
   locale?: InputMaybe<Scalars['String']>;
   parent?: InputMaybe<NodeFilterInput>;
+};
+
+
+export type QueryDatoCmsTimelineInstanceArgs = {
+  children?: InputMaybe<NodeFilterListInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  year?: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -3782,11 +5574,29 @@ export type StringQueryOperatorInput = {
   regex?: InputMaybe<Scalars['String']>;
 };
 
-export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null };
+export type ImageAssetFragment = { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null };
+
+export type TimelineInstanceFragment = { __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null };
+
+export type DatoCmsEntitySkillFragment = { __typename: 'DatoCmsEntitySkill', id: string, title?: string | null, logo?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null };
+
+export type DatoCmsComponentCallToActionFragment = { __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null };
+
+export type DatoCmsComponentImageFragment = { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null };
+
+export type DatoCmsComponentHeroFragment = { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, secondaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, tertiaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, body?: { __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | null, ctas?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null };
+
+export type DatoCmsComponentStoryFragment = { __typename: 'DatoCmsComponentStory', id: string, heading?: string | null, subheading?: string | null, timelineItems?: Array<{ __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null } | null> | null };
+
+export type LayoutSectionFragment = { __typename: 'DatoCmsLayoutSection', id: string, internalName?: string | null, desktopTopPadding?: string | null, desktopBottomPadding?: string | null, tabletTopPadding?: string | null, tabletBottomPadding?: string | null, mobileTopPadding?: string | null, mobileBottomPadding?: string | null, component?: { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, secondaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, tertiaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, body?: { __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | null, ctas?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | { __typename: 'DatoCmsComponentStory', id: string, heading?: string | null, subheading?: string | null, timelineItems?: Array<{ __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null } | null> | null } | null };
+
+export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null, layouts?: Array<{ __typename: 'DatoCmsLayoutSection', id: string, internalName?: string | null, desktopTopPadding?: string | null, desktopBottomPadding?: string | null, tabletTopPadding?: string | null, tabletBottomPadding?: string | null, mobileTopPadding?: string | null, mobileBottomPadding?: string | null, component?: { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, secondaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, tertiaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, body?: { __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | null, ctas?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | { __typename: 'DatoCmsComponentStory', id: string, heading?: string | null, subheading?: string | null, timelineItems?: Array<{ __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null };
+
+export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, body?: { __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<{ __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null> | null } | null };
 
 export type TemplatePageQueryQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type TemplatePageQueryQuery = { __typename?: 'Query', pageData?: { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null } | null };
+export type TemplatePageQueryQuery = { __typename?: 'Query', pageData?: { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null, layouts?: Array<{ __typename: 'DatoCmsLayoutSection', id: string, internalName?: string | null, desktopTopPadding?: string | null, desktopBottomPadding?: string | null, tabletTopPadding?: string | null, tabletBottomPadding?: string | null, mobileTopPadding?: string | null, mobileBottomPadding?: string | null, component?: { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, secondaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, tertiaryImage?: { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null, mobileImage?: { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null } | null } | null, body?: { __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | null, ctas?: Array<{ __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null } | null> | null } | { __typename: 'DatoCmsComponentStory', id: string, heading?: string | null, subheading?: string | null, timelineItems?: Array<{ __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } | null };
