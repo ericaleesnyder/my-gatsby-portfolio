@@ -1,18 +1,18 @@
-import Container from "basics/Container.styled";
-import Section from "basics/Section.styled";
-import { type HeadFC, type PageProps, graphql } from "gatsby";
-import React from "react";
-import styled from "styled-components";
+import Container from 'basics/Container.styled';
+import Section from 'basics/Section.styled';
+import { type HeadFC, type PageProps, graphql } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
 
-import { font } from "atoms/typography";
+import { font } from 'atoms/typography';
 
-import Button from "components/Button/Button";
-import Layout from "components/Layout/Layout";
+import Button from 'components/Button/Button';
+import Layout from 'components/Layout/Layout';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 const Title = styled.h1`
-  ${font("head", "xl")}
+  ${font('head', 'xl')}
 `;
 
 const IndexPage: FC<PageProps> = (props) => {
@@ -23,7 +23,7 @@ const IndexPage: FC<PageProps> = (props) => {
       <Section>
         <Container>
           <Title>This is my homepage!! Learning TypeScript!! Yay!!</Title>
-          <Button to="/test" variant="primary">
+          <Button to='/test' variant='primary'>
             Test Page
           </Button>
         </Container>

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { color } from 'atoms/colors';
 import { font } from 'atoms/typography';
 
+import type { NavProps } from 'components/Header/Header';
 import Link from 'components/Link/Link';
 
-import type { NavProps } from 'components/Header/Header';
 
 export const Wrapper = styled.div<NavProps>`
   width: 100%;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div<NavProps>`
   left: 0;
   right: 0;
   position: fixed;
-  background-color: ${({ isTransparent }) => isTransparent ? `transparent` :  color.white};
+  background-color: ${({ isTransparent }) => isTransparent ? 'transparent' :  color.white};
   height: 80px;
   z-index: 101;
   border-bottom: ${({ isTransparent }) => isTransparent ? 'none' : `1px solid ${color.black}`};

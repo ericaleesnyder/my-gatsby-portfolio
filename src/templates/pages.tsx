@@ -1,10 +1,11 @@
-import { type PageProps, graphql } from "gatsby";
-import React, { type FC } from "react";
+import { type PageProps, graphql } from 'gatsby';
+import React, { type FC } from 'react';
 
-import Layout from "components/Layout/Layout";
+import Layout from 'components/Layout/Layout';
 
-import type { DatoCmsTemplatePage } from "graphqlTypes";
-import useScrollPosition from "utils/useScrollPosition";
+import useScrollPosition from 'utils/useScrollPosition';
+
+import type { DatoCmsTemplatePage } from 'graphqlTypes';
 
 const IndexPage: FC<PageProps<DatoCmsTemplatePage>> = (props) => {
   const scrollPosition = useScrollPosition();

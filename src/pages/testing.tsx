@@ -1,18 +1,18 @@
-import Container from "basics/Container.styled";
-import Section from "basics/Section.styled";
-import * as React from "react";
-import styled, { css } from "styled-components";
+import Container from 'basics/Container.styled';
+import Section from 'basics/Section.styled';
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-import { color } from "atoms/colors";
-import { font } from "atoms/typography";
+import { color } from 'atoms/colors';
+import { font } from 'atoms/typography';
 
-import Button from "components/Button/Button";
-import Hero from "components/Hero/Hero";
-import Layout from "components/Layout/Layout";
+import Button from 'components/Button/Button';
+import Hero from 'components/Hero/Hero';
+import Layout from 'components/Layout/Layout';
 
-import useScrollPosition from "utils/useScrollPosition";
+import useScrollPosition from 'utils/useScrollPosition';
 
-import type { HeadFC, PageProps } from "gatsby";
+import type { HeadFC, PageProps } from 'gatsby';
 
 interface TextProps {
   size?: string;
@@ -20,76 +20,76 @@ interface TextProps {
 }
 
 const Title = styled.h1`
-  ${font("head", "xl")}
+  ${font('head', 'xl')}
 `;
 
 const Text = styled.p<TextProps>`
   ${(props) =>
     (props?.size &&
-      ((props?.size === "small" &&
+      ((props?.size === 'small' &&
         css`
-          ${font("text", "sm")}
+          ${font('text', 'sm')}
         `) ||
-        (props?.size === "med" &&
+        (props?.size === 'med' &&
           css`
-            ${font("text", "med")}
+            ${font('text', 'med')}
           `) ||
-        (props?.size === "large" &&
+        (props?.size === 'large' &&
           css`
-            ${font("text", "lg")}
+            ${font('text', 'lg')}
           `) ||
-        (props?.size === "xlarge" &&
+        (props?.size === 'xlarge' &&
           css`
-            ${font("text", "xl")}
+            ${font('text', 'xl')}
           `) ||
-        (props?.size === "dispxs" &&
+        (props?.size === 'dispxs' &&
           css`
-            ${font("head", "xs")}
+            ${font('head', 'xs')}
           `) ||
-        (props?.size === "dispsm" &&
+        (props?.size === 'dispsm' &&
           css`
-            ${font("head", "sm")}
+            ${font('head', 'sm')}
           `) ||
-        (props?.size === "dispmed" &&
+        (props?.size === 'dispmed' &&
           css`
-            ${font("head", "med")}
+            ${font('head', 'med')}
           `) ||
-        (props?.size === "displg" &&
+        (props?.size === 'displg' &&
           css`
-            ${font("head", "lg")}
+            ${font('head', 'lg')}
           `) ||
-        (props?.size === "dispxl" &&
+        (props?.size === 'dispxl' &&
           css`
-            ${font("head", "xl")}
+            ${font('head', 'xl')}
           `))) ||
     (props?.weight &&
       ((props?.weight === 300 &&
         css`
-          ${font("text", "med", 300)}
+          ${font('text', 'med', 300)}
         `) ||
         (props?.weight === 400 &&
           css`
-            ${font("text", "med", 400)}
+            ${font('text', 'med', 400)}
           `) ||
         (props?.weight === 500 &&
           css`
-            ${font("text", "med", 500)}
+            ${font('text', 'med', 500)}
           `) ||
         (props?.weight === 600 &&
           css`
-            ${font("text", "med", 600)}
+            ${font('text', 'med', 600)}
           `) ||
         (props?.weight === 700 &&
           css`
-            ${font("text", "med", 700)}
+            ${font('text', 'med', 700)}
           `) ||
         (props?.weight === 800 &&
           css`
-            ${font("text", "med", 800)}
+            ${font('text', 'med', 800)}
           `) ||
         (props?.weight === 900 &&
           css`
-            ${font("text", "med", 900)}
+            ${font('text', 'med', 900)}
           `)))}
 `;
 const Grid = styled.div`
@@ -122,21 +122,19 @@ const IndexPage: React.FC<PageProps> = () => {
   const scrollPosition = useScrollPosition();
 
   console.log(scrollPosition);
-  return (
+  
+return (
     <Layout>
       <Hero />
       <Section>
         <Container>
-          <Button to="/" variant="primary">
+          <Button to='/' variant='primary'>
             Home Page
           </Button>
-          <Button to="/" variant="secondary">
+          <Button to='/' variant='secondary'>
             Home Page
           </Button>
-          <Button to="/" variant="tertiary">
-            Home Page
-          </Button>
-          <Button to="/" variant="inline">
+          <Button to='/' variant='inline'>
             Home Page
           </Button>
         </Container>
@@ -144,15 +142,15 @@ const IndexPage: React.FC<PageProps> = () => {
       <Section>
         <Container>
           <Title>Font Sizes</Title>
-          <Text size="small">Text Small</Text>
-          <Text size="med">Text Medium</Text>
-          <Text size="large">Text Large</Text>
-          <Text size="xlarge">Text Extra Large</Text>
-          <Text size="dispxs">Display Extra Small</Text>
-          <Text size="dispsm">Display Small</Text>
-          <Text size="dispmed">Display Medium</Text>
-          <Text size="displg">Display Large</Text>
-          <Text size="dispxl">Display Extra Large</Text>
+          <Text size='small'>Text Small</Text>
+          <Text size='med'>Text Medium</Text>
+          <Text size='large'>Text Large</Text>
+          <Text size='xlarge'>Text Extra Large</Text>
+          <Text size='dispxs'>Display Extra Small</Text>
+          <Text size='dispsm'>Display Small</Text>
+          <Text size='dispmed'>Display Medium</Text>
+          <Text size='displg'>Display Large</Text>
+          <Text size='dispxl'>Display Extra Large</Text>
         </Container>
         <Container>
           <Title>Font Weights (all with text medium)</Title>
