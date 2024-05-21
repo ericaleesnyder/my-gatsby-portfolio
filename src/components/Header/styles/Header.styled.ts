@@ -13,8 +13,8 @@ export const Wrapper = styled.div<NavProps>`
   left: 0;
   right: 0;
   position: fixed;
-  background-color: ${({ isTransparent }) => isTransparent ? 'transparent' :  color.white};
-  height: 80px;
+  background-color: ${({ isTransparent }) => isTransparent ? 'transparent' :  color.cream};
+  height: 88px;
   z-index: 101;
   border-bottom: ${({ isTransparent }) => isTransparent ? 'none' : `1px solid ${color.black}`};
 `;

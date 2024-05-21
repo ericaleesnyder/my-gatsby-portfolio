@@ -64,7 +64,19 @@ const config: GatsbyConfig = {
         'src': path.join(__dirname, 'src'),
         'pages': path.join(__dirname, 'src/pages')
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Erica Snyder Portfolio',
+        short_name: 'ES Portfolio',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        theme_color: '##ffb6f8',
+        display: 'standalone',
+        icon: 'src/assets/esLogo.png',
+      },
+    },
   ],
 };
 

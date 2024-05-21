@@ -21,12 +21,16 @@ const GlobalNav: FC<NavProps> = ({ isTransparent }) => (
       <Header>
         <Container>
           <Nav>
-            <NavItem to='/'>Erica Snyder</NavItem>
+            <NavItem to="/">
+              <svg width="56px" height="56px">
+                <use href="/icons/sprites.svg#logo" />
+              </svg>
+            </NavItem>
             <Right>
-              <Button to='/' variant='secondary'>
+              <Button to="/" variant="secondary">
                 About
               </Button>
-              <Button to='/' variant='secondary'>
+              <Button to="/" variant="secondary">
                 Projects
               </Button>
             </Right>

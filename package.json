@@ -27,6 +27,7 @@
     "gatsby": "^5.9.0",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.9.0",
+    "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-sharp": "^5.9.0",
     "gatsby-source-datocms": "^5.1.0",
     "graphql": "^16.6.0",

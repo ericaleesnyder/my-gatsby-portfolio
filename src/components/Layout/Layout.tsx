@@ -1,12 +1,12 @@
-import GlobalStyle from 'GlobalStyle';
-import React from 'react';
+import GlobalStyle from "GlobalStyle";
+import React from "react";
 
-import GlobalNav from 'components/Header/Header';
-import { LayoutWrapper } from 'components/Layout/styles/Layout.styled';
+import GlobalNav from "components/Header/Header";
+// import { LayoutWrapper } from 'components/Layout/styles/Layout.styled';
 
-import useScrollPosition from 'utils/useScrollPosition';
+import useScrollPosition from "utils/useScrollPosition";
 
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -20,7 +20,7 @@ const Layout: FC<Props> = ({ children }) => {
     <>
       <GlobalStyle />
       <GlobalNav isTransparent={scrollPosition < 50} />
-      <LayoutWrapper>{children}</LayoutWrapper>
+      <main>{children}</main>
     </>
   );
 };
