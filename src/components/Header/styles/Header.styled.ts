@@ -1,33 +1,28 @@
-import styled from "styled-components";
-import { color } from "../../../atoms/colors";
-import Link from "../../Link/Link";
-import { font } from "../../../atoms/typography";
+import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+import { color } from 'atoms/colors';
+import { font } from 'atoms/typography';
+
+import Link from 'components/Link/Link';
+
+import type { NavProps } from 'components/Header/Header';
+
+export const Wrapper = styled.div<NavProps>`
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
   position: fixed;
-  background: ${color.common.nav};
+  background-color: ${({ isTransparent }) => isTransparent ? `transparent` :  color.white};
   height: 80px;
   z-index: 101;
-  &::before {
-    content: "";
-    backdrop-filter: saturate(1.8) blur(5px);
-    height: 80px;
-    width: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    z-index: -1;
-  }
+  border-bottom: ${({ isTransparent }) => isTransparent ? 'none' : `1px solid ${color.black}`};
 `;
 
 export const Line = styled.div`
   height: 1px;
   width: 100vw;
-  background-color: ${color.grey[100]};
-  content: "";
+  content: '';
   position: fixed;
   top: 80px;
   left: 0;
@@ -49,11 +44,11 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled(Link)`
-  ${font("text", "xl", 700)}
-  color: ${color.common.midnight};
+  ${font('text', 'xl', 700)}
+  color: ${color.black};
   transition: color 150ms ease;
   &:hover {
-    color: ${color.common.sunshine};
+    color: ${color.yellow};
   }
 `;
 

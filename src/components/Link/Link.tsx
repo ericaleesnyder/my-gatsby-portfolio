@@ -1,7 +1,8 @@
-import React from "react"
-import type {FC, ReactNode, AnchorHTMLAttributes} from "react"
+import { Link as GatsbyLink } from 'gatsby';
+import React from 'react';
 
-import { Link as GatsbyLink } from "gatsby"
+import type { AnchorHTMLAttributes, FC, ReactNode } from 'react';
+
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
@@ -12,8 +13,14 @@ interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 // set up of Link component based on Documentation: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-link/
 
-const Link: FC<LinkProps> = ({ children, to, activeClassName, partiallyActive, ...other }) => {
-  const internal = /^\/(?!\/)/.test(to)
+const Link: FC<LinkProps> = ({
+  children,
+  to,
+  activeClassName,
+  partiallyActive,
+  ...other
+}) => {
+  const internal = /^\/(?!\/)/.test(to);
 
   if (internal) {
     return (
@@ -25,13 +32,14 @@ const Link: FC<LinkProps> = ({ children, to, activeClassName, partiallyActive, .
       >
         {children}
       </GatsbyLink>
-    )
+    );
   }
-  return (
+  
+return (
     <a href={to} {...other}>
       {children}
     </a>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const fontType: any = {
   text: {
@@ -20,11 +20,9 @@ export const font = (
   type: string,
   size: string,
   weight?: 300 | 400 | 500 | 600 | 700 | 800 | 900
-) => {
-  return css`
+) => css`
     font-size: ${fontType[type][size].fontSize}px;
     line-height: ${fontType[type][size].lineHeight}px;
     font-weight: ${weight || 500};
     margin-bottom: 0;
   `;
-};

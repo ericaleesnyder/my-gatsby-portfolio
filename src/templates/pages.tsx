@@ -1,27 +1,26 @@
-import { PageProps, graphql } from "gatsby";
-import React from "react";
-import { DatoCmsTemplatePage } from "../graphqlTypes";
+import { type PageProps, graphql } from "gatsby";
+import React, { type FC } from "react";
 
-import Layout from "../components/Layout/Layout";
+import Layout from "components/Layout/Layout";
 
-import type { FC } from "react";
+import type { DatoCmsTemplatePage } from "graphqlTypes";
+import useScrollPosition from "utils/useScrollPosition";
 
-interface PageDataType {
-  pageData: DatoCmsTemplatePage;
-}
+const IndexPage: FC<PageProps<DatoCmsTemplatePage>> = (props) => {
+  const scrollPosition = useScrollPosition();
 
-const IndexPage: FC<PageProps<PageDataType>> = (props) => {
-  console.log(props);
+  console.log(scrollPosition);
+
   return (
     <Layout>
-      <div>{props?.data?.pageData?.title}</div>
+      <div>{props?.data?.title}</div>
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
   query templatePageQuery($slug: String!) {
-    pageData: datoCmsTemplatePage(slug: { eq: $slug }) {
+    datoCmsTemplatePage(slug: { eq: $slug }) {
       ...datoCmsTemplatePage
     }
   }

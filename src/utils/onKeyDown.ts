@@ -1,13 +1,13 @@
-import type { KeyboardEvent } from "react";
+import type { KeyboardEvent } from 'react';
 
 const onKeyDown = (
-  event: KeyboardEvent<HTMLElement>,
+  event: KeyboardEvent<HTMLElement | SVGSVGElement>,
   action: () => void,
-  key?: string
+  targetKey?: string | string[],
 ) => {
-  const keyPressed = key ?? ["Enter", " "];
+  const target = targetKey ?? ['Enter', ' '];
 
-  if (event.key === keyPressed || keyPressed.includes(event.key)) {
+  if (event.key === target || (Array.isArray(target) && target.includes(event.key))) {
     event.preventDefault();
     action();
   }

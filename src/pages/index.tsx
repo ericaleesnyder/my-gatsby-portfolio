@@ -1,20 +1,23 @@
+import Container from "basics/Container.styled";
+import Section from "basics/Section.styled";
+import { type HeadFC, type PageProps, graphql } from "gatsby";
 import React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import type { FC } from "react";
-
-import Layout from "../components/Layout/Layout";
-
 import styled from "styled-components";
-import { font } from "../atoms/typography";
-import Container from "../basics/Container.styled";
-import Section from "../basics/Section.styled";
-import Button from "../components/Button/Button";
+
+import { font } from "atoms/typography";
+
+import Button from "components/Button/Button";
+import Layout from "components/Layout/Layout";
+
+import type { FC } from "react";
 
 const Title = styled.h1`
   ${font("head", "xl")}
 `;
 
-const IndexPage: FC<PageProps> = () => {
+const IndexPage: FC<PageProps> = (props) => {
+  console.log(props);
+
   return (
     <Layout>
       <Section>
@@ -28,6 +31,14 @@ const IndexPage: FC<PageProps> = () => {
     </Layout>
   );
 };
+
+export const homePageQuery = graphql`
+  query homepageQuery {
+    datoCmsTemplatePage(internalName: { eq: "Homepage" }) {
+      ...datoCmsTemplatePage
+    }
+  }
+`;
 
 export default IndexPage;
 

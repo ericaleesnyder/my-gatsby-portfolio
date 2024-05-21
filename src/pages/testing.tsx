@@ -1,16 +1,18 @@
+import Container from "basics/Container.styled";
+import Section from "basics/Section.styled";
 import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-
-import Layout from "../components/Layout/Layout";
-
 import styled, { css } from "styled-components";
-import { color } from "../atoms/colors";
-import { font } from "../atoms/typography";
-import Container from "../basics/Container.styled";
 
-import Button from "../components/Button/Button";
-import Section from "../basics/Section.styled";
-import Hero from "../components/Hero/Hero";
+import { color } from "atoms/colors";
+import { font } from "atoms/typography";
+
+import Button from "components/Button/Button";
+import Hero from "components/Hero/Hero";
+import Layout from "components/Layout/Layout";
+
+import useScrollPosition from "utils/useScrollPosition";
+
+import type { HeadFC, PageProps } from "gatsby";
 
 interface TextProps {
   size?: string;
@@ -107,7 +109,7 @@ const GridItem = styled.div`
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
-  border: 2px ${color.common.midnight} solid;
+  border: 2px ${color.black} solid;
   border-radius: 10px;
   ${(props) =>
     props?.color &&
@@ -117,6 +119,9 @@ const GridItem = styled.div`
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
+  const scrollPosition = useScrollPosition();
+
+  console.log(scrollPosition);
   return (
     <Layout>
       <Hero />
@@ -139,15 +144,15 @@ const IndexPage: React.FC<PageProps> = () => {
       <Section>
         <Container>
           <Title>Font Sizes</Title>
-          <Text size={"small"}>Text Small</Text>
-          <Text size={"med"}>Text Medium</Text>
-          <Text size={"large"}>Text Large</Text>
-          <Text size={"xlarge"}>Text Extra Large</Text>
-          <Text size={"dispxs"}>Display Extra Small</Text>
-          <Text size={"dispsm"}>Display Small</Text>
-          <Text size={"dispmed"}>Display Medium</Text>
-          <Text size={"displg"}>Display Large</Text>
-          <Text size={"dispxl"}>Display Extra Large</Text>
+          <Text size="small">Text Small</Text>
+          <Text size="med">Text Medium</Text>
+          <Text size="large">Text Large</Text>
+          <Text size="xlarge">Text Extra Large</Text>
+          <Text size="dispxs">Display Extra Small</Text>
+          <Text size="dispsm">Display Small</Text>
+          <Text size="dispmed">Display Medium</Text>
+          <Text size="displg">Display Large</Text>
+          <Text size="dispxl">Display Extra Large</Text>
         </Container>
         <Container>
           <Title>Font Weights (all with text medium)</Title>
@@ -164,27 +169,11 @@ const IndexPage: React.FC<PageProps> = () => {
         <Container>
           <Title>Color Swatches</Title>
           <Grid>
-            <GridItem color={color.common.light} />
-            <GridItem color={color.common.black} />
-            <GridItem color={color.common.sunshine} />
-            <GridItem color={color.common.marigold} />
-            <GridItem color={color.common.flamingo} />
-            <GridItem color={color.common.baby} />
-            <GridItem color={color.common.purple} />
-            <GridItem color={color.common.lavender} />
-            <GridItem color={color.common.midnight} />
-            <GridItem color={color.common.charcoal} />
-            <GridItem color={color.common.light} />
-            <GridItem color={color.grey[50]} />
-            <GridItem color={color.grey[100]} />
-            <GridItem color={color.grey[200]} />
-            <GridItem color={color.grey[300]} />
-            <GridItem color={color.grey[400]} />
-            <GridItem color={color.grey[500]} />
-            <GridItem color={color.grey[600]} />
-            <GridItem color={color.grey[700]} />
-            <GridItem color={color.grey[800]} />
-            <GridItem color={color.grey[900]} />
+            <GridItem color={color.black} />
+            <GridItem color={color.yellow} />
+            <GridItem color={color.green} />
+            <GridItem color={color.pink} />
+            <GridItem color={color.red} />
           </Grid>
         </Container>
       </Section>

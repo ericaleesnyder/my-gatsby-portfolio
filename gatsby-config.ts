@@ -1,5 +1,6 @@
-require("dotenv").config();
-import type { GatsbyConfig } from "gatsby";
+require('dotenv').config();
+const path = require('path')
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -21,8 +22,8 @@ const config: GatsbyConfig = {
         ],
         web: [
           {
-            name: `Poppins`,
-            file: `https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap`,
+            name: `Quicksand`,
+            file: `https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap`,
           },
         ],
       },
@@ -55,6 +56,15 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        'components': path.join(__dirname, 'src/components'),
+        'templates': path.join(__dirname, 'src/templates'),
+        'src': path.join(__dirname, 'src'),
+        'pages': path.join(__dirname, 'src/pages')
+      }
+    }
   ],
 };
 
