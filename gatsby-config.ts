@@ -1,6 +1,10 @@
-require('dotenv').config();
-const path = require('path')
 import type { GatsbyConfig } from 'gatsby';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
+
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -72,7 +76,7 @@ const config: GatsbyConfig = {
         short_name: 'ES Portfolio',
         start_url: '/',
         background_color: '#FFFFFF',
-        theme_color: '##ffb6f8',
+        theme_color: '#ffb6f8',
         display: 'standalone',
         icon: 'src/assets/esLogo.png',
       },

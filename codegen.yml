@@ -1,3 +1,4 @@
+overwrite: true
 schema: http://localhost:8000/___graphql
 documents:
   - ./src/**/*.{ts,tsx}
@@ -5,4 +6,8 @@ generates:
   ./src/graphqlTypes.ts:
     plugins:
       - typescript
-      - typescript-operations
+      - typescript-operations:
+          globalNamespace: true
+    config:
+      declarationKind: 'interface'
+      inlineFragmentTypes: 'combine'
