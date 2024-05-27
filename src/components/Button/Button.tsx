@@ -24,7 +24,7 @@ export interface ButtonProps {
   isDark?: boolean | null;
   size?: 'Small' | 'Large' | string | null;
   buttonType?: 'Pill' | 'Text' | 'Icon' | null;
-  onSubmit?: () => object;
+  onSubmit?: () => void;
 }
 
 // TODO: fix/confirm accessibility via for click and hover state. Not seeing the to link display in the corner of the window with the current implementation
