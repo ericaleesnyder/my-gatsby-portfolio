@@ -1,26 +1,27 @@
-import GlobalStyle from "GlobalStyle";
-import React from "react";
+import GlobalStyle from 'GlobalStyle';
+import React from 'react';
 
-import GlobalNav from "components/Header/Header";
-// import { LayoutWrapper } from 'components/Layout/styles/Layout.styled';
+import ContactForm from 'components/Form';
+import GlobalNav from 'components/Header/Header';
 
-import useScrollPosition from "utils/useScrollPosition";
+import useScrollPosition from 'utils/useScrollPosition';
 
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
-  transparentNav?: boolean;
+  isGradientBackground?: boolean;
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children, isGradientBackground }) => {
   const scrollPosition = useScrollPosition();
 
   return (
     <>
-      <GlobalStyle />
-      <GlobalNav isTransparent={scrollPosition < 50} />
+      <GlobalStyle isGradientBackground={isGradientBackground} />
+      <GlobalNav isTransparent={scrollPosition < 30} />
       <main>{children}</main>
+      <ContactForm />
     </>
   );
 };
