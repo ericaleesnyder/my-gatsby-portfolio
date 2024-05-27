@@ -9,7 +9,7 @@ export interface TextProps {
 }
 
 const Text: FC<TextProps> = ({ size, weight, children }) => (
-  <TextAtom size={size} weight={weight ?? 500}>
+  <TextAtom size={size ?? 'med'} weight={weight ?? 500}>
     {children}
   </TextAtom>
 );
