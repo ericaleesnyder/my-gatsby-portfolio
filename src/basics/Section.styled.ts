@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { color } from 'atoms/colors';
-
 interface SectionProps {
   isHero?: boolean;
 }
@@ -11,6 +9,11 @@ const Section = styled.section<SectionProps>`
   width: 100%;
   height: fit-content;
   display:block;
+  position: relative;
+  &#contact-me-form {
+    z-index: 0;
+    background: radial-gradient(57.22% 58.84% at 83.51% 83.51%, rgba(255,182,248, 0.5) 0%, transparent 100%);
+  }
 
   @media (min-width: 577px) {
     padding: 25px 0;
@@ -28,7 +31,7 @@ const Section = styled.section<SectionProps>`
       radial-gradient(15% 25% at 65% 25%, rgba(255, 41, 231, .3) 0%, transparent 100%),
       radial-gradient(11% 25% at 60% 60%, rgba(255, 20, 34, 0.25) 0%, transparent 100%),
       radial-gradient(25% 35% at 60% 60%, rgba(255, 118, 41, .35) 0%, transparent 100%),
-      radial-gradient(57.22% 58.84% at 16.49% 16.48%, ${color.pink} 0%, transparent 100%);
+      radial-gradient(57.22% 58.84% at 16.49% 16.48%, rgba(255,182,248, 0.5) 0%, transparent 100%);
   `}
   }
 `;

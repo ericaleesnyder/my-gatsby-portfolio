@@ -5,6 +5,11 @@ const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 500px;
+  &.invert {
+    img {
+      transform: rotate(180deg);
+    }
+  }
   @media (min-width: 577px) {
     max-width: 800px;
   }
