@@ -6,6 +6,14 @@ import { font } from 'atoms/typography';
 import type { NavProps } from 'components/Header/Header';
 import Link from 'components/Link/Link';
 
+export const Logo = styled.svg`
+  width: 40px;
+  height: 40px;
+  @media (min-width: 993px) {
+    width: 56px;
+    height: 56px;
+  }
+`;
 
 export const Wrapper = styled.div<NavProps>`
   width: 100%;
@@ -16,7 +24,8 @@ export const Wrapper = styled.div<NavProps>`
   background-color: ${({ isTransparent }) => isTransparent ? 'transparent' :  color.cream};
   height: 88px;
   z-index: 101;
-  border-bottom: ${({ isTransparent }) => isTransparent ? 'none' : `1px solid ${color.black}`};
+  border-bottom: ${({ isTransparent }) => isTransparent ? '1.5px solid transparent' : `1.5px solid ${color.grey}`};
+  transition: ease border 100ms;
 `;
 
 export const Line = styled.div`
@@ -55,5 +64,6 @@ export const NavItem = styled(Link)`
 export const Right = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 16px;
+  align-items: center;
 `;

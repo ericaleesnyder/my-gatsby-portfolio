@@ -5,6 +5,7 @@ import Button from 'components/Button/Button';
 import {
   Header,
   Line,
+  Logo,
   Nav,
   NavItem,
   Right,
@@ -21,17 +22,23 @@ const GlobalNav: FC<NavProps> = ({ isTransparent }) => (
       <Header>
         <Container>
           <Nav>
-            <NavItem to="/">
-              <svg width="56px" height="56px">
-                <use href="/icons/sprites.svg#logo" />
-              </svg>
+            <NavItem to='/'>
+              <Logo>
+                <use href='/icons/sprites.svg#logo' />
+              </Logo>
             </NavItem>
             <Right>
-              <Button to="/" variant="secondary">
-                About
-              </Button>
-              <Button to="/" variant="secondary">
+              <Button to='/projects' buttonType='Text'>
                 Projects
+              </Button>
+              <Button to='/about-me' buttonType='Text'>
+                About Me
+              </Button>
+              <Button to='/#' size='Small' isDark={false}>
+                My Resume
+              </Button>
+              <Button to='#contact-me-form' size='Small' isDark>
+                Contact Me
               </Button>
             </Right>
           </Nav>
