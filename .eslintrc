@@ -91,6 +91,11 @@
             "position": "after"
           },
           {
+            "pattern": "basic/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
             "pattern": "atoms/**",
             "group": "internal",
             "position": "after"
@@ -112,6 +117,16 @@
           },
           {
             "pattern": "layouts/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "templates/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "pages/**",
             "group": "internal",
             "position": "after"
           },
