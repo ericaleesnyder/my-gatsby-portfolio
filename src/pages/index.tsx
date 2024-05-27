@@ -1,33 +1,25 @@
-import Container from 'basics/Container.styled';
-import Section from 'basics/Section.styled';
-import { type HeadFC, type PageProps, graphql } from 'gatsby';
+import { type HeadFC, graphql } from 'gatsby';
 import React from 'react';
-import styled from 'styled-components';
 
-import { font } from 'atoms/typography';
-
-import Button from 'components/Button/Button';
 import Layout from 'components/Layout/Layout';
+import LayoutSection from 'components/LayoutSection';
 
+import type { DatoCmsTemplatePage } from 'graphqlTypes';
 import type { FC } from 'react';
 
-const Title = styled.h1`
-  ${font('head', 'xl')}
-`;
+interface HomepageProps extends DatoCmsTemplatePage {
+  data: { datoCmsTemplatePage: DatoCmsTemplatePage };
+}
 
-const IndexPage: FC<PageProps> = (props) => {
-  console.log(props);
+const IndexPage: FC<HomepageProps> = ({ data }) => {
+  const { datoCmsTemplatePage: homepage } = data;
+  const { layouts } = homepage;
 
   return (
     <Layout>
-      <Section>
-        <Container>
-          <Title>This is my homepage!! Learning TypeScript!! Yay!!</Title>
-          <Button to='/test' variant='primary'>
-            Test Page
-          </Button>
-        </Container>
-      </Section>
+      {layouts &&
+        layouts.length > 0 &&
+        layouts.map((layout) => <LayoutSection {...layout} key={layout?.id} />)}
     </Layout>
   );
 };

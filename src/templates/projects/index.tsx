@@ -1,20 +1,18 @@
-import { type PageProps, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React, { type FC } from 'react';
 
 import Layout from 'components/Layout/Layout';
 
 import type { DatoCmsTemplateProject } from 'graphqlTypes';
 
-
 interface ProjectProps {
-  projectData: DatoCmsTemplateProject;
+  data: { projectData: DatoCmsTemplateProject };
 }
 
-const ProjectPage: FC<PageProps<ProjectProps>> = ({ data }) => {
+const ProjectPage: FC<ProjectProps> = ({ data }) => {
   const { projectData } = data;
-  console.log(data);
-  
-return (
+
+  return (
     <Layout>
       <div>{projectData?.title}</div>
     </Layout>
