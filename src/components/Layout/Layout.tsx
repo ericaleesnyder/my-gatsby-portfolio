@@ -1,6 +1,7 @@
 import GlobalStyle from 'GlobalStyle';
 import React from 'react';
 
+import GlobalFooter from 'components/Footer';
 import ContactForm from 'components/Form';
 import GlobalNav from 'components/Header/Header';
 
@@ -22,6 +23,7 @@ const Layout: FC<Props> = ({ children, isGradientBackground }) => {
       <GlobalNav isTransparent={scrollPosition < 30} />
       <main>{children}</main>
       <ContactForm />
+      <GlobalFooter />
     </>
   );
 };
