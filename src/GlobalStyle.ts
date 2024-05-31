@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     margin-block-end: 0;
   }
   main {
-    min-height: 100vh;
     ${({ isGradientBackground }) => isGradientBackground && css`
        background:
         radial-gradient(15% 15% at 75% 70%, rgba(41,255,140, 0.5) 0%, transparent 100%),
@@ -27,6 +26,7 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   }
   html {
     background-color: #FFFBEF;
+    scroll-behavior: smooth;
   }
   body {
     color: ${color.black};

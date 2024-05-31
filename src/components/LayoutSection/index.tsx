@@ -37,6 +37,7 @@ const LayoutSection: FC<LayoutSectionProps> = (props) => {
 
   const isHero = component?.__typename === 'DatoCmsComponentHero';
 
+  // TODO: build out top and bottom padding functionality
   return (
     <Section isHero={isHero} id={props?.id}>
       {component && componentGenerator(component)}

@@ -5,6 +5,8 @@ import { color } from 'atoms/colors';
 export const HeroWrap = styled.div`
   width: 100%;
   padding-top: 80px;
+  position: relative;
+  z-index: 0;
 `;
 
 export const HeroContentWrap = styled.div`

@@ -6,6 +6,7 @@ import { font } from 'atoms/typography';
 import type { NavProps } from 'components/Header/Header';
 import Link from 'components/Link/Link';
 
+// TODO: create Icon component 
 export const Logo = styled.svg`
   width: 40px;
   height: 40px;
@@ -25,18 +26,7 @@ export const Wrapper = styled.div<NavProps>`
   height: 88px;
   z-index: 101;
   border-bottom: ${({ isTransparent }) => isTransparent ? '1.5px solid transparent' : `1.5px solid ${color.grey}`};
-  transition: ease border 100ms;
-`;
-
-export const Line = styled.div`
-  height: 1px;
-  width: 100vw;
-  content: '';
-  position: fixed;
-  top: 80px;
-  left: 0;
-  right: 0;
-  z-index: 101;
+  transition: ease border 100ms, background-color ease 150ms;
 `;
 
 export const Header = styled.header`
