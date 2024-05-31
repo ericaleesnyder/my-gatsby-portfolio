@@ -1,7 +1,7 @@
 import { navigate } from 'gatsby';
 import React from 'react';
 
-import { type ColorKeys, type ColorValues, getHoverColor } from 'atoms/colors';
+import { type ColorKeys, type ColorValues, getColor } from 'atoms/colors';
 
 import {
   IconBtn,
@@ -44,9 +44,7 @@ const Button: FC<ButtonProps> = ({
     switch (btnType) {
       case 'Icon':
         return (
-          <IconBtnWrap
-            hoverColor={getHoverColor(hover as ColorKeys) as ColorValues}
-          >
+          <IconBtnWrap hoverColor={getColor(hover as ColorKeys) as ColorValues}>
             <IconBtn
               role={to ? 'link' : 'button'}
               isDark={isDark}
@@ -72,7 +70,7 @@ const Button: FC<ButtonProps> = ({
       default:
         return (
           <PillWrap
-            hoverColor={getHoverColor(hover as ColorKeys) as ColorValues}
+            hoverColor={getColor(hover as ColorKeys) as ColorValues}
             size={size}
             className='pill'
           >
