@@ -7,6 +7,7 @@ import {
   Blurb,
   CardWrap,
   HeadingWrap,
+  Icon,
 } from 'components/Card/styles/Card.styled';
 
 import type { DatoCmsComponentImage } from 'graphqlTypes';
@@ -37,8 +38,10 @@ const Card: FC<CardProps> = ({
       <HeadingWrap>
         <Heading hTag='h3' size='sm'>
           {title}
-          {/* TODO: fix icon shit */}
         </Heading>
+        <Icon>
+          <use href='/icons/sprites.svg#right-arrow' />
+        </Icon>
       </HeadingWrap>
       {/* {blurb &&  */}
       <Blurb>

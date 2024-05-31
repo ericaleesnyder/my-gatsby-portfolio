@@ -2,6 +2,7 @@ export const color = {
   white: '#fff',
   black: '#000',
   grey: '#bebcb3',
+  darkGrey: '#3a3b3c',
   cream: '#fffbef',
   blue: '#b6f2ff',
   yellow: '#fff848',
@@ -15,7 +16,7 @@ export type ColorObject = typeof color;
 export type ColorKeys = keyof typeof color
 export type ColorValues = typeof color[ColorKeys]
 
-export const getHoverColor = (clr?: ColorKeys) => {
+export const getColor = (clr?: ColorKeys) => {
   switch (clr) {
     case 'white': {
       return color.white;
@@ -38,7 +39,19 @@ export const getHoverColor = (clr?: ColorKeys) => {
     case 'purple': {
       return color.purple;
     }
+    case 'grey': {
+      return color.grey;
+    }
+    case 'cream': {
+      return color.cream;
+    }
+    case 'black': {
+      return color.black;
+    }
+    case 'darkGrey': {
+       return color.darkGrey;
+    }
     default:
-      return color.blue;
+      return null;
   }
 };
