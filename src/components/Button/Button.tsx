@@ -10,8 +10,6 @@ import {
   PillWrap,
   TextLink,
 } from 'components/Button/styles/Button.styled';
-// import { Logo } from 'components/Header/styles/Header.styled';
-// import Link from 'components/Link/Link';
 
 import onKeyDown from 'utils/onKeyDown';
 

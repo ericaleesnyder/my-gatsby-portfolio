@@ -5,6 +5,13 @@ export const HeadingWrap = styled.div`
   display: grid;
   grid-gap: 16px;
   margin: auto 0;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    text-align: left;
+    margin: unset;
+  }
 `;
 
 export const CtaWrap = styled.div`
@@ -13,6 +20,7 @@ export const CtaWrap = styled.div`
   display: flex;
   gap: 12px;
   width: 100%;
+  justify-content: center;
   div {
     width: 100%;
   }
@@ -21,5 +29,9 @@ export const CtaWrap = styled.div`
     div {
       width: unset;
     }
+  }
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+
   }
 `;
