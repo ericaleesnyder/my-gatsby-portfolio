@@ -3,7 +3,7 @@ import React from 'react';
 
 import GlobalFooter from 'components/Footer';
 import ContactForm from 'components/Form';
-import GlobalNav from 'components/Header/Header';
+import GlobalNav from 'components/Header';
 
 import useScrollPosition from 'utils/useScrollPosition';
 

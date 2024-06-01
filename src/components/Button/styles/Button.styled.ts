@@ -124,4 +124,9 @@ export const TextLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+  &:focus, :focus-visible {
+    border-radius: 4px;
+    outline: 2px solid ${color.black};
+    outline-offset: 2px;
+  }
 `
