@@ -36,7 +36,12 @@ const Card: FC<CardProps> = ({
   return (
     <CardWrap to={slug ?? ''}>
       <HeadingWrap>
-        <Heading hTag='h3' desktopSize='headSm'>
+        <Heading
+          hTag='h3'
+          desktopSize='headSm'
+          tabletSize='headSm'
+          mobileSize='headXs'
+        >
           {title}
         </Heading>
         <Icon>

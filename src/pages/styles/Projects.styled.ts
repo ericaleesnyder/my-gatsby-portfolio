@@ -9,6 +9,7 @@ export const ProjectGrid = styled.div`
   gap: 24px;
   grid-template-columns: 1fr;
   height: 100%;
+  padding: 15px 0;
   @media (min-width: 576px) {
     grid-template-columns: repeat(2, 1fr);
   }

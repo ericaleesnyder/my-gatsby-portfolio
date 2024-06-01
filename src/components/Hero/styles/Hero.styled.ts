@@ -4,12 +4,9 @@ import { color } from 'atoms/colors';
 
 export const HeroWrap = styled.div`
   width: 100%;
-  padding-top: 65px;
+  padding-top: 48px;
   position: relative;
   z-index: 0;
-  @media (min-width: 768px) {
-    padding-top: 88px;
-  }
 `;
 
 export const HeroContentWrap = styled.div`
@@ -17,10 +14,8 @@ export const HeroContentWrap = styled.div`
   flex-direction: column;
   gap: 36px;
   align-items: center;
-  /* text-align: center; */
   @media (min-width: 768px) {
     display: grid;
-    /* text-align: left; */
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
   }
