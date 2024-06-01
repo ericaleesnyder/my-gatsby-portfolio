@@ -1,35 +1,55 @@
 import { css } from 'styled-components';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const fontType: any = {
-  text: {
-    sm: { fontSize: 14, lineHeight: 20 },
-    med: { fontSize: 16, lineHeight: 24 },
-    lg: { fontSize: 18, lineHeight: 24 },
-    xl: { fontSize: 20, lineHeight: 28 },
-    xxl: { fontSize: 28, lineHeight: 30 },
-  },
-  head: {
-    xs: { fontSize: 22, lineHeight: 30 },
-    sm: { fontSize: 24, lineHeight: 34 },
-    med: { fontSize: 36, lineHeight: 50 },
-    lg: { fontSize: 48, lineHeight: 68 },
-    xl: { fontSize: 56, lineHeight: 78 },
-    xxl: { fontSize: 72, lineHeight: 88 },
-  },
-  button: {
-    sm: { fontSize: 16, lineHeight: 16},
-    lg: { fontSize: 20, lineHeight: 24}
-  }
-};
+export type HeadingTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+export type TextSizes = 'textSm' | 'textMed' | 'textLg' | 'textXl' | 'text2xl'
+
+export type HeadingSizes = 'headXs' | 'headSm' | 'headMed' | 'headLg' | 'headXl' | 'head2xl'
+
+export type ButtonSizes = 'btnSm' | 'btnLg'
+
+export type FontWeights = 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+export const fontSize = {
+  textSm: '14px',
+  textMed: '16px',
+  textLg: '18px',
+  textXl: '20px',
+  text2xl: '28px',
+  headXs: '22px',
+  headSm: '24px',
+  headMed: '36px',
+  headLg: '48px',
+  headXl: '56px',
+  head2xl: '72px',
+  btnSm: '16px',
+  btnLg: '20px',
+} as const
+
+export const fontLineHeight = {
+  textSm: '20px',
+  textMed: '24px',
+  textLg: '24px',
+  textXl: '28px',
+  text2xl: '30px',
+  headXs: '30px',
+  headSm: '24px',
+  headMed: '36px',
+  headLg: '48px',
+  headXl: '56px',
+  head2xl: '72px',
+  btnSm: '16px',
+  btnLg: '20px',
+} as const
+
+export type FontTypeDefinition = keyof typeof fontSize;
 
 export const font = (
-  type: string,
-  size: string,
-  weight?: 300 | 400 | 500 | 600 | 700 | 800 | 900
+  type: FontTypeDefinition,
+  weight?: FontWeights,
 ) => css`
-    font-size: ${fontType[type][size].fontSize}px;
-    line-height: ${fontType[type][size].lineHeight}px;
+    font-size: ${fontSize[type]};
+    line-height: ${fontLineHeight[type]};
     font-weight: ${weight || 500};
     margin-bottom: 0;
   `;

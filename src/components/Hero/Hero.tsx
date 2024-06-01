@@ -12,7 +12,12 @@ import OptimizedImage from 'components/Image';
 import type { DatoCmsComponentHero } from 'graphqlTypes';
 import type { StructuredTextGraphQlResponse } from 'react-datocms/structured-text';
 
-const Hero: FC<DatoCmsComponentHero> = ({
+type HeroProps = Omit<
+  DatoCmsComponentHero,
+  'children' | 'id' | 'internal' | 'meta' | 'originalId'
+>;
+
+const Hero: FC<HeroProps> = ({
   heading,
   subheading,
   body,
@@ -28,7 +33,7 @@ const Hero: FC<DatoCmsComponentHero> = ({
             subheading={subheading}
             ctas={ctas}
             body={body as StructuredTextGraphQlResponse}
-            headingTag='h1'
+            hTag='h1'
           />
         )}
         <ImageWrapper>

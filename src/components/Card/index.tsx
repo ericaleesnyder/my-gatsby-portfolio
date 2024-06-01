@@ -36,7 +36,12 @@ const Card: FC<CardProps> = ({
   return (
     <CardWrap to={slug ?? ''}>
       <HeadingWrap>
-        <Heading hTag='h3' size='sm'>
+        <Heading
+          hTag='h3'
+          desktopSize='headSm'
+          tabletSize='headSm'
+          mobileSize='headXs'
+        >
           {title}
         </Heading>
         <Icon>
@@ -45,7 +50,7 @@ const Card: FC<CardProps> = ({
       </HeadingWrap>
       {/* {blurb &&  */}
       <Blurb>
-        <Text size='lg' weight={400}>
+        <Text size='textLg' weight={400}>
           blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
           blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
           blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
