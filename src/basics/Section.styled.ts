@@ -28,8 +28,8 @@ const Section = styled.section<SectionProps>`
   };
 
   @media (min-width: 993px) {
-    padding-top: ${({ desktopTopPadding }) => desktopTopPadding ? `${desktopTopPadding}px` : '200px'};
-    padding-bottom: ${({ desktopBottomPadding }) => desktopBottomPadding ? `${desktopBottomPadding}px` : '200px'};
+    padding-top: ${({ desktopTopPadding }) => desktopTopPadding ? `${desktopTopPadding}px` : '96px'};
+    padding-bottom: ${({ desktopBottomPadding }) => desktopBottomPadding ? `${desktopBottomPadding}px` : '96px'};
   };
 
 
