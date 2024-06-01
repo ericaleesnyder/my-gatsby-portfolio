@@ -30,11 +30,7 @@ const SkillsBar: FC<DatoCmsComponentSkillsBar> = ({ heading, skills }) => {
     <Container>
       <SkillsBarWrap>
         {heading && (
-          <ComponentHeading
-            headingTag='h2'
-            headingSize='lg'
-            heading={heading}
-          />
+          <ComponentHeading hTag='h2' desktopSize='headLg' heading={heading} />
         )}
         <SkillsWrap>
           {skills &&

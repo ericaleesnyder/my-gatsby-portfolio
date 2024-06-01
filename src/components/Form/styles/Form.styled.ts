@@ -21,7 +21,7 @@ export const Form = styled.form`
   }
   input,
   textarea {
-    ${font('text', 'med', 400)}
+    ${font('textMed', 400)}
   }
 `;
 

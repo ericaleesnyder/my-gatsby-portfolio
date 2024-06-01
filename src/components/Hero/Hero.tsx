@@ -28,7 +28,7 @@ const Hero: FC<DatoCmsComponentHero> = ({
             subheading={subheading}
             ctas={ctas}
             body={body as StructuredTextGraphQlResponse}
-            headingTag='h1'
+            hTag='h1'
           />
         )}
         <ImageWrapper>

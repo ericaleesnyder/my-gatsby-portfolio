@@ -49,13 +49,6 @@ export const SkillCard = styled.div`
       opacity: 1;
     }
   }
-  :focus, :focus-visible {
-    .gatsby-image-wrapper {
-      border-radius: 4px;
-      outline: 2px solid ${color.darkGrey};
-      outline-offset: 3px;
-    }
-  }
   @media (min-width: 400px) {
     flex: 1 0 33%;
   }

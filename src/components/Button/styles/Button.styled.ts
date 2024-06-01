@@ -35,7 +35,7 @@ export const PillWrap = styled.div<StyledButtonProps>`
 `
 
 export const Pill = styled.div<StyledButtonProps>`
-  ${({ size }) => size && size === 'Small' ? font('button', 'sm', 600) : font('button', 'lg', 600)};
+  ${({ size }) => size && size === 'Small' ? font('btnSm', 600) : font('btnLg', 600)};
   color: ${({ isDark }) => isDark ? color.white : color.black };
   text-align: center;
   padding: ${({ size }) => size && size === 'Small' ? '12px 24px' : '16px 40px'};
@@ -119,7 +119,7 @@ export const IconBtn = styled.div<StyledButtonProps>`
 
 export const TextLink = styled(Link)`
   transition: text-decoration 550ms ease;
-  ${font('text', 'lg', 600)}
+  ${font('textLg', 600)}
   text-decoration: none;
   &:hover {
     text-decoration: underline;

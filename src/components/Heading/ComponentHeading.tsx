@@ -1,11 +1,10 @@
 import React, { type FC } from 'react';
-import {
-  StructuredText,
-  type StructuredTextGraphQlResponse,
-} from 'react-datocms/structured-text';
+import { StructuredText } from 'react-datocms/structured-text';
 
-import Heading, { type HeadingTypes } from 'atoms/Text/Heading';
+import Heading from 'atoms/Text/Heading';
 import Text from 'atoms/Text/Text';
+import type { HeadingProps } from 'atoms/Text/textTypesAndData';
+import type { FontWeights, TextSizes } from 'atoms/typography';
 
 import Button from 'components/Button/Button';
 import {
@@ -14,22 +13,23 @@ import {
 } from 'components/Heading/styles/ComponentHeading.styled';
 
 import type { DatoCmsComponentCallToAction, Maybe } from 'graphqlTypes';
+import type { StructuredTextGraphQlResponse } from 'react-datocms/structured-text';
 
-interface HeadingProps {
+export interface ComponentHeadingProps extends HeadingProps {
   heading?: string | null;
-  headingTag?: HeadingTypes | null;
-  headingSize?: 'xs' | 'sm' | 'med' | 'lg' | 'xl' | 'xxl' | null;
   subheading?: string | null;
-  subheadingSize?: 'sm' | 'med' | 'lg' | 'xl' | 'xxl' | null;
-  subheadingWeight?: 300 | 400 | 500 | 600 | 700 | 800 | 900 | null;
+  subheadingSize?: TextSizes | null;
+  subheadingWeight?: FontWeights | null;
   ctas?: Maybe<DatoCmsComponentCallToAction>[] | null | undefined;
   body?: StructuredTextGraphQlResponse | null;
 }
 
-const ComponentHeading: FC<HeadingProps> = ({
+const ComponentHeading: FC<ComponentHeadingProps> = ({
   heading,
-  headingSize,
-  headingTag,
+  desktopSize,
+  tabletSize,
+  mobileSize,
+  hTag,
   subheading,
   subheadingSize,
   subheadingWeight,
@@ -38,12 +38,17 @@ const ComponentHeading: FC<HeadingProps> = ({
 }) => (
   <HeadingWrap>
     {heading && (
-      <Heading hTag={headingTag ?? 'h1'} size={headingSize}>
+      <Heading
+        hTag={hTag ?? 'h1'}
+        desktopSize={desktopSize}
+        tabletSize={tabletSize}
+        mobileSize={mobileSize}
+      >
         {heading}
       </Heading>
     )}
     {subheading && (
-      <Text size={subheadingSize ?? 'xxl'} weight={subheadingWeight ?? 600}>
+      <Text size={subheadingSize ?? 'text2xl'} weight={subheadingWeight ?? 600}>
         {subheading}
       </Text>
     )}

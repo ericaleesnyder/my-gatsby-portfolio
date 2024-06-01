@@ -16,6 +16,7 @@ export const HeroContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 36px;
+  align-items: center;
   /* text-align: center; */
   @media (min-width: 768px) {
     display: grid;

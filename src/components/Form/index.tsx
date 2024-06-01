@@ -47,10 +47,10 @@ const ContactForm: FC<FormProps> = () => {
         <Wrapper>
           <ComponentHeading
             heading='Contact Me'
-            headingTag='h2'
-            headingSize='lg'
+            hTag='h2'
+            desktopSize='headLg'
             subheading="Shoot me a message any time with comments, questions, offers, or just to say hi. While I'm primarily interested in full-time employment, I'm open to opportunities of any kind."
-            subheadingSize='lg'
+            subheadingSize='textLg'
             subheadingWeight={400}
             ctas={[
               {
@@ -82,7 +82,7 @@ const ContactForm: FC<FormProps> = () => {
               </>
             ) : (
               <ThankYou>
-                <Text size='xxl'>Thank you for your submission!</Text>
+                <Text size='text2xl'>Thank you for your submission!</Text>
                 <Button
                   hoverColor={color.blue}
                   size='Small'
