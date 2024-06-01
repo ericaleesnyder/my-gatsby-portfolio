@@ -19,7 +19,7 @@ const GlobalFooter = () => (
             <use href='/icons/sprites.svg#logo' />
           </FooterLogo>
         </Link>
-        <Text color='darkGrey'>© Erica Snyder 2024</Text>
+        <Text color='darkGrey'>© Erica Snyder {new Date().getFullYear()}</Text>
       </FooterContent>
     </Container>
   </FooterWrap>

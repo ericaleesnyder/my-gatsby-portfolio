@@ -9,21 +9,10 @@ import {
 } from 'components/Hero/styles/Hero.styled';
 import OptimizedImage from 'components/Image';
 
-import type {
-  DatoCmsComponentCallToAction,
-  DatoCmsComponentImage,
-} from 'graphqlTypes';
+import type { DatoCmsComponentHero } from 'graphqlTypes';
 import type { StructuredTextGraphQlResponse } from 'react-datocms/structured-text';
 
-interface HeroProps {
-  heading?: string | null;
-  subheading?: string | null;
-  ctas?: DatoCmsComponentCallToAction[] | null;
-  body?: StructuredTextGraphQlResponse | null;
-  featuredImage?: DatoCmsComponentImage | null;
-}
-
-const Hero: FC<HeroProps> = ({
+const Hero: FC<DatoCmsComponentHero> = ({
   heading,
   subheading,
   body,
@@ -38,7 +27,7 @@ const Hero: FC<HeroProps> = ({
             heading={heading}
             subheading={subheading}
             ctas={ctas}
-            body={body}
+            body={body as StructuredTextGraphQlResponse}
             headingTag='h1'
           />
         )}

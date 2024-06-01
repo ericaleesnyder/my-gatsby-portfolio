@@ -13,7 +13,7 @@ import {
   HeadingWrap,
 } from 'components/Heading/styles/ComponentHeading.styled';
 
-import type { DatoCmsComponentCallToAction } from 'graphqlTypes';
+import type { DatoCmsComponentCallToAction, Maybe } from 'graphqlTypes';
 
 interface HeadingProps {
   heading?: string | null;
@@ -22,7 +22,7 @@ interface HeadingProps {
   subheading?: string | null;
   subheadingSize?: 'sm' | 'med' | 'lg' | 'xl' | 'xxl' | null;
   subheadingWeight?: 300 | 400 | 500 | 600 | 700 | 800 | 900 | null;
-  ctas?: DatoCmsComponentCallToAction[] | null | undefined;
+  ctas?: Maybe<DatoCmsComponentCallToAction>[] | null | undefined;
   body?: StructuredTextGraphQlResponse | null;
 }
 

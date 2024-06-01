@@ -102,6 +102,17 @@ export const componentStoryQuery = graphql`
   }
 `
 
+export const componentSkillsBarQuery = graphql`
+  fragment datoCmsComponentSkillsBar on DatoCmsComponentSkillsBar {
+    __typename
+    id
+    heading
+    skills {
+      ...datoCmsEntitySkill
+    }
+  }
+`
+
 export const layoutSectionQuery = graphql`
   fragment layoutSection on DatoCmsLayoutSection {
     __typename
@@ -116,6 +127,7 @@ export const layoutSectionQuery = graphql`
     component {
       ...datoCmsComponentHero
       ...datoCmsComponentStory
+      ...datoCmsComponentSkillsBar
     }
   }
 `

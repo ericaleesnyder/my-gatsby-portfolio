@@ -9,13 +9,15 @@ export interface TextProps {
   weight?: 300 | 400 | 500 | 600 | 700 | 800 | 900;
   children?: React.ReactNode;
   color?: ColorKeys;
+  className?: string;
 }
 
-const Text: FC<TextProps> = ({ size, weight, children, color }) => (
+const Text: FC<TextProps> = ({ size, weight, children, color, className }) => (
   <TextAtom
     size={size ?? 'med'}
     weight={weight ?? 500}
     colorValue={getColor(color as ColorKeys) as ColorValues}
+    className={className}
   >
     {children}
   </TextAtom>
