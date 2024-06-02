@@ -29,6 +29,19 @@ export const entitySkill = graphql`
   }
 `
 
+export const entityPerson = graphql`
+  fragment datoCmsEntityPerson on DatoCmsEntityPerson {
+    __typename
+    id
+    name
+    positionTitle
+    company
+    headshot {
+      ...imageAsset
+    }
+  }
+`
+
 export const callToActionQuery = graphql`
   fragment datoCmsComponentCallToAction on DatoCmsComponentCallToAction {
     __typename
@@ -57,6 +70,32 @@ export const componentImageQuery = graphql`
     }
     mobileImage {
       ...imageAsset
+    }
+  }
+`
+
+export const componentTestimonialQuery = graphql`
+  fragment datoCmsComponentTestimonial on DatoCmsComponentTestimonial {
+    __typename
+    id
+    quote {
+      blocks
+      value
+      links
+    }
+    author {
+      ...datoCmsEntityPerson
+    }
+  }
+`
+
+export const componentTestimonialCarouselQuery = graphql`
+  fragment datoCmsComponentTestimonialCarousel on DatoCmsComponentTestimonialCarousel {
+    __typename
+    id
+    heading
+    quotes {
+      ...datoCmsComponentTestimonial
     }
   }
 `
@@ -128,6 +167,7 @@ export const layoutSectionQuery = graphql`
       ...datoCmsComponentHero
       ...datoCmsComponentStory
       ...datoCmsComponentSkillsBar
+      ...datoCmsComponentTestimonialCarousel
     }
   }
 `
