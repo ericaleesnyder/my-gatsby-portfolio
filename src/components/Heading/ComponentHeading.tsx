@@ -22,6 +22,7 @@ export interface ComponentHeadingProps extends HeadingProps {
   subheadingWeight?: FontWeights | null;
   ctas?: Maybe<DatoCmsComponentCallToAction>[] | null | undefined;
   body?: StructuredTextGraphQlResponse | null;
+  alignment?: 'center' | 'left';
 }
 
 const ComponentHeading: FC<ComponentHeadingProps> = ({
@@ -35,8 +36,9 @@ const ComponentHeading: FC<ComponentHeadingProps> = ({
   subheadingWeight,
   ctas,
   body,
+  alignment = 'left',
 }) => (
-  <HeadingWrap>
+  <HeadingWrap alignment={alignment}>
     {heading && (
       <Heading
         hTag={hTag ?? 'h1'}

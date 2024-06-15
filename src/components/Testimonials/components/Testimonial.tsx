@@ -4,30 +4,33 @@ import {
   type StructuredTextGraphQlResponse,
 } from 'react-datocms/structured-text';
 
+import type { ColorKeys } from 'atoms/colors';
+
 import Author from 'components/Testimonials/components/Author';
 import {
+  QuoteIcon,
   TestimonialWrapper,
   TextWrap,
 } from 'components/Testimonials/styles/TestimonialSlider.styled';
 
 import type { DatoCmsEntityPerson } from 'graphqlTypes';
 
-interface TestimonialProps {
+export interface TestimonialProps {
   quote?: StructuredTextGraphQlResponse;
   author?: DatoCmsEntityPerson;
+  color?: 'blue' | 'pink' | 'green';
 }
 
-const Testimonial: FC<TestimonialProps> = ({ quote, author }) => {
-  console.log(quote, author);
-
-  return (
-    <TestimonialWrapper className='quote'>
-      <TextWrap>
-        <StructuredText data={quote} />
-        {author && <Author {...author} />}
-      </TextWrap>
-    </TestimonialWrapper>
-  );
-};
+const Testimonial: FC<TestimonialProps> = ({ quote, author, color }) => (
+  <TestimonialWrapper clr={color as ColorKeys}>
+    <QuoteIcon>
+      <use href='/icons/sprites.svg#quote' />
+    </QuoteIcon>
+    <TextWrap>
+      <StructuredText data={quote} />
+      {author && <Author {...author} />}
+    </TextWrap>
+  </TestimonialWrapper>
+);
 
 export default Testimonial;

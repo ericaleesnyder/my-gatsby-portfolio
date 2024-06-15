@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const HeadingWrap = styled.div`
+interface HeadingProps {
+  alignment?: 'center' | 'left';
+}
+
+export const HeadingWrap = styled.div<HeadingProps>`
   height: fit-content;
   display: grid;
   grid-gap: 16px;
@@ -9,8 +13,12 @@ export const HeadingWrap = styled.div`
   max-width: 600px;
   margin: 0 auto;
   @media (min-width: 768px) {
-    text-align: left;
-    margin: unset;
+    ${({ alignment }) => alignment && alignment !== 'center' &&  
+      css` 
+        text-align: left;
+        margin: unset;
+      `
+    }
   }
 `;
 

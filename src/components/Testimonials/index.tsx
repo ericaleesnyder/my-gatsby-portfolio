@@ -1,9 +1,13 @@
-import Container from 'basics/Container.styled';
 import React, { type FC } from 'react';
 
+import Carousel from 'components/Carousel';
 import ComponentHeading from 'components/Heading/ComponentHeading';
 import Testimonial from 'components/Testimonials/components/Testimonial';
-import { TestimonialsWrapper } from 'components/Testimonials/styles/TestimonialSlider.styled';
+import type { TestimonialProps } from 'components/Testimonials/components/Testimonial';
+import {
+  TestimonialsWrapper,
+  Wrapper,
+} from 'components/Testimonials/styles/TestimonialSlider.styled';
 
 import type {
   DatoCmsComponentTestimonialCarousel,
@@ -14,27 +18,36 @@ import type { StructuredTextGraphQlResponse } from 'react-datocms/structured-tex
 const TestimonialCarousel: FC<DatoCmsComponentTestimonialCarousel> = ({
   heading,
   quotes,
-}) => {
-  console.log(heading, quotes);
+}) => (
+  <Wrapper>
+    {heading && (
+      <ComponentHeading
+        heading={heading}
+        hTag='h2'
+        desktopSize='headLg'
+        alignment='center'
+      />
+    )}
+    <TestimonialsWrapper>
+      {quotes && quotes.length > 0 && (
+        <Carousel
+          slides={quotes.map((quote, idx) => {
+            const colors = ['blue', 'pink', 'green'];
 
-  return (
-    <Container>
-      {heading && (
-        <ComponentHeading heading={heading} hTag='h2' desktopSize='headLg' />
+            return (
+              <Testimonial
+                key={quote?.id}
+                quote={quote?.quote as StructuredTextGraphQlResponse}
+                author={quote?.author as DatoCmsEntityPerson}
+                color={colors[idx % colors.length] as TestimonialProps['color']}
+              />
+            );
+          })}
+          spaceBetween={30}
+        />
       )}
-      <TestimonialsWrapper>
-        {quotes &&
-          quotes.length > 0 &&
-          quotes.map((quote) => (
-            <Testimonial
-              key={quote?.id}
-              quote={quote?.quote as StructuredTextGraphQlResponse}
-              author={quote?.author as DatoCmsEntityPerson}
-            />
-          ))}
-      </TestimonialsWrapper>
-    </Container>
-  );
-};
+    </TestimonialsWrapper>
+  </Wrapper>
+);
 
 export default TestimonialCarousel;

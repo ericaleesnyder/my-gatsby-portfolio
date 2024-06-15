@@ -1,27 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { type ColorKeys, color } from 'atoms/colors';
 
 interface StyledProps {
-  color?: ColorKeys;
+  clr?: ColorKeys;
 }
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`
+
 export const TestimonialsWrapper = styled.div`
-  .quote:nth-child(3n + 1) {
-    ::before {
-      background-color: ${color.blue};
-    }
-  }
-  .quote:nth-child(3n+2) {
-    ::before {
-      background-color: ${color.pink};
-    }
-  }
-  .quote:nth-child(3n + 3) {
-    ::before {
-      background-color: ${color.green};
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const TestimonialWrapper = styled.div<StyledProps>`
@@ -30,7 +24,12 @@ export const TestimonialWrapper = styled.div<StyledProps>`
   background: white;
   position: relative;
   border: 2px solid ${color.black};
+  width: 100%;
+  margin-bottom: 80px;
   ::before {
+    ${({ clr }) => clr && css`
+      background-color: ${color[clr]};`
+    }
     user-select: none;
     content: '';
     display: block;
@@ -44,10 +43,15 @@ export const TestimonialWrapper = styled.div<StyledProps>`
   }
 `;
 
-export const TextWrap = styled.div`
-position: relative;
-  z-index: 2;
+export const QuoteIcon = styled.svg`
+  width: 56px;
+  height: 56px;
+  path {
+    fill: white!important;
+  }
 `
 
-
-
+export const TextWrap = styled.div`
+  position: relative;
+  z-index: 2;
+`;
