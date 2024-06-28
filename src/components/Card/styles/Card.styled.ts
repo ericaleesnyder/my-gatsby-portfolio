@@ -13,7 +13,8 @@ export const CardWrap = styled(Link)<StyledCardProps>`
   border-radius: 24px;
   background-color: ${color.white};
   padding: 24px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   position: relative;
   ::before {

@@ -56,7 +56,7 @@ const ComponentHeading: FC<ComponentHeadingProps> = ({
     )}
     {body && <StructuredText data={body} />}
     {ctas && ctas.length > 0 && (
-      <CtaWrap>
+      <CtaWrap alignment={alignment}>
         {ctas.map((cta) => (
           <Button
             to={cta?.link ?? ''}

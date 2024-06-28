@@ -24,6 +24,7 @@ interface CardProps {
   slug?: string | null;
   blurb?: string | null;
   hoverColor?: string | null;
+  className?: string;
 }
 
 const Card: FC<CardProps> = ({
@@ -34,14 +35,15 @@ const Card: FC<CardProps> = ({
   slug,
   blurb,
   hoverColor,
+  className,
 }) => {
-  console.log(featuredImage, framework, cms, title, slug, blurb, hoverColor);
-
+  console.log(framework, cms, blurb);
   // TODO: image styles, logo, etc.
 
   return (
     <CardWrap
       to={slug ?? ''}
+      className={className}
       hoverColor={
         getColor(hoverColor?.toLowerCase() as ColorKeys) as ColorValues
       }

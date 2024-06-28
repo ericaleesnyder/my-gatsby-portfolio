@@ -105,10 +105,15 @@ export const componentFeaturedProjectGridQuery = graphql`
     __typename
     id
     heading
+    subheading
+    cta {
+      ...datoCmsComponentCallToAction
+    }
     projects {
       title
       blurb
       hoverColor
+      slug
       featuredImage {
         ...datoCmsComponentImage
       }
@@ -235,6 +240,9 @@ export const templateProjectQuery = graphql`
       links {
         ...datoCmsComponentImage
       }
+    }
+    relatedProjects {
+      ...datoCmsComponentFeaturedProjectGrid
     }
   }
 `
