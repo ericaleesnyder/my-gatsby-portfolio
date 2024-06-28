@@ -45,6 +45,7 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
                   slug={`/projects/${project?.slug}`}
                   blurb={project?.blurb}
                   framework={project?.blurb}
+                  hoverColor={project?.hoverColor}
                 />
               ))}
           </ProjectGrid>
