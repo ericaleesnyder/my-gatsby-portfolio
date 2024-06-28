@@ -1227,6 +1227,298 @@ export interface DatoCmsComponentStorySortInput {
   timelineItems?: InputMaybe<DatoCmsTimelineInstanceSortInput>;
 }
 
+export interface DatoCmsComponentTestimonial extends Node {
+  __typename?: 'DatoCmsComponentTestimonial';
+  author?: Maybe<DatoCmsEntityPerson>;
+  children: Array<Node>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  quote?: Maybe<DatoCmsDatoCmsComponentTestimonialQuoteStructuredText>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+}
+
+export interface DatoCmsComponentTestimonialCarousel extends Node {
+  __typename?: 'DatoCmsComponentTestimonialCarousel';
+  children: Array<Node>;
+  heading?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  quotes?: Maybe<Array<Maybe<DatoCmsComponentTestimonial>>>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+}
+
+export interface DatoCmsComponentTestimonialCarouselConnection {
+  __typename?: 'DatoCmsComponentTestimonialCarouselConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentTestimonialCarouselEdge>;
+  group: Array<DatoCmsComponentTestimonialCarouselGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentTestimonialCarousel>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselConnectionDistinctArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselConnectionGroupArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselConnectionMaxArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselConnectionMinArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselConnectionSumArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+export interface DatoCmsComponentTestimonialCarouselEdge {
+  __typename?: 'DatoCmsComponentTestimonialCarouselEdge';
+  next?: Maybe<DatoCmsComponentTestimonialCarousel>;
+  node: DatoCmsComponentTestimonialCarousel;
+  previous?: Maybe<DatoCmsComponentTestimonialCarousel>;
+}
+
+export interface DatoCmsComponentTestimonialCarouselFieldSelector {
+  children?: InputMaybe<NodeFieldSelector>;
+  heading?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  quotes?: InputMaybe<DatoCmsComponentTestimonialFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+}
+
+export interface DatoCmsComponentTestimonialCarouselFilterInput {
+  children?: InputMaybe<NodeFilterListInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  quotes?: InputMaybe<DatoCmsComponentTestimonialFilterListInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnection {
+  __typename?: 'DatoCmsComponentTestimonialCarouselGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentTestimonialCarouselEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentTestimonialCarouselGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentTestimonialCarousel>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnectionDistinctArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnectionGroupArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnectionMaxArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnectionMinArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialCarouselGroupConnectionSumArgs {
+  field: DatoCmsComponentTestimonialCarouselFieldSelector;
+}
+
+export interface DatoCmsComponentTestimonialCarouselSortInput {
+  children?: InputMaybe<NodeSortInput>;
+  heading?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  quotes?: InputMaybe<DatoCmsComponentTestimonialSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+}
+
+export interface DatoCmsComponentTestimonialConnection {
+  __typename?: 'DatoCmsComponentTestimonialConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentTestimonialEdge>;
+  group: Array<DatoCmsComponentTestimonialGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentTestimonial>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentTestimonialConnectionDistinctArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialConnectionGroupArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentTestimonialConnectionMaxArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialConnectionMinArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialConnectionSumArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+export interface DatoCmsComponentTestimonialEdge {
+  __typename?: 'DatoCmsComponentTestimonialEdge';
+  next?: Maybe<DatoCmsComponentTestimonial>;
+  node: DatoCmsComponentTestimonial;
+  previous?: Maybe<DatoCmsComponentTestimonial>;
+}
+
+export interface DatoCmsComponentTestimonialFieldSelector {
+  author?: InputMaybe<DatoCmsEntityPersonFieldSelector>;
+  children?: InputMaybe<NodeFieldSelector>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  quote?: InputMaybe<DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+}
+
+export interface DatoCmsComponentTestimonialFilterInput {
+  author?: InputMaybe<DatoCmsEntityPersonFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  quote?: InputMaybe<DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+export interface DatoCmsComponentTestimonialFilterListInput {
+  elemMatch?: InputMaybe<DatoCmsComponentTestimonialFilterInput>;
+}
+
+export interface DatoCmsComponentTestimonialGroupConnection {
+  __typename?: 'DatoCmsComponentTestimonialGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentTestimonialEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentTestimonialGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentTestimonial>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentTestimonialGroupConnectionDistinctArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialGroupConnectionGroupArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentTestimonialGroupConnectionMaxArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialGroupConnectionMinArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+
+export interface DatoCmsComponentTestimonialGroupConnectionSumArgs {
+  field: DatoCmsComponentTestimonialFieldSelector;
+}
+
+export interface DatoCmsComponentTestimonialSortInput {
+  author?: InputMaybe<DatoCmsEntityPersonSortInput>;
+  children?: InputMaybe<NodeSortInput>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  quote?: InputMaybe<DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+}
+
 export interface DatoCmsDatoCmsComponentHeroBodyStructuredText {
   __typename?: 'DatoCmsDatoCmsComponentHeroBodyStructuredText';
   blocks?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -1249,6 +1541,31 @@ export interface DatoCmsDatoCmsComponentHeroBodyStructuredTextFilterInput {
 export interface DatoCmsDatoCmsComponentHeroBodyStructuredTextSortInput {
   blocks?: InputMaybe<SortOrderEnum>;
   links?: InputMaybe<DatoCmsComponentCallToActionSortInput>;
+  value?: InputMaybe<SortOrderEnum>;
+}
+
+export interface DatoCmsDatoCmsComponentTestimonialQuoteStructuredText {
+  __typename?: 'DatoCmsDatoCmsComponentTestimonialQuoteStructuredText';
+  blocks?: Maybe<Array<Maybe<Scalars['String']>>>;
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
+  value?: Maybe<Scalars['JSON']>;
+}
+
+export interface DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextFieldSelector {
+  blocks?: InputMaybe<FieldSelectorEnum>;
+  links?: InputMaybe<FieldSelectorEnum>;
+  value?: InputMaybe<FieldSelectorEnum>;
+}
+
+export interface DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextFilterInput {
+  blocks?: InputMaybe<StringQueryOperatorInput>;
+  links?: InputMaybe<StringQueryOperatorInput>;
+  value?: InputMaybe<JsonQueryOperatorInput>;
+}
+
+export interface DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextSortInput {
+  blocks?: InputMaybe<SortOrderEnum>;
+  links?: InputMaybe<SortOrderEnum>;
   value?: InputMaybe<SortOrderEnum>;
 }
 
@@ -1275,6 +1592,156 @@ export interface DatoCmsDatoCmsTemplateProjectBodyStructuredTextSortInput {
   blocks?: InputMaybe<SortOrderEnum>;
   links?: InputMaybe<DatoCmsComponentImageSortInput>;
   value?: InputMaybe<SortOrderEnum>;
+}
+
+export interface DatoCmsEntityPerson extends Node {
+  __typename?: 'DatoCmsEntityPerson';
+  children: Array<Node>;
+  company?: Maybe<Scalars['String']>;
+  headshot?: Maybe<DatoCmsFileField>;
+  id: Scalars['ID'];
+  internal: Internal;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  name?: Maybe<Scalars['String']>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  positionTitle?: Maybe<Scalars['String']>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+}
+
+export interface DatoCmsEntityPersonConnection {
+  __typename?: 'DatoCmsEntityPersonConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsEntityPersonEdge>;
+  group: Array<DatoCmsEntityPersonGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsEntityPerson>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsEntityPersonConnectionDistinctArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonConnectionGroupArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsEntityPersonConnectionMaxArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonConnectionMinArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonConnectionSumArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+export interface DatoCmsEntityPersonEdge {
+  __typename?: 'DatoCmsEntityPersonEdge';
+  next?: Maybe<DatoCmsEntityPerson>;
+  node: DatoCmsEntityPerson;
+  previous?: Maybe<DatoCmsEntityPerson>;
+}
+
+export interface DatoCmsEntityPersonFieldSelector {
+  children?: InputMaybe<NodeFieldSelector>;
+  company?: InputMaybe<FieldSelectorEnum>;
+  headshot?: InputMaybe<DatoCmsFileFieldFieldSelector>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  name?: InputMaybe<FieldSelectorEnum>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  positionTitle?: InputMaybe<FieldSelectorEnum>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+}
+
+export interface DatoCmsEntityPersonFilterInput {
+  children?: InputMaybe<NodeFilterListInput>;
+  company?: InputMaybe<StringQueryOperatorInput>;
+  headshot?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  positionTitle?: InputMaybe<StringQueryOperatorInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+export interface DatoCmsEntityPersonGroupConnection {
+  __typename?: 'DatoCmsEntityPersonGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsEntityPersonEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsEntityPersonGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsEntityPerson>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsEntityPersonGroupConnectionDistinctArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonGroupConnectionGroupArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsEntityPersonGroupConnectionMaxArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonGroupConnectionMinArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+
+export interface DatoCmsEntityPersonGroupConnectionSumArgs {
+  field: DatoCmsEntityPersonFieldSelector;
+}
+
+export interface DatoCmsEntityPersonSortInput {
+  children?: InputMaybe<NodeSortInput>;
+  company?: InputMaybe<SortOrderEnum>;
+  headshot?: InputMaybe<DatoCmsFileFieldSortInput>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  name?: InputMaybe<SortOrderEnum>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  positionTitle?: InputMaybe<SortOrderEnum>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
 }
 
 export interface DatoCmsEntitySkill extends Node {
@@ -3490,7 +3957,7 @@ export interface DatoCmsTimelineInstanceSortInput {
   year?: InputMaybe<SortOrderEnum>;
 }
 
-export type DatoCmsUnionForDatoCmsLayoutSectionComponent = DatoCmsComponentHero | DatoCmsComponentSkillsBar | DatoCmsComponentStory;
+export type DatoCmsUnionForDatoCmsLayoutSectionComponent = DatoCmsComponentHero | DatoCmsComponentSkillsBar | DatoCmsComponentStory | DatoCmsComponentTestimonialCarousel;
 
 export interface DatoCmsVideoField {
   __typename?: 'DatoCmsVideoField';
@@ -4268,6 +4735,9 @@ export interface Query {
   allDatoCmsComponentImage: DatoCmsComponentImageConnection;
   allDatoCmsComponentSkillsBar: DatoCmsComponentSkillsBarConnection;
   allDatoCmsComponentStory: DatoCmsComponentStoryConnection;
+  allDatoCmsComponentTestimonial: DatoCmsComponentTestimonialConnection;
+  allDatoCmsComponentTestimonialCarousel: DatoCmsComponentTestimonialCarouselConnection;
+  allDatoCmsEntityPerson: DatoCmsEntityPersonConnection;
   allDatoCmsEntitySkill: DatoCmsEntitySkillConnection;
   allDatoCmsField: DatoCmsFieldConnection;
   allDatoCmsLayoutSection: DatoCmsLayoutSectionConnection;
@@ -4290,6 +4760,9 @@ export interface Query {
   datoCmsComponentImage?: Maybe<DatoCmsComponentImage>;
   datoCmsComponentSkillsBar?: Maybe<DatoCmsComponentSkillsBar>;
   datoCmsComponentStory?: Maybe<DatoCmsComponentStory>;
+  datoCmsComponentTestimonial?: Maybe<DatoCmsComponentTestimonial>;
+  datoCmsComponentTestimonialCarousel?: Maybe<DatoCmsComponentTestimonialCarousel>;
+  datoCmsEntityPerson?: Maybe<DatoCmsEntityPerson>;
   datoCmsEntitySkill?: Maybe<DatoCmsEntitySkill>;
   datoCmsField?: Maybe<DatoCmsField>;
   datoCmsLayoutSection?: Maybe<DatoCmsLayoutSection>;
@@ -4366,6 +4839,36 @@ export interface QueryAllDatoCmsComponentStoryArgs {
   locale?: InputMaybe<Scalars['String']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentStorySortInput>>>;
+}
+
+
+export interface QueryAllDatoCmsComponentTestimonialArgs {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentTestimonialFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentTestimonialSortInput>>>;
+}
+
+
+export interface QueryAllDatoCmsComponentTestimonialCarouselArgs {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentTestimonialCarouselFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentTestimonialCarouselSortInput>>>;
+}
+
+
+export interface QueryAllDatoCmsEntityPersonArgs {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsEntityPersonFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsEntityPersonSortInput>>>;
 }
 
 
@@ -4651,6 +5154,57 @@ export interface QueryDatoCmsComponentStoryArgs {
   subheading?: InputMaybe<StringQueryOperatorInput>;
   subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
   timelineItems?: InputMaybe<DatoCmsTimelineInstanceFilterListInput>;
+}
+
+
+export interface QueryDatoCmsComponentTestimonialArgs {
+  author?: InputMaybe<DatoCmsEntityPersonFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  quote?: InputMaybe<DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+
+export interface QueryDatoCmsComponentTestimonialCarouselArgs {
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  quotes?: InputMaybe<DatoCmsComponentTestimonialFilterListInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+
+export interface QueryDatoCmsEntityPersonArgs {
+  children?: InputMaybe<NodeFilterListInput>;
+  company?: InputMaybe<StringQueryOperatorInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  headshot?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  positionTitle?: InputMaybe<StringQueryOperatorInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
 }
 
 
@@ -5790,6 +6344,11 @@ export type DatoCmsEntitySkillFragment = { __typename: 'DatoCmsEntitySkill', id:
     & ImageAssetFragment
   ) | null };
 
+export type DatoCmsEntityPersonFragment = { __typename: 'DatoCmsEntityPerson', id: string, name?: string | null, positionTitle?: string | null, company?: string | null, headshot?: (
+    { __typename?: 'DatoCmsFileField' }
+    & ImageAssetFragment
+  ) | null };
+
 export type DatoCmsComponentCallToActionFragment = { __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null };
 
 export type DatoCmsComponentImageFragment = { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: (
@@ -5799,6 +6358,16 @@ export type DatoCmsComponentImageFragment = { __typename?: 'DatoCmsComponentImag
     { __typename?: 'DatoCmsFileField' }
     & ImageAssetFragment
   ) | null };
+
+export type DatoCmsComponentTestimonialFragment = { __typename: 'DatoCmsComponentTestimonial', id: string, quote?: { __typename?: 'DatoCmsDatoCmsComponentTestimonialQuoteStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<string | null> | null } | null, author?: (
+    { __typename?: 'DatoCmsEntityPerson' }
+    & DatoCmsEntityPersonFragment
+  ) | null };
+
+export type DatoCmsComponentTestimonialCarouselFragment = { __typename: 'DatoCmsComponentTestimonialCarousel', id: string, heading?: string | null, quotes?: Array<(
+    { __typename?: 'DatoCmsComponentTestimonial' }
+    & DatoCmsComponentTestimonialFragment
+  ) | null> | null };
 
 export type DatoCmsComponentHeroFragment = { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: (
     { __typename?: 'DatoCmsComponentImage' }
@@ -5836,6 +6405,9 @@ export type LayoutSectionFragment = { __typename: 'DatoCmsLayoutSection', id: st
   ) | (
     { __typename?: 'DatoCmsComponentStory' }
     & DatoCmsComponentStoryFragment
+  ) | (
+    { __typename?: 'DatoCmsComponentTestimonialCarousel' }
+    & DatoCmsComponentTestimonialCarouselFragment
   ) | null };
 
 export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null, layouts?: Array<(
