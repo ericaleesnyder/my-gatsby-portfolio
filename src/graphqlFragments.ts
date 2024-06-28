@@ -100,6 +100,27 @@ export const componentTestimonialCarouselQuery = graphql`
   }
 `
 
+export const componentFeaturedProjectGridQuery = graphql`
+  fragment datoCmsComponentFeaturedProjectGrid on DatoCmsComponentFeaturedProjectGrid {
+    __typename
+    id
+    heading
+    subheading
+    cta {
+      ...datoCmsComponentCallToAction
+    }
+    projects {
+      title
+      blurb
+      hoverColor
+      slug
+      featuredImage {
+        ...datoCmsComponentImage
+      }
+    }
+  }
+`
+
 export const componentHeroQuery = graphql`
   fragment datoCmsComponentHero on DatoCmsComponentHero {
     __typename
@@ -168,6 +189,7 @@ export const layoutSectionQuery = graphql`
       ...datoCmsComponentStory
       ...datoCmsComponentSkillsBar
       ...datoCmsComponentTestimonialCarousel
+      ...datoCmsComponentFeaturedProjectGrid
     }
   }
 `
@@ -204,6 +226,7 @@ export const templateProjectQuery = graphql`
     year
     role
     featured
+    hoverColor
     featuredImage {
       ...datoCmsComponentImage
     }
@@ -217,6 +240,9 @@ export const templateProjectQuery = graphql`
       links {
         ...datoCmsComponentImage
       }
+    }
+    relatedProjects {
+      ...datoCmsComponentFeaturedProjectGrid
     }
   }
 `

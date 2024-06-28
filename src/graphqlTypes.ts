@@ -587,6 +587,164 @@ export interface DatoCmsComponentCallToActionSortInput {
   size?: InputMaybe<SortOrderEnum>;
 }
 
+export interface DatoCmsComponentFeaturedProjectGrid extends Node {
+  __typename?: 'DatoCmsComponentFeaturedProjectGrid';
+  children: Array<Node>;
+  cta?: Maybe<DatoCmsComponentCallToAction>;
+  heading?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  internal: Internal;
+  internalName?: Maybe<Scalars['String']>;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  projects?: Maybe<Array<Maybe<DatoCmsTemplateProject>>>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  subheading?: Maybe<Scalars['String']>;
+  subheadingNode?: Maybe<DatoCmsTextNode>;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridConnection {
+  __typename?: 'DatoCmsComponentFeaturedProjectGridConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentFeaturedProjectGridEdge>;
+  group: Array<DatoCmsComponentFeaturedProjectGridGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentFeaturedProjectGrid>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridConnectionDistinctArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridConnectionGroupArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridConnectionMaxArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridConnectionMinArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridConnectionSumArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridEdge {
+  __typename?: 'DatoCmsComponentFeaturedProjectGridEdge';
+  next?: Maybe<DatoCmsComponentFeaturedProjectGrid>;
+  node: DatoCmsComponentFeaturedProjectGrid;
+  previous?: Maybe<DatoCmsComponentFeaturedProjectGrid>;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridFieldSelector {
+  children?: InputMaybe<NodeFieldSelector>;
+  cta?: InputMaybe<DatoCmsComponentCallToActionFieldSelector>;
+  heading?: InputMaybe<FieldSelectorEnum>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  internalName?: InputMaybe<FieldSelectorEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  projects?: InputMaybe<DatoCmsTemplateProjectFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  subheading?: InputMaybe<FieldSelectorEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridFilterInput {
+  children?: InputMaybe<NodeFilterListInput>;
+  cta?: InputMaybe<DatoCmsComponentCallToActionFilterInput>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  projects?: InputMaybe<DatoCmsTemplateProjectFilterListInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnection {
+  __typename?: 'DatoCmsComponentFeaturedProjectGridGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsComponentFeaturedProjectGridEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsComponentFeaturedProjectGridGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsComponentFeaturedProjectGrid>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnectionDistinctArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnectionGroupArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnectionMaxArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnectionMinArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+
+export interface DatoCmsComponentFeaturedProjectGridGroupConnectionSumArgs {
+  field: DatoCmsComponentFeaturedProjectGridFieldSelector;
+}
+
+export interface DatoCmsComponentFeaturedProjectGridSortInput {
+  children?: InputMaybe<NodeSortInput>;
+  cta?: InputMaybe<DatoCmsComponentCallToActionSortInput>;
+  heading?: InputMaybe<SortOrderEnum>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  internalName?: InputMaybe<SortOrderEnum>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  projects?: InputMaybe<DatoCmsTemplateProjectSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  subheading?: InputMaybe<SortOrderEnum>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeSortInput>;
+}
+
 export interface DatoCmsComponentHero extends Node {
   __typename?: 'DatoCmsComponentHero';
   body?: Maybe<DatoCmsDatoCmsComponentHeroBodyStructuredText>;
@@ -3502,6 +3660,7 @@ export interface DatoCmsTemplateProject extends Node {
   featuredImage?: Maybe<DatoCmsComponentImage>;
   framework?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
+  hoverColor?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   internal: Internal;
   internalName?: Maybe<Scalars['String']>;
@@ -3510,6 +3669,7 @@ export interface DatoCmsTemplateProject extends Node {
   model?: Maybe<DatoCmsModel>;
   originalId: Scalars['String'];
   parent?: Maybe<Node>;
+  relatedProjects?: Maybe<DatoCmsComponentFeaturedProjectGrid>;
   role?: Maybe<Scalars['String']>;
   searchEngineOptimization?: Maybe<DatoCmsSeoField>;
   seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
@@ -3575,6 +3735,7 @@ export interface DatoCmsTemplateProjectFieldSelector {
   featuredImage?: InputMaybe<DatoCmsComponentImageFieldSelector>;
   framework?: InputMaybe<FieldSelectorEnum>;
   github?: InputMaybe<FieldSelectorEnum>;
+  hoverColor?: InputMaybe<FieldSelectorEnum>;
   id?: InputMaybe<FieldSelectorEnum>;
   internal?: InputMaybe<InternalFieldSelector>;
   internalName?: InputMaybe<FieldSelectorEnum>;
@@ -3583,6 +3744,7 @@ export interface DatoCmsTemplateProjectFieldSelector {
   model?: InputMaybe<DatoCmsModelFieldSelector>;
   originalId?: InputMaybe<FieldSelectorEnum>;
   parent?: InputMaybe<NodeFieldSelector>;
+  relatedProjects?: InputMaybe<DatoCmsComponentFeaturedProjectGridFieldSelector>;
   role?: InputMaybe<FieldSelectorEnum>;
   searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFieldSelector>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
@@ -3601,6 +3763,7 @@ export interface DatoCmsTemplateProjectFilterInput {
   featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
   framework?: InputMaybe<StringQueryOperatorInput>;
   github?: InputMaybe<StringQueryOperatorInput>;
+  hoverColor?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   internalName?: InputMaybe<StringQueryOperatorInput>;
@@ -3609,12 +3772,17 @@ export interface DatoCmsTemplateProjectFilterInput {
   model?: InputMaybe<DatoCmsModelFilterInput>;
   originalId?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
+  relatedProjects?: InputMaybe<DatoCmsComponentFeaturedProjectGridFilterInput>;
   role?: InputMaybe<StringQueryOperatorInput>;
   searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFilterInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
   title?: InputMaybe<StringQueryOperatorInput>;
   year?: InputMaybe<StringQueryOperatorInput>;
+}
+
+export interface DatoCmsTemplateProjectFilterListInput {
+  elemMatch?: InputMaybe<DatoCmsTemplateProjectFilterInput>;
 }
 
 export interface DatoCmsTemplateProjectGroupConnection {
@@ -3669,6 +3837,7 @@ export interface DatoCmsTemplateProjectSortInput {
   featuredImage?: InputMaybe<DatoCmsComponentImageSortInput>;
   framework?: InputMaybe<SortOrderEnum>;
   github?: InputMaybe<SortOrderEnum>;
+  hoverColor?: InputMaybe<SortOrderEnum>;
   id?: InputMaybe<SortOrderEnum>;
   internal?: InputMaybe<InternalSortInput>;
   internalName?: InputMaybe<SortOrderEnum>;
@@ -3677,6 +3846,7 @@ export interface DatoCmsTemplateProjectSortInput {
   model?: InputMaybe<DatoCmsModelSortInput>;
   originalId?: InputMaybe<SortOrderEnum>;
   parent?: InputMaybe<NodeSortInput>;
+  relatedProjects?: InputMaybe<DatoCmsComponentFeaturedProjectGridSortInput>;
   role?: InputMaybe<SortOrderEnum>;
   searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldSortInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
@@ -3957,7 +4127,7 @@ export interface DatoCmsTimelineInstanceSortInput {
   year?: InputMaybe<SortOrderEnum>;
 }
 
-export type DatoCmsUnionForDatoCmsLayoutSectionComponent = DatoCmsComponentHero | DatoCmsComponentSkillsBar | DatoCmsComponentStory | DatoCmsComponentTestimonialCarousel;
+export type DatoCmsUnionForDatoCmsLayoutSectionComponent = DatoCmsComponentFeaturedProjectGrid | DatoCmsComponentHero | DatoCmsComponentSkillsBar | DatoCmsComponentStory | DatoCmsComponentTestimonialCarousel;
 
 export interface DatoCmsVideoField {
   __typename?: 'DatoCmsVideoField';
@@ -4731,6 +4901,7 @@ export interface Query {
   __typename?: 'Query';
   allDatoCmsAsset: DatoCmsAssetConnection;
   allDatoCmsComponentCallToAction: DatoCmsComponentCallToActionConnection;
+  allDatoCmsComponentFeaturedProjectGrid: DatoCmsComponentFeaturedProjectGridConnection;
   allDatoCmsComponentHero: DatoCmsComponentHeroConnection;
   allDatoCmsComponentImage: DatoCmsComponentImageConnection;
   allDatoCmsComponentSkillsBar: DatoCmsComponentSkillsBarConnection;
@@ -4756,6 +4927,7 @@ export interface Query {
   allSitePlugin: SitePluginConnection;
   datoCmsAsset?: Maybe<DatoCmsAsset>;
   datoCmsComponentCallToAction?: Maybe<DatoCmsComponentCallToAction>;
+  datoCmsComponentFeaturedProjectGrid?: Maybe<DatoCmsComponentFeaturedProjectGrid>;
   datoCmsComponentHero?: Maybe<DatoCmsComponentHero>;
   datoCmsComponentImage?: Maybe<DatoCmsComponentImage>;
   datoCmsComponentSkillsBar?: Maybe<DatoCmsComponentSkillsBar>;
@@ -4799,6 +4971,16 @@ export interface QueryAllDatoCmsComponentCallToActionArgs {
   locale?: InputMaybe<Scalars['String']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentCallToActionSortInput>>>;
+}
+
+
+export interface QueryAllDatoCmsComponentFeaturedProjectGridArgs {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsComponentFeaturedProjectGridFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsComponentFeaturedProjectGridSortInput>>>;
 }
 
 
@@ -5076,6 +5258,26 @@ export interface QueryDatoCmsComponentCallToActionArgs {
 }
 
 
+export interface QueryDatoCmsComponentFeaturedProjectGridArgs {
+  children?: InputMaybe<NodeFilterListInput>;
+  cta?: InputMaybe<DatoCmsComponentCallToActionFilterInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  heading?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  internalName?: InputMaybe<StringQueryOperatorInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  projects?: InputMaybe<DatoCmsTemplateProjectFilterListInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  subheading?: InputMaybe<StringQueryOperatorInput>;
+  subheadingNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
+}
+
+
 export interface QueryDatoCmsComponentHeroArgs {
   body?: InputMaybe<DatoCmsDatoCmsComponentHeroBodyStructuredTextFilterInput>;
   children?: InputMaybe<NodeFilterListInput>;
@@ -5335,6 +5537,7 @@ export interface QueryDatoCmsTemplateProjectArgs {
   featuredImage?: InputMaybe<DatoCmsComponentImageFilterInput>;
   framework?: InputMaybe<StringQueryOperatorInput>;
   github?: InputMaybe<StringQueryOperatorInput>;
+  hoverColor?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   internalName?: InputMaybe<StringQueryOperatorInput>;
@@ -5344,6 +5547,7 @@ export interface QueryDatoCmsTemplateProjectArgs {
   model?: InputMaybe<DatoCmsModelFilterInput>;
   originalId?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
+  relatedProjects?: InputMaybe<DatoCmsComponentFeaturedProjectGridFilterInput>;
   role?: InputMaybe<StringQueryOperatorInput>;
   searchEngineOptimization?: InputMaybe<DatoCmsSeoFieldFilterInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
@@ -6369,6 +6573,14 @@ export type DatoCmsComponentTestimonialCarouselFragment = { __typename: 'DatoCms
     & DatoCmsComponentTestimonialFragment
   ) | null> | null };
 
+export type DatoCmsComponentFeaturedProjectGridFragment = { __typename: 'DatoCmsComponentFeaturedProjectGrid', id: string, heading?: string | null, subheading?: string | null, cta?: (
+    { __typename?: 'DatoCmsComponentCallToAction' }
+    & DatoCmsComponentCallToActionFragment
+  ) | null, projects?: Array<{ __typename?: 'DatoCmsTemplateProject', title?: string | null, blurb?: string | null, hoverColor?: string | null, slug?: string | null, featuredImage?: (
+      { __typename?: 'DatoCmsComponentImage' }
+      & DatoCmsComponentImageFragment
+    ) | null } | null> | null };
+
 export type DatoCmsComponentHeroFragment = { __typename: 'DatoCmsComponentHero', id: string, internalName?: string | null, heading?: string | null, subheading?: string | null, featuredImage?: (
     { __typename?: 'DatoCmsComponentImage' }
     & DatoCmsComponentImageFragment
@@ -6397,6 +6609,9 @@ export type DatoCmsComponentSkillsBarFragment = { __typename: 'DatoCmsComponentS
   ) | null> | null };
 
 export type LayoutSectionFragment = { __typename: 'DatoCmsLayoutSection', id: string, internalName?: string | null, desktopTopPadding?: string | null, desktopBottomPadding?: string | null, tabletTopPadding?: string | null, tabletBottomPadding?: string | null, mobileTopPadding?: string | null, mobileBottomPadding?: string | null, component?: (
+    { __typename?: 'DatoCmsComponentFeaturedProjectGrid' }
+    & DatoCmsComponentFeaturedProjectGridFragment
+  ) | (
     { __typename?: 'DatoCmsComponentHero' }
     & DatoCmsComponentHeroFragment
   ) | (
@@ -6415,13 +6630,16 @@ export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', i
     & LayoutSectionFragment
   ) | null> | null };
 
-export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: (
+export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, hoverColor?: string | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: (
     { __typename?: 'DatoCmsComponentImage' }
     & DatoCmsComponentImageFragment
   ) | null, body?: { __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<(
       { __typename?: 'DatoCmsComponentImage' }
       & DatoCmsComponentImageFragment
-    ) | null> | null } | null };
+    ) | null> | null } | null, relatedProjects?: (
+    { __typename?: 'DatoCmsComponentFeaturedProjectGrid' }
+    & DatoCmsComponentFeaturedProjectGridFragment
+  ) | null };
 
 export type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

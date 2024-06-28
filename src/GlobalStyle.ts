@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     margin-block-end: 0;
   }
   main {
+    position: relative;
+    z-index: 0;
     ${({ isGradientBackground }) => isGradientBackground && css`
        background:
         radial-gradient(15% 15% at 75% 70%, rgba(41,255,140, 0.5) 0%, transparent 100%),

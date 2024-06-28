@@ -2,13 +2,17 @@ import React, { type FC } from 'react';
 
 import Heading from 'atoms/Text/Heading';
 import Text from 'atoms/Text/Text';
+import { getColor } from 'atoms/colors';
+import type { ColorKeys, ColorValues } from 'atoms/colors';
 
 import {
   Blurb,
   CardWrap,
   HeadingWrap,
   Icon,
+  ImageWrap,
 } from 'components/Card/styles/Card.styled';
+import OptimizedImage from 'components/Image';
 
 import type { DatoCmsComponentImage } from 'graphqlTypes';
 
@@ -19,6 +23,8 @@ interface CardProps {
   title?: string | null;
   slug?: string | null;
   blurb?: string | null;
+  hoverColor?: string | null;
+  className?: string;
 }
 
 const Card: FC<CardProps> = ({
@@ -28,13 +34,20 @@ const Card: FC<CardProps> = ({
   title,
   slug,
   blurb,
+  hoverColor,
+  className,
 }) => {
-  console.log(featuredImage, framework, cms, title, slug, blurb);
-
+  console.log(framework, cms, blurb);
   // TODO: image styles, logo, etc.
 
   return (
-    <CardWrap to={slug ?? ''}>
+    <CardWrap
+      to={slug ?? ''}
+      className={className}
+      hoverColor={
+        getColor(hoverColor?.toLowerCase() as ColorKeys) as ColorValues
+      }
+    >
       <HeadingWrap>
         <Heading
           hTag='h3'
@@ -58,6 +71,16 @@ const Card: FC<CardProps> = ({
         </Text>
       </Blurb>
       {/* } */}
+      {featuredImage && (
+        <ImageWrap>
+          <OptimizedImage
+            image={featuredImage?.desktopImage?.gatsbyImageData}
+            src={featuredImage?.desktopImage?.url}
+            alt={featuredImage?.alt ?? ''}
+            loading='eager'
+          />
+        </ImageWrap>
+      )}
     </CardWrap>
   );
 };

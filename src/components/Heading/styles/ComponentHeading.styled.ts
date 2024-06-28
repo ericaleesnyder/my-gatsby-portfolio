@@ -22,13 +22,14 @@ export const HeadingWrap = styled.div<HeadingProps>`
   }
 `;
 
-export const CtaWrap = styled.div`
+export const CtaWrap = styled.div<HeadingProps>`
   flex-direction: column;
   margin-top: 8px;
   display: flex;
   gap: 12px;
   width: 100%;
   justify-content: center;
+  align-items: center;
   div {
     width: 100%;
   }
@@ -39,7 +40,8 @@ export const CtaWrap = styled.div`
     }
   }
   @media (min-width: 768px) {
-    justify-content: flex-start;
-
+    ${({ alignment }) => alignment && alignment !== 'center' && css`
+      justify-content: flex-start;
+    `}
   }
 `;
