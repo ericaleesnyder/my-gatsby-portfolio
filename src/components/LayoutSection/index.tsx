@@ -11,7 +11,6 @@ export interface LayoutSectionProps
     DatoCmsLayoutSection,
     'id' | 'children' | 'model' | 'meta' | 'internal' | 'originalId'
   > {
-  key?: string;
   id?: string;
 }
 
