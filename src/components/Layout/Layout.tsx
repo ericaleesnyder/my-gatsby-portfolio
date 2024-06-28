@@ -1,5 +1,5 @@
 import GlobalStyle from 'GlobalStyle';
-import React from 'react';
+import React, { useState } from 'react';
 
 import GlobalFooter from 'components/Footer';
 import ContactForm from 'components/Form';
@@ -16,11 +16,19 @@ interface Props {
 
 const Layout: FC<Props> = ({ children, isGradientBackground }) => {
   const scrollPosition = useScrollPosition();
+  const [mobileNavActive, setMobileNavActive] = useState<boolean>(false);
 
   return (
     <>
-      <GlobalStyle isGradientBackground={isGradientBackground} />
-      <GlobalNav isTransparent={scrollPosition < 30} />
+      <GlobalStyle
+        isGradientBackground={isGradientBackground}
+        mobileNavActive={mobileNavActive}
+      />
+      <GlobalNav
+        isTransparent={scrollPosition < 30}
+        mobileNavActive={mobileNavActive}
+        setMobileNavActive={setMobileNavActive}
+      />
       <main>{children}</main>
       <ContactForm />
       <GlobalFooter />

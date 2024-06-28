@@ -1,11 +1,17 @@
 import type { ButtonProps } from 'components/Button/Button';
 
+import type { Dispatch, SetStateAction } from 'react';
+
 export interface HeaderProps {
   isTransparent: boolean;
+  mobileNavActive?: boolean;
+  setMobileNavActive?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface NavProps {
   menuItems: MenuItemProps[];
+  mobileNavActive?: boolean;
+  setMobileNavActive?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface MenuItemProps extends Omit<ButtonProps, 'children'> {
