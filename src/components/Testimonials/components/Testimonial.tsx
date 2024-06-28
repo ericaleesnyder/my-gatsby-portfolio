@@ -23,7 +23,7 @@ export interface TestimonialProps {
 
 const Testimonial: FC<TestimonialProps> = ({ quote, author, color }) => (
   <TestimonialWrapper clr={color as ColorKeys}>
-    <QuoteIcon>
+    <QuoteIcon clr={color as ColorKeys}>
       <use href='/icons/sprites.svg#quote' />
     </QuoteIcon>
     <TextWrap>

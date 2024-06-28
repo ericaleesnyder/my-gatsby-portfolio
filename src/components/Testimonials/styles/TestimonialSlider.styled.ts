@@ -19,7 +19,7 @@ export const TestimonialsWrapper = styled.div`
 `;
 
 export const TestimonialWrapper = styled.div<StyledProps>`
-  padding: 24px;
+  padding: 8px 24px 24px;
   border-radius: 24px;
   background: white;
   position: relative;
@@ -38,17 +38,17 @@ export const TestimonialWrapper = styled.div<StyledProps>`
     position: absolute;
     opacity: 0.1;
     border-radius: 24px;
-    margin: -24px;
+    margin: -8px -24px -24px;
     z-index: 0;
   }
 `;
 
-export const QuoteIcon = styled.svg`
+export const QuoteIcon = styled.svg<StyledProps>`
   width: 56px;
   height: 56px;
-  path {
-    fill: white!important;
-  }
+  ${({ clr }) => clr && css`
+    color: ${color[clr]};
+  `};
 `
 
 export const TextWrap = styled.div`
