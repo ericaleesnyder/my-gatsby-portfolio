@@ -9,12 +9,20 @@ import {
 } from 'components/Header/headerTypesAndData';
 import { Header, Wrapper } from 'components/Header/styles/Nav.styled';
 
-const GlobalNav: FC<HeaderProps> = ({ isTransparent }) => (
+const GlobalNav: FC<HeaderProps> = ({
+  isTransparent,
+  mobileNavActive,
+  setMobileNavActive,
+}) => (
   <Wrapper isTransparent={isTransparent}>
     <Header>
       <Container>
         <DesktopHeader menuItems={menuItems} />
-        <MobileHeader menuItems={menuItems} />
+        <MobileHeader
+          menuItems={menuItems}
+          mobileNavActive={mobileNavActive}
+          setMobileNavActive={setMobileNavActive}
+        />
       </Container>
     </Header>
   </Wrapper>
