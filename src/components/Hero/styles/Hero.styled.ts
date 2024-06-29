@@ -39,3 +39,54 @@ export const ImageWrapper = styled.div`
     border: 2px solid ${color.black};
   }
 `;
+
+export const TwoImageGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  .image, img {
+    border-radius: 20px;
+    @media (min-width: 768px) {
+      border-radius: 40px;
+    }
+    img {
+      border: 2px solid ${color.black};
+    }
+  }
+  .primary {
+    grid-area: 3 / 3 / 7 / 7;
+    z-index: 2;
+  }
+  .secondary {
+    grid-area: 1 / 1 / 4 / 4;
+    z-index: 1;
+  }
+`;
+
+export const ThreeImageGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 24px;
+  .image, img {
+    border-radius: 20px;
+    @media (min-width: 768px) {
+      border-radius: 40px;
+    }
+    img {
+      border: 2px solid ${color.black};
+    }
+  }
+  .primary {
+    grid-area: 2 / 4 / 5 / 8;
+    z-index: 3;
+  }
+  .secondary {
+    grid-area: 1 / 1 / 4 / 5;
+    z-index: 2;
+  }
+  .tertiary {
+    grid-area: 4 / 2 / 7 / 6;
+    z-index: 1;
+  }
+`;

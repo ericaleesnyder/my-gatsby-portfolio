@@ -1,19 +1,40 @@
-import { type PageProps, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React, { type FC } from 'react';
 
 import Layout from 'components/Layout/Layout';
+import LayoutSection from 'components/LayoutSection';
 
 import type { DatoCmsTemplatePage } from 'graphqlTypes';
 
-const IndexPage: FC<PageProps<DatoCmsTemplatePage>> = (props) => (
-  <Layout>
-    <div>{props?.data?.title}</div>
-  </Layout>
-);
+interface PageProps {
+  data: { pageData: DatoCmsTemplatePage };
+}
+
+const IndexPage: FC<PageProps> = ({ data }) => {
+  const { pageData } = data;
+  const layouts = pageData?.layouts;
+
+  return (
+    <Layout>
+      {layouts &&
+        layouts.length > 0 &&
+        layouts.map((layout) => (
+          <>
+            {layout && (
+              <LayoutSection
+                key={Math.random()}
+                component={layout?.component ?? layout.component}
+              />
+            )}
+          </>
+        ))}
+    </Layout>
+  );
+};
 
 export const pageQuery = graphql`
   query templatePageQuery($slug: String!) {
-    datoCmsTemplatePage(slug: { eq: $slug }) {
+    pageData: datoCmsTemplatePage(slug: { eq: $slug }) {
       ...datoCmsTemplatePage
     }
   }
