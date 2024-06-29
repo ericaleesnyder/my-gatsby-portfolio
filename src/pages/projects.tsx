@@ -25,7 +25,13 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
 
   return (
     <Layout isGradientBackground>
-      <Hero heading='My Projects' />
+      <Section
+        desktopBottomPadding='0'
+        tabletBottomPadding='0'
+        mobileBottomPadding='0'
+      >
+        <Hero heading='My Projects' />
+      </Section>
       <Section>
         <Container>
           <Icon>
