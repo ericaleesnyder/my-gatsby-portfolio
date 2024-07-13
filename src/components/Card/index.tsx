@@ -29,60 +29,48 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({
   featuredImage,
-  framework,
-  cms,
   title,
   slug,
   blurb,
   hoverColor,
   className,
-}) => {
-  console.log(framework, cms, blurb);
-  // TODO: image styles, logo, etc.
-
-  return (
-    <CardWrap
-      to={slug ?? ''}
-      className={className}
-      hoverColor={
-        getColor(hoverColor?.toLowerCase() as ColorKeys) as ColorValues
-      }
-    >
-      <HeadingWrap>
-        <Heading
-          hTag='h3'
-          desktopSize='headSm'
-          tabletSize='headSm'
-          mobileSize='headXs'
-        >
-          {title}
-        </Heading>
-        <Icon>
-          <use href='/icons/sprites.svg#right-arrow' />
-        </Icon>
-      </HeadingWrap>
-      {/* {blurb &&  */}
+}) => (
+  <CardWrap
+    to={slug ?? ''}
+    className={className}
+    hoverColor={getColor(hoverColor?.toLowerCase() as ColorKeys) as ColorValues}
+  >
+    <HeadingWrap>
+      <Heading
+        hTag='h3'
+        desktopSize='headSm'
+        tabletSize='headSm'
+        mobileSize='headXs'
+      >
+        {title}
+      </Heading>
+      <Icon>
+        <use href='/icons/sprites.svg#right-arrow' />
+      </Icon>
+    </HeadingWrap>
+    {blurb && (
       <Blurb>
         <Text size='textLg' weight={400}>
-          blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
-          blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
-          blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb blurb
-          blurb blurb blurb
+          {blurb}
         </Text>
       </Blurb>
-      {/* } */}
-      {featuredImage && (
-        <ImageWrap>
-          <OptimizedImage
-            image={featuredImage?.desktopImage?.gatsbyImageData}
-            src={featuredImage?.desktopImage?.url}
-            alt={featuredImage?.alt ?? ''}
-            loading='eager'
-          />
-        </ImageWrap>
-      )}
-    </CardWrap>
-  );
-};
+    )}
+    {featuredImage && (
+      <ImageWrap>
+        <OptimizedImage
+          image={featuredImage?.desktopImage?.gatsbyImageData}
+          src={featuredImage?.desktopImage?.url}
+          alt={featuredImage?.alt ?? ''}
+          loading='eager'
+        />
+      </ImageWrap>
+    )}
+  </CardWrap>
+);
 
 export default Card;
