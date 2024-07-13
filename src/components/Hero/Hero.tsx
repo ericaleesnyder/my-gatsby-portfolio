@@ -33,7 +33,7 @@ const Hero: FC<HeroProps> = ({
   const allImages =
     featuredImage !== null && secondaryImage !== null && tertiaryImage !== null;
 
-  const imageGrid = (() => {
+  const imageGrid = () => {
     switch (true) {
       case oneImage: {
         return (
@@ -90,7 +90,7 @@ const Hero: FC<HeroProps> = ({
         );
       }
     }
-  })();
+  };
 
   return (
     <HeroWrap>
@@ -105,7 +105,7 @@ const Hero: FC<HeroProps> = ({
               hTag='h1'
             />
           )}
-          {imageGrid}
+          {featuredImage && imageGrid()}
         </HeroContentWrap>
       </Container>
     </HeroWrap>
