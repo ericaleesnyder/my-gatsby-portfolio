@@ -19,14 +19,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
       {layouts &&
         layouts.length > 0 &&
         layouts.map((layout) => (
-          <>
-            {layout && (
-              <LayoutSection
-                key={Math.random()}
-                component={layout?.component ?? layout.component}
-              />
-            )}
-          </>
+          <>{layout && <LayoutSection key={Math.random()} {...layout} />}</>
         ))}
     </Layout>
   );
