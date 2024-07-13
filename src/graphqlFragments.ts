@@ -9,6 +9,20 @@ export const assetQuery = graphql`
   }
 `
 
+export const imageBlock = graphql`
+  fragment imageBlock on DatoCmsImage {
+    __typename
+    id: originalId
+    originalId
+    alt
+    asset {
+      gatsbyImageData
+      url
+      title
+    }
+  }
+`
+
 export const timelineInstanceQuery = graphql`
   fragment timelineInstance on DatoCmsTimelineInstance {
     __typename
@@ -70,6 +84,9 @@ export const componentImageQuery = graphql`
     }
     mobileImage {
       ...imageAsset
+    }
+    model {
+      apiKey
     }
   }
 `
@@ -235,11 +252,11 @@ export const templateProjectQuery = graphql`
     github
     blurb
     body {
-      blocks
-      value
-      links {
-        ...datoCmsComponentImage
+      blocks {
+        ...imageBlock
       }
+      value
+      links
     }
     relatedProjects {
       ...datoCmsComponentFeaturedProjectGrid

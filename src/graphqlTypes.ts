@@ -10,7 +10,7 @@ export interface Scalars {
   Boolean: boolean;
   Int: number;
   Float: number;
-  Date: any;
+  Date: string;
   JSON: any;
 }
 
@@ -1023,10 +1023,6 @@ export interface DatoCmsComponentImageFilterInput {
   title?: InputMaybe<StringQueryOperatorInput>;
 }
 
-export interface DatoCmsComponentImageFilterListInput {
-  elemMatch?: InputMaybe<DatoCmsComponentImageFilterInput>;
-}
-
 export interface DatoCmsComponentImageGroupConnection {
   __typename?: 'DatoCmsComponentImageGroupConnection';
   distinct: Array<Scalars['String']>;
@@ -1729,26 +1725,26 @@ export interface DatoCmsDatoCmsComponentTestimonialQuoteStructuredTextSortInput 
 
 export interface DatoCmsDatoCmsTemplateProjectBodyStructuredText {
   __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText';
-  blocks?: Maybe<Array<Maybe<Scalars['String']>>>;
-  links?: Maybe<Array<Maybe<DatoCmsComponentImage>>>;
+  blocks?: Maybe<Array<Maybe<DatoCmsImage>>>;
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   value?: Maybe<Scalars['JSON']>;
 }
 
 export interface DatoCmsDatoCmsTemplateProjectBodyStructuredTextFieldSelector {
-  blocks?: InputMaybe<FieldSelectorEnum>;
-  links?: InputMaybe<DatoCmsComponentImageFieldSelector>;
+  blocks?: InputMaybe<DatoCmsImageFieldSelector>;
+  links?: InputMaybe<FieldSelectorEnum>;
   value?: InputMaybe<FieldSelectorEnum>;
 }
 
 export interface DatoCmsDatoCmsTemplateProjectBodyStructuredTextFilterInput {
-  blocks?: InputMaybe<StringQueryOperatorInput>;
-  links?: InputMaybe<DatoCmsComponentImageFilterListInput>;
+  blocks?: InputMaybe<DatoCmsImageFilterListInput>;
+  links?: InputMaybe<StringQueryOperatorInput>;
   value?: InputMaybe<JsonQueryOperatorInput>;
 }
 
 export interface DatoCmsDatoCmsTemplateProjectBodyStructuredTextSortInput {
-  blocks?: InputMaybe<SortOrderEnum>;
-  links?: InputMaybe<DatoCmsComponentImageSortInput>;
+  blocks?: InputMaybe<DatoCmsImageSortInput>;
+  links?: InputMaybe<SortOrderEnum>;
   value?: InputMaybe<SortOrderEnum>;
 }
 
@@ -2560,6 +2556,152 @@ export interface DatoCmsGlobalSeoSortInput {
   siteName?: InputMaybe<SortOrderEnum>;
   titleSuffix?: InputMaybe<SortOrderEnum>;
   twitterAccount?: InputMaybe<SortOrderEnum>;
+}
+
+export interface DatoCmsImage extends Node {
+  __typename?: 'DatoCmsImage';
+  alt?: Maybe<Scalars['String']>;
+  asset?: Maybe<DatoCmsFileField>;
+  children: Array<Node>;
+  id: Scalars['ID'];
+  internal: Internal;
+  meta: DatoCmsMetaField;
+  model?: Maybe<DatoCmsModel>;
+  originalId: Scalars['String'];
+  parent?: Maybe<Node>;
+  seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+}
+
+export interface DatoCmsImageConnection {
+  __typename?: 'DatoCmsImageConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsImageEdge>;
+  group: Array<DatoCmsImageGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsImage>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsImageConnectionDistinctArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageConnectionGroupArgs {
+  field: DatoCmsImageFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsImageConnectionMaxArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageConnectionMinArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageConnectionSumArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+export interface DatoCmsImageEdge {
+  __typename?: 'DatoCmsImageEdge';
+  next?: Maybe<DatoCmsImage>;
+  node: DatoCmsImage;
+  previous?: Maybe<DatoCmsImage>;
+}
+
+export interface DatoCmsImageFieldSelector {
+  alt?: InputMaybe<FieldSelectorEnum>;
+  asset?: InputMaybe<DatoCmsFileFieldFieldSelector>;
+  children?: InputMaybe<NodeFieldSelector>;
+  id?: InputMaybe<FieldSelectorEnum>;
+  internal?: InputMaybe<InternalFieldSelector>;
+  meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
+  model?: InputMaybe<DatoCmsModelFieldSelector>;
+  originalId?: InputMaybe<FieldSelectorEnum>;
+  parent?: InputMaybe<NodeFieldSelector>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+}
+
+export interface DatoCmsImageFilterInput {
+  alt?: InputMaybe<StringQueryOperatorInput>;
+  asset?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+}
+
+export interface DatoCmsImageFilterListInput {
+  elemMatch?: InputMaybe<DatoCmsImageFilterInput>;
+}
+
+export interface DatoCmsImageGroupConnection {
+  __typename?: 'DatoCmsImageGroupConnection';
+  distinct: Array<Scalars['String']>;
+  edges: Array<DatoCmsImageEdge>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+  group: Array<DatoCmsImageGroupConnection>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  nodes: Array<DatoCmsImage>;
+  pageInfo: PageInfo;
+  sum?: Maybe<Scalars['Float']>;
+  totalCount: Scalars['Int'];
+}
+
+
+export interface DatoCmsImageGroupConnectionDistinctArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageGroupConnectionGroupArgs {
+  field: DatoCmsImageFieldSelector;
+  limit?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+}
+
+
+export interface DatoCmsImageGroupConnectionMaxArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageGroupConnectionMinArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+
+export interface DatoCmsImageGroupConnectionSumArgs {
+  field: DatoCmsImageFieldSelector;
+}
+
+export interface DatoCmsImageSortInput {
+  alt?: InputMaybe<SortOrderEnum>;
+  asset?: InputMaybe<DatoCmsFileFieldSortInput>;
+  children?: InputMaybe<NodeSortInput>;
+  id?: InputMaybe<SortOrderEnum>;
+  internal?: InputMaybe<InternalSortInput>;
+  meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
+  model?: InputMaybe<DatoCmsModelSortInput>;
+  originalId?: InputMaybe<SortOrderEnum>;
+  parent?: InputMaybe<NodeSortInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
 }
 
 export interface DatoCmsImgixParams {
@@ -4911,6 +5053,7 @@ export interface Query {
   allDatoCmsEntityPerson: DatoCmsEntityPersonConnection;
   allDatoCmsEntitySkill: DatoCmsEntitySkillConnection;
   allDatoCmsField: DatoCmsFieldConnection;
+  allDatoCmsImage: DatoCmsImageConnection;
   allDatoCmsLayoutSection: DatoCmsLayoutSectionConnection;
   allDatoCmsModel: DatoCmsModelConnection;
   allDatoCmsSite: DatoCmsSiteConnection;
@@ -4937,6 +5080,7 @@ export interface Query {
   datoCmsEntityPerson?: Maybe<DatoCmsEntityPerson>;
   datoCmsEntitySkill?: Maybe<DatoCmsEntitySkill>;
   datoCmsField?: Maybe<DatoCmsField>;
+  datoCmsImage?: Maybe<DatoCmsImage>;
   datoCmsLayoutSection?: Maybe<DatoCmsLayoutSection>;
   datoCmsModel?: Maybe<DatoCmsModel>;
   datoCmsSite?: Maybe<DatoCmsSite>;
@@ -5071,6 +5215,16 @@ export interface QueryAllDatoCmsFieldArgs {
   locale?: InputMaybe<Scalars['String']>;
   skip?: InputMaybe<Scalars['Int']>;
   sort?: InputMaybe<Array<InputMaybe<DatoCmsFieldSortInput>>>;
+}
+
+
+export interface QueryAllDatoCmsImageArgs {
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  filter?: InputMaybe<DatoCmsImageFilterInput>;
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  sort?: InputMaybe<Array<InputMaybe<DatoCmsImageSortInput>>>;
 }
 
 
@@ -5442,6 +5596,22 @@ export interface QueryDatoCmsFieldArgs {
   parent?: InputMaybe<NodeFilterInput>;
   position?: InputMaybe<IntQueryOperatorInput>;
   validators?: InputMaybe<JsonQueryOperatorInput>;
+}
+
+
+export interface QueryDatoCmsImageArgs {
+  alt?: InputMaybe<StringQueryOperatorInput>;
+  asset?: InputMaybe<DatoCmsFileFieldFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+  locale?: InputMaybe<Scalars['String']>;
+  meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
+  model?: InputMaybe<DatoCmsModelFilterInput>;
+  originalId?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
 }
 
 
@@ -6541,6 +6711,8 @@ export interface StringQueryOperatorInput {
     declare global {
       export type ImageAssetFragment = { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null };
 
+export type ImageBlockFragment = { __typename: 'DatoCmsImage', originalId: string, alt?: string | null, id: string, asset?: { __typename?: 'DatoCmsFileField', gatsbyImageData?: any | null, url?: string | null, title?: string | null } | null };
+
 export type TimelineInstanceFragment = { __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null };
 
 export type DatoCmsEntitySkillFragment = { __typename: 'DatoCmsEntitySkill', id: string, title?: string | null, logo?: (
@@ -6561,7 +6733,7 @@ export type DatoCmsComponentImageFragment = { __typename?: 'DatoCmsComponentImag
   ) | null, mobileImage?: (
     { __typename?: 'DatoCmsFileField' }
     & ImageAssetFragment
-  ) | null };
+  ) | null, model?: { __typename?: 'DatoCmsModel', apiKey?: string | null } | null };
 
 export type DatoCmsComponentTestimonialFragment = { __typename: 'DatoCmsComponentTestimonial', id: string, quote?: { __typename?: 'DatoCmsDatoCmsComponentTestimonialQuoteStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<string | null> | null } | null, author?: (
     { __typename?: 'DatoCmsEntityPerson' }
@@ -6633,9 +6805,9 @@ export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', i
 export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, hoverColor?: string | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: (
     { __typename?: 'DatoCmsComponentImage' }
     & DatoCmsComponentImageFragment
-  ) | null, body?: { __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText', blocks?: Array<string | null> | null, value?: any | null, links?: Array<(
-      { __typename?: 'DatoCmsComponentImage' }
-      & DatoCmsComponentImageFragment
+  ) | null, body?: { __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText', value?: any | null, links?: Array<string | null> | null, blocks?: Array<(
+      { __typename?: 'DatoCmsImage' }
+      & ImageBlockFragment
     ) | null> | null } | null, relatedProjects?: (
     { __typename?: 'DatoCmsComponentFeaturedProjectGrid' }
     & DatoCmsComponentFeaturedProjectGridFragment
@@ -6662,7 +6834,7 @@ export type TemplatePageQueryQueryVariables = Exact<{
 }>;
 
 
-export type TemplatePageQueryQuery = { __typename?: 'Query', datoCmsTemplatePage?: (
+export type TemplatePageQueryQuery = { __typename?: 'Query', pageData?: (
     { __typename?: 'DatoCmsTemplatePage' }
     & DatoCmsTemplatePageFragment
   ) | null };
