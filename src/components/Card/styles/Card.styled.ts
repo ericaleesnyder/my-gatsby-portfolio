@@ -25,7 +25,7 @@ export const CardWrap = styled(Link)<StyledCardProps>`
     width: 100%;
     height: 100%;
   }
-  :hover {
+  :hover:not(:focus-visible) {
     left: -6px;
     bottom: 7px;
     ::before {
@@ -38,6 +38,12 @@ export const CardWrap = styled(Link)<StyledCardProps>`
       border: 2px solid ${color.black};
       z-index: -2;
     }
+  }
+  :focus-visible,
+  :focus {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: ${color.black};
+    outline-offset: 6px;
   }
 `
 
@@ -62,11 +68,9 @@ export const Blurb = styled.div`
 
 export const ImageWrap = styled.div`
   border-radius: 10px;
-  margin: 0 auto;
+  display: flex;
+  margin-top: auto;
   aspect-ratio: 16 / 9;
-  @media (min-width: 768px) {
-    margin: 0 0 0 auto;
-  }
   .gatsby-image-wrapper {
     aspect-ratio: 16 / 9;
   }
