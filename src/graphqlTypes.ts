@@ -4121,6 +4121,7 @@ export interface DatoCmsTimelineInstance extends Node {
   description?: Maybe<Scalars['String']>;
   descriptionNode?: Maybe<DatoCmsTextNode>;
   heading?: Maybe<Scalars['String']>;
+  iconId?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   internal: Internal;
   meta: DatoCmsMetaField;
@@ -4128,6 +4129,7 @@ export interface DatoCmsTimelineInstance extends Node {
   originalId: Scalars['String'];
   parent?: Maybe<Node>;
   seoMetaTags?: Maybe<DatoCmsSeoMetaTags>;
+  sortOrder?: Maybe<Scalars['Int']>;
   year?: Maybe<Scalars['String']>;
 }
 
@@ -4183,6 +4185,7 @@ export interface DatoCmsTimelineInstanceFieldSelector {
   description?: InputMaybe<FieldSelectorEnum>;
   descriptionNode?: InputMaybe<DatoCmsTextNodeFieldSelector>;
   heading?: InputMaybe<FieldSelectorEnum>;
+  iconId?: InputMaybe<FieldSelectorEnum>;
   id?: InputMaybe<FieldSelectorEnum>;
   internal?: InputMaybe<InternalFieldSelector>;
   meta?: InputMaybe<DatoCmsMetaFieldFieldSelector>;
@@ -4190,6 +4193,7 @@ export interface DatoCmsTimelineInstanceFieldSelector {
   originalId?: InputMaybe<FieldSelectorEnum>;
   parent?: InputMaybe<NodeFieldSelector>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFieldSelector>;
+  sortOrder?: InputMaybe<FieldSelectorEnum>;
   year?: InputMaybe<FieldSelectorEnum>;
 }
 
@@ -4198,6 +4202,7 @@ export interface DatoCmsTimelineInstanceFilterInput {
   description?: InputMaybe<StringQueryOperatorInput>;
   descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
   heading?: InputMaybe<StringQueryOperatorInput>;
+  iconId?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   meta?: InputMaybe<DatoCmsMetaFieldFilterInput>;
@@ -4205,6 +4210,7 @@ export interface DatoCmsTimelineInstanceFilterInput {
   originalId?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  sortOrder?: InputMaybe<IntQueryOperatorInput>;
   year?: InputMaybe<StringQueryOperatorInput>;
 }
 
@@ -4259,6 +4265,7 @@ export interface DatoCmsTimelineInstanceSortInput {
   description?: InputMaybe<SortOrderEnum>;
   descriptionNode?: InputMaybe<DatoCmsTextNodeSortInput>;
   heading?: InputMaybe<SortOrderEnum>;
+  iconId?: InputMaybe<SortOrderEnum>;
   id?: InputMaybe<SortOrderEnum>;
   internal?: InputMaybe<InternalSortInput>;
   meta?: InputMaybe<DatoCmsMetaFieldSortInput>;
@@ -4266,6 +4273,7 @@ export interface DatoCmsTimelineInstanceSortInput {
   originalId?: InputMaybe<SortOrderEnum>;
   parent?: InputMaybe<NodeSortInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsSortInput>;
+  sortOrder?: InputMaybe<SortOrderEnum>;
   year?: InputMaybe<SortOrderEnum>;
 }
 
@@ -5743,6 +5751,7 @@ export interface QueryDatoCmsTimelineInstanceArgs {
   descriptionNode?: InputMaybe<DatoCmsTextNodeFilterInput>;
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
   heading?: InputMaybe<StringQueryOperatorInput>;
+  iconId?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
   internal?: InputMaybe<InternalFilterInput>;
   locale?: InputMaybe<Scalars['String']>;
@@ -5751,6 +5760,7 @@ export interface QueryDatoCmsTimelineInstanceArgs {
   originalId?: InputMaybe<StringQueryOperatorInput>;
   parent?: InputMaybe<NodeFilterInput>;
   seoMetaTags?: InputMaybe<DatoCmsSeoMetaTagsFilterInput>;
+  sortOrder?: InputMaybe<IntQueryOperatorInput>;
   year?: InputMaybe<StringQueryOperatorInput>;
 }
 
@@ -6713,7 +6723,7 @@ export interface StringQueryOperatorInput {
 
 export type ImageBlockFragment = { __typename: 'DatoCmsImage', originalId: string, alt?: string | null, id: string, asset?: { __typename?: 'DatoCmsFileField', gatsbyImageData?: any | null, url?: string | null, title?: string | null } | null };
 
-export type TimelineInstanceFragment = { __typename: 'DatoCmsTimelineInstance', year?: string | null, heading?: string | null, description?: string | null };
+export type TimelineInstanceFragment = { __typename: 'DatoCmsTimelineInstance', sortOrder?: number | null, year?: string | null, iconId?: string | null, heading?: string | null, description?: string | null };
 
 export type DatoCmsEntitySkillFragment = { __typename: 'DatoCmsEntitySkill', id: string, title?: string | null, logo?: (
     { __typename?: 'DatoCmsFileField' }

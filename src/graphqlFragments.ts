@@ -26,7 +26,9 @@ export const imageBlock = graphql`
 export const timelineInstanceQuery = graphql`
   fragment timelineInstance on DatoCmsTimelineInstance {
     __typename
+    sortOrder
     year
+    iconId
     heading
     description
   }
