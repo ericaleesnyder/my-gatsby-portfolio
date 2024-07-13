@@ -9,6 +9,17 @@ generates:
       - typescript-operations:
           globalNamespace: true
     config:
+      scalars:
+        BooleanType: boolean
+        CustomData: Record<string, unknown>
+        Date: string
+        DateTime: string
+        FloatType: number
+        IntType: number
+        ItemId: string
+        JsonField: 'StructuredTextGraphQlResponse<StructuredTextGraphQlResponseRecord,StructuredTextGraphQlResponseRecord>'
+        MetaTagAttributes: Record<string, string>
+        UploadId: string
       declarationKind: 'interface'
       inlineFragmentTypes: 'combine'
       preResolveTypes: true

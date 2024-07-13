@@ -6,6 +6,8 @@ import {
   HeroContentWrap,
   HeroWrap,
   ImageWrapper,
+  ThreeImageGrid,
+  TwoImageGrid,
 } from 'components/Hero/styles/Hero.styled';
 import OptimizedImage from 'components/Image';
 
@@ -23,30 +25,91 @@ const Hero: FC<HeroProps> = ({
   body,
   ctas,
   featuredImage,
-}) => (
-  <HeroWrap>
-    <Container>
-      <HeroContentWrap>
-        {(heading || subheading || ctas) && (
-          <ComponentHeading
-            heading={heading}
-            subheading={subheading}
-            ctas={ctas}
-            body={body as StructuredTextGraphQlResponse}
-            hTag='h1'
-          />
-        )}
-        <ImageWrapper>
-          <OptimizedImage
-            image={featuredImage?.desktopImage?.gatsbyImageData}
-            src={featuredImage?.desktopImage?.url}
-            alt={featuredImage?.alt ?? ''}
-            loading='eager'
-          />
-        </ImageWrapper>
-      </HeroContentWrap>
-    </Container>
-  </HeroWrap>
-);
+  secondaryImage,
+  tertiaryImage,
+}) => {
+  const oneImage = featuredImage && !secondaryImage && !tertiaryImage;
+  const twoImages = featuredImage && secondaryImage && !tertiaryImage;
+  const allImages =
+    featuredImage !== null && secondaryImage !== null && tertiaryImage !== null;
+
+  const imageGrid = () => {
+    switch (true) {
+      case oneImage: {
+        return (
+          <ImageWrapper>
+            <OptimizedImage
+              image={featuredImage?.desktopImage?.gatsbyImageData}
+              src={featuredImage?.desktopImage?.url}
+              alt={featuredImage?.alt ?? ''}
+              loading='eager'
+            />
+          </ImageWrapper>
+        );
+      }
+      case twoImages: {
+        return (
+          <TwoImageGrid>
+            <OptimizedImage
+              image={featuredImage?.desktopImage?.gatsbyImageData}
+              src={featuredImage?.desktopImage?.url}
+              alt={featuredImage?.alt ?? ''}
+              className='primary image'
+            />
+            <OptimizedImage
+              image={secondaryImage?.desktopImage?.gatsbyImageData}
+              src={secondaryImage?.desktopImage?.url}
+              alt={secondaryImage?.alt ?? ''}
+              className='secondary image'
+            />
+          </TwoImageGrid>
+        );
+      }
+      case allImages: {
+        return (
+          <ThreeImageGrid>
+            <OptimizedImage
+              image={featuredImage?.desktopImage?.gatsbyImageData}
+              src={featuredImage?.desktopImage?.url}
+              alt={featuredImage?.alt ?? ''}
+              className='primary image'
+            />
+            <OptimizedImage
+              image={secondaryImage?.desktopImage?.gatsbyImageData}
+              src={secondaryImage?.desktopImage?.url}
+              alt={secondaryImage?.alt ?? ''}
+              className='secondary image'
+            />
+            <OptimizedImage
+              image={tertiaryImage?.desktopImage?.gatsbyImageData}
+              src={tertiaryImage?.desktopImage?.url}
+              alt={tertiaryImage?.alt ?? ''}
+              className='tertiary image'
+            />
+          </ThreeImageGrid>
+        );
+      }
+    }
+  };
+
+  return (
+    <HeroWrap>
+      <Container>
+        <HeroContentWrap>
+          {(heading || subheading || ctas) && (
+            <ComponentHeading
+              heading={heading}
+              subheading={subheading}
+              ctas={ctas}
+              body={body as StructuredTextGraphQlResponse}
+              hTag='h1'
+            />
+          )}
+          {featuredImage && imageGrid()}
+        </HeroContentWrap>
+      </Container>
+    </HeroWrap>
+  );
+};
 
 export default Hero;
