@@ -22,9 +22,15 @@ export const ProjectGrid = styled.div`
 export const Icon = styled.svg<IconProps>`
   height: 60px;
   width: 12px;
+  margin: 0 auto;
+  display: flex;
   ${({ invert }) => invert && css`
     transform: rotate(180deg);
   `}
+  @media (min-width: 768px) {
+    margin: none;
+    display: inline-block;
+  }
 `
 
 export default ProjectGrid;

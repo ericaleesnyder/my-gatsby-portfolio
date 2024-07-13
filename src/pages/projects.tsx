@@ -68,7 +68,7 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
 
 export const projectListingQuery = graphql`
   query projectListingQuery {
-    allDatoCmsTemplateProject {
+    allDatoCmsTemplateProject(sort: { title: ASC }) {
       nodes {
         ...datoCmsTemplateProject
       }
