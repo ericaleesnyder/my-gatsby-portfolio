@@ -1,4 +1,3 @@
-import { navigate } from 'gatsby';
 import React from 'react';
 
 import { type ColorKeys, type ColorValues, getColor } from 'atoms/colors';
@@ -12,20 +11,19 @@ import {
 } from 'components/Button/styles/Button.styled';
 
 import onKeyDown from 'utils/onKeyDown';
+import parseUrl from 'utils/parseUrl';
 
-import type { FC, ReactNode } from 'react';
+import type { FC, KeyboardEvent, ReactNode } from 'react';
 
 export interface ButtonProps {
   to?: string;
-  children: ReactNode;
+  children?: ReactNode;
   hoverColor?: string | null;
   isDark?: boolean | null;
   size?: 'Small' | 'Large' | string | null;
   buttonType?: 'Pill' | 'Text' | 'Icon' | null;
   onSubmit?: () => void;
 }
-
-// TODO: fix/confirm accessibility via for click and hover state. Not seeing the to link display in the corner of the window with the current implementation
 
 const Button: FC<ButtonProps> = ({
   to,
@@ -37,33 +35,39 @@ const Button: FC<ButtonProps> = ({
   onSubmit,
 }) => {
   const hover = hoverColor && hoverColor.toLowerCase();
+  const { as, ...urlProps } = to ? parseUrl(to) : ({ as: undefined } as const);
 
   const getButtonType = (btnType: ButtonProps['buttonType']) => {
     switch (btnType) {
       case 'Icon':
         return (
-          <IconBtnWrap hoverColor={getColor(hover as ColorKeys) as ColorValues}>
-            <IconBtn
-              role={to ? 'link' : 'button'}
-              isDark={isDark}
-              size={size}
-              tabIndex={0}
-              aria-label={`${children}`}
-              onKeyDown={
-                to
-                  ? (e) => onKeyDown(e, () => navigate(to))
-                  : onSubmit ?? onSubmit
-              }
-              onClick={to ? () => navigate(to) : onSubmit ?? onSubmit}
-            >
-              <svg>
-                <use href='/icons/sprites.svg#logo' />
-              </svg>
+          <IconBtnWrap
+            hoverColor={getColor(hover as ColorKeys) as ColorValues}
+            onClick={onSubmit ?? onSubmit}
+            as={as}
+            {...urlProps}
+            onKeyDown={
+              onSubmit
+                ? (e: KeyboardEvent<HTMLElement | SVGSVGElement>) =>
+                    onKeyDown(e, onSubmit)
+                : null
+            }
+          >
+            <IconBtn isDark={isDark} size={size}>
+              {children}
             </IconBtn>
           </IconBtnWrap>
         );
       case 'Text':
-        return <>{to && <TextLink to={to}>{children}</TextLink>}</>;
+        return (
+          <>
+            {to && (
+              <TextLink as={as} {...urlProps}>
+                {children}
+              </TextLink>
+            )}
+          </>
+        );
       case 'Pill':
       default:
         return (
@@ -71,20 +75,17 @@ const Button: FC<ButtonProps> = ({
             hoverColor={getColor(hover as ColorKeys) as ColorValues}
             size={size}
             className='pill'
+            as={as}
+            {...urlProps}
+            onClick={onSubmit ?? onSubmit}
+            onKeyDown={
+              onSubmit
+                ? (e: KeyboardEvent<HTMLElement | SVGSVGElement>) =>
+                    onKeyDown(e, onSubmit)
+                : null
+            }
           >
-            <Pill
-              role={to ? 'link' : 'button'}
-              isDark={isDark}
-              size={size}
-              tabIndex={0}
-              aria-label={`${children}`}
-              onKeyDown={
-                to
-                  ? (e) => onKeyDown(e, () => navigate(to))
-                  : onSubmit ?? onSubmit
-              }
-              onClick={to ? () => navigate(to) : onSubmit ?? onSubmit}
-            >
+            <Pill isDark={isDark} size={size}>
               <span>{children}</span>
             </Pill>
           </PillWrap>

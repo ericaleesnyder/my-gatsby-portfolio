@@ -11,11 +11,15 @@ interface StyledButtonProps extends Omit<ButtonProps, 'to' | 'children' | 'hover
   hoverColor?: ColorValues;
 }
 
-export const PillWrap = styled.div<StyledButtonProps>`
+export const PillWrap = styled.button<StyledButtonProps>`
   position: relative;
   min-width: fit-content;
+  border: none;
+  border-radius: 40px;
+  background-color: transparent;
+  padding: 0;
   cursor: pointer;
-  :hover > div {
+  :hover:not(:focus-visible) > div {
     left: -4px;
     bottom: 7px;
     ::before {
@@ -28,6 +32,12 @@ export const PillWrap = styled.div<StyledButtonProps>`
       border: 2px solid ${color.black};
       z-index: -2;
     }
+  }
+  :focus-visible,
+  :focus {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: ${color.black};
+    outline-offset: 5px;
   }
   @media (min-width: 768px) {
     width: fit-content;
@@ -51,12 +61,6 @@ export const Pill = styled.div<StyledButtonProps>`
   justify-content: center;
   align-items: center;
   width: fit-content;
-  :focus-visible,
-  :focus {
-    outline: -webkit-focus-ring-color auto 1px;
-    outline-color: ${color.black};
-    outline-offset: 5px;
-  }
   ::before {
     content: '';
     position: absolute;
@@ -68,17 +72,21 @@ export const Pill = styled.div<StyledButtonProps>`
 `;
 
 
-export const IconBtnWrap = styled.div<StyledButtonProps>`
+export const IconBtnWrap = styled.button<StyledButtonProps>`
   position: relative;
   width: fit-content;
   cursor: pointer;
-  :hover > div {
+  border: none;
+  border-radius: 40px;
+  background-color: transparent;
+  padding: 0;
+  :hover:not(:focus-visible) > div {
     left: -4px;
-    bottom: 7px;
+    bottom: 6px;
     ::before {
       content: '';
       left: 2px;
-      bottom: -9px;
+      bottom: -8px;
       width: 100%;
       height: 100%;
       background-color: ${color.blue};
@@ -87,6 +95,12 @@ export const IconBtnWrap = styled.div<StyledButtonProps>`
       z-index: -2;
     }
   }
+  :focus-visible,
+  :focus {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-color: ${color.black};
+    outline-offset: 5px;
+  }
 `
 
 export const IconBtn = styled.div<StyledButtonProps>`
@@ -94,19 +108,13 @@ export const IconBtn = styled.div<StyledButtonProps>`
     height: 32px;
     width: 32px;
   }
-  display: block;
+  display: flex;
   position: relative;
   border: 2px solid ${color.black};
   padding: 12px;
   border-radius: 8px;
   background-color: ${color.white};
   width: fit-content;
-  :focus-visible,
-  :focus {
-    outline: -webkit-focus-ring-color auto 1px;
-    outline-color: ${color.black};
-    outline-offset: 5px;
-  }
   ::before {
     content: '';
     position: absolute;
