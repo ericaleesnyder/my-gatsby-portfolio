@@ -8,6 +8,7 @@ import type { DatoCmsLayoutSection } from 'graphqlTypes';
 const CardDeck = loadable(() => import('components/CardDeck'));
 const TestimonialCarousel = loadable(() => import('components/Testimonials'));
 const SkillsBar = loadable(() => import('components/SkillsBar'));
+const Story = loadable(() => import('components/Story'));
 
 const componentGenerator = (component: DatoCmsLayoutSection['component']) => {
   if (!component) {
@@ -23,6 +24,8 @@ const componentGenerator = (component: DatoCmsLayoutSection['component']) => {
       return <TestimonialCarousel {...component} />;
     case 'DatoCmsComponentFeaturedProjectGrid':
       return <CardDeck {...component} />;
+    case 'DatoCmsComponentStory':
+      return <Story {...component} />;
     default:
       return null;
   }
