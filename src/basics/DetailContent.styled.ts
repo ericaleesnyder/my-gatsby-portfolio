@@ -13,10 +13,15 @@ export const DetailContent = styled.div`
   a {
     text-decoration: underline;
   }
+  h2, h3 {
+    margin-top: 16px;
+  }
 `;
 
 export const ImageWrap = styled.div`
   border-radius: 30px;
+  max-width: 80%;
+  margin: 0 auto 16px;
   .gatsby-image-wrapper,
   img {
     border-radius: 40px;
