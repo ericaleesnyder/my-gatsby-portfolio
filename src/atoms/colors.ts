@@ -10,6 +10,7 @@ export const color = {
   pink: '#ffb6f8',
   red: '#ff3737',
   purple: '#752DD3',
+  teal: '#7ef4cc',
 } as const;
 
 export type ColorObject = typeof color;
@@ -49,7 +50,10 @@ export const getColor = (clr?: ColorKeys) => {
       return color.black;
     }
     case 'darkGrey': {
-       return color.darkGrey;
+      return color.darkGrey;
+    }
+    case 'teal': {
+      return color.teal;
     }
     default:
       return null;
