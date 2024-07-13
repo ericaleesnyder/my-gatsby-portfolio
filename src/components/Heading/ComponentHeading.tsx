@@ -7,6 +7,7 @@ import type { HeadingProps } from 'atoms/Text/textTypesAndData';
 import type { FontWeights, TextSizes } from 'atoms/typography';
 
 import Button from 'components/Button/Button';
+import type { ButtonProps } from 'components/Button/Button';
 import {
   CtaWrap,
   HeadingWrap,
@@ -64,6 +65,7 @@ const ComponentHeading: FC<ComponentHeadingProps> = ({
             key={cta?.id ?? Math.random()}
             size={cta?.size}
             isDark={cta?.isDark}
+            buttonType={cta?.buttonType as ButtonProps['buttonType']}
           >
             {cta?.label}
           </Button>

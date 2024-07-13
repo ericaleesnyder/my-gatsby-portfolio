@@ -54,9 +54,27 @@ const ContactForm: FC<FormProps> = () => {
             subheadingWeight={400}
             ctas={[
               {
+                link: 'https://www.linkedin.com/in/ericaleesnyder/',
+                buttonType: 'Icon',
+                label: (
+                  <svg>
+                    <use href='/icons/sprites.svg#linkedIn' />
+                  </svg>
+                ),
+              } as unknown as DatoCmsComponentCallToAction,
+              {
+                link: 'https://github.com/ericaleesnyder',
+                buttonType: 'Icon',
+                label: (
+                  <svg>
+                    <use href='/icons/sprites.svg#github' />
+                  </svg>
+                ),
+              } as unknown as DatoCmsComponentCallToAction,
+              {
                 link: '#',
                 label: 'My Resume',
-                size: 'Small',
+                size: 'Large',
                 isDark: false,
               } as DatoCmsComponentCallToAction,
             ]}

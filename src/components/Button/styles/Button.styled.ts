@@ -81,11 +81,11 @@ export const IconBtnWrap = styled.button<StyledButtonProps>`
   background-color: transparent;
   padding: 0;
   :hover:not(:focus-visible) > div {
-    left: -4px;
+    left: -5px;
     bottom: 6px;
     ::before {
       content: '';
-      left: 2px;
+      left: 3px;
       bottom: -8px;
       width: 100%;
       height: 100%;
