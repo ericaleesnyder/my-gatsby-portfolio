@@ -20,7 +20,6 @@ export const DetailContent = styled.div`
 
 export const ImageWrap = styled.div`
   border-radius: 30px;
-  max-width: 80%;
   margin: 0 auto 16px;
   .gatsby-image-wrapper,
   img {
@@ -31,6 +30,7 @@ export const ImageWrap = styled.div`
   }
   @media (min-width: 768px) {
     border-radius: 40px;
+    max-width: 80%;
     .gatsby-image-wrapper,
     img {
       border-radius: 40px;
