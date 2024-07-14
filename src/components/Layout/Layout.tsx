@@ -5,7 +5,7 @@ import GlobalFooter from 'components/Footer';
 import ContactForm from 'components/Form';
 import GlobalNav from 'components/Header';
 
-import useScrollPosition from 'utils/useScrollPosition';
+import useIsScrolled from 'utils/useIsScrolled';
 
 import type { FC, ReactNode } from 'react';
 
@@ -16,7 +16,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children, isGradientBackground }) => {
   const [mobileNavActive, setMobileNavActive] = useState<boolean>(false);
-  const isScrolled = useScrollPosition().isScrolled;
+  const isScrolled = useIsScrolled().isScrolled;
 
   return (
     <>
