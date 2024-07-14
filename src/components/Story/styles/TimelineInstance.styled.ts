@@ -71,6 +71,9 @@ export const Middle = styled.div<MiddleProps>`
   border-width: 0 0 0 30px;
   border-image-source: url(${Dot});
   margin-left: -6px;
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   ${({ last }) => last === true && css`
     border-width: 0
     border-image-source: unset;
