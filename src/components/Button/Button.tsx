@@ -7,6 +7,7 @@ import {
   StyledButton,
   TextLink,
 } from 'components/Button/styles/Button.styled';
+import Icon from 'components/Icon';
 
 import onKeyDown from 'utils/onKeyDown';
 import parseUrl from 'utils/parseUrl';
@@ -68,11 +69,7 @@ const Button: FC<ButtonProps> = ({
     >
       <Btn buttonType={buttonType} size={size} isDark={isDark}>
         {children}
-        {iconId && buttonType === 'Icon' && (
-          <svg>
-            <use href={`/icons/sprites.svg#${iconId}`} />
-          </svg>
-        )}
+        {iconId && buttonType === 'Icon' && <Icon id={iconId} size='32px' />}
       </Btn>
     </StyledButton>
   );

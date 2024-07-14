@@ -81,7 +81,7 @@ export const Middle = styled.div<MiddleProps>`
   `}
 `;
 
-export const Icon = styled.div<MiddleProps>`
+export const IconWrap = styled.div<MiddleProps>`
   display: flex;
   justify-content: center;
   align-items: center;

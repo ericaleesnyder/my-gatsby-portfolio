@@ -5,9 +5,10 @@ import React, { type FC } from 'react';
 
 import Card from 'components/Card';
 import Hero from 'components/Hero/Hero';
+import Icon from 'components/Icon';
 import Layout from 'components/Layout/Layout';
 
-import { Icon, ProjectGrid } from 'pages/styles/Projects.styled';
+import { IconWrap, ProjectGrid } from 'pages/styles/Projects.styled';
 
 import type { DatoCmsTemplatePage, DatoCmsTemplateProject } from 'graphqlTypes';
 
@@ -34,9 +35,9 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
       </Section>
       <Section>
         <Container>
-          <Icon>
-            <use href='/icons/sprites.svg#filler' />
-          </Icon>
+          <IconWrap>
+            <Icon id='filler' height='60px' width='12px' />
+          </IconWrap>
         </Container>
         <Container>
           <ProjectGrid>
@@ -57,9 +58,9 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
           </ProjectGrid>
         </Container>
         <Container>
-          <Icon invert>
-            <use href='/icons/sprites.svg#filler' />
-          </Icon>
+          <IconWrap>
+            <Icon id='filler' height='60px' width='12px' invert />
+          </IconWrap>
         </Container>
       </Section>
     </Layout>

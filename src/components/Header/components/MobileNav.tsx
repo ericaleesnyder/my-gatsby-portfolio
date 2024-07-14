@@ -10,7 +10,8 @@ import {
   MobileNav,
   OpenNavWrap,
 } from 'components/Header/styles/MobileNav.styled';
-import { Logo, NavItem } from 'components/Header/styles/Nav.styled';
+import { NavItem } from 'components/Header/styles/Nav.styled';
+import Icon from 'components/Icon';
 
 const MobileHeader: FC<NavProps> = ({
   menuItems,
@@ -19,9 +20,7 @@ const MobileHeader: FC<NavProps> = ({
 }) => (
   <MobileNav>
     <NavItem to='/'>
-      <Logo>
-        <use href='/icons/sprites.svg#logo' />
-      </Logo>
+      <Icon id='logo' size='40px' />
     </NavItem>
     <Hamburger
       toggled={mobileNavActive}

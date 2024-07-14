@@ -9,7 +9,7 @@ import {
 } from 'react-datocms/structured-text';
 
 import ProjectHero from 'components/Hero/ProjectHero';
-import { Icon } from 'components/Hero/styles/ProjectHeroStyled';
+import { IconWrap } from 'components/Hero/styles/ProjectHeroStyled';
 import OptimizedImage from 'components/Image';
 import Layout from 'components/Layout/Layout';
 import LayoutSection from 'components/LayoutSection';
@@ -17,6 +17,7 @@ import LayoutSection from 'components/LayoutSection';
 import type { StructuredTextBlock } from 'utils/structuredTextUtilTypes';
 
 import type { DatoCmsTemplateProject } from 'graphqlTypes';
+import Icon from 'components/Icon';
 
 interface ProjectProps {
   data: { projectData: DatoCmsTemplateProject };
@@ -88,9 +89,9 @@ const ProjectPage: FC<ProjectProps> = ({ data }) => {
         </Section>
       )}
       <Container flex>
-        <Icon invert>
-          <use href='/icons/sprites.svg#filler' />
-        </Icon>
+        <IconWrap>
+          <Icon id='filler' width='12px' height='60px' />
+        </IconWrap>
       </Container>
       {relatedProjects && <LayoutSection component={relatedProjects} />}
     </Layout>

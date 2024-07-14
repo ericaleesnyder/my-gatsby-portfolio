@@ -5,7 +5,7 @@ import { color } from 'atoms/colors';
 import type { HeaderProps } from 'components/Header/headerTypesAndData';
 import Link from 'components/Link/Link';
 
-// TODO: create Icon component 
+
 export const Logo = styled.svg`
   width: 40px;
   height: 40px;
