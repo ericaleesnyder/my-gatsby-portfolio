@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+interface ContainerProps {
+  flex?: boolean;
+}
+
+const Container = styled.div<ContainerProps>`
   padding: 0 15px;
   margin: 0 auto;
   width: 100%;
   max-width: 500px;
-  &.invert {
-    img {
-      transform: rotate(180deg);
-    }
-  }
+  ${({ flex }) => flex && css`
+    display: flex;
+  `}
   @media (min-width: 577px) {
     max-width: 800px;
   }

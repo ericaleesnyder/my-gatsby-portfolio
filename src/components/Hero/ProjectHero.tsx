@@ -150,7 +150,7 @@ const ProjectHero: FC<ProjectHeroProps> = ({
           </ContentWrap>
         </Wrap>
       </Container>
-      <Container>
+      <Container flex>
         <Icon>
           <use href='/icons/sprites.svg#filler' />
         </Icon>
