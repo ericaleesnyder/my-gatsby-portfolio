@@ -106,6 +106,7 @@ const ContactForm: FC<FormProps> = () => {
                   size='Small'
                   isDark
                   onSubmit={() => setSubmitted(false)}
+                  fullWidth
                 >
                   Back
                 </Button>
