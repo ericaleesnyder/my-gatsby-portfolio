@@ -56,7 +56,7 @@ const IndexPage: FC<ProjectListingProps> = ({ data }) => {
               ))}
           </ProjectGrid>
         </Container>
-        <Container className='invert'>
+        <Container>
           <Icon invert>
             <use href='/icons/sprites.svg#filler' />
           </Icon>

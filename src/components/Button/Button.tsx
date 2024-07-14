@@ -3,10 +3,8 @@ import React from 'react';
 import { type ColorKeys, type ColorValues, getColor } from 'atoms/colors';
 
 import {
-  IconBtn,
-  IconBtnWrap,
-  Pill,
-  PillWrap,
+  Btn,
+  StyledButton,
   TextLink,
 } from 'components/Button/styles/Button.styled';
 
@@ -23,6 +21,8 @@ export interface ButtonProps {
   size?: 'Small' | 'Large' | string | null;
   buttonType?: 'Pill' | 'Text' | 'Icon' | null;
   onSubmit?: () => void;
+  fullWidth?: boolean;
+  iconId?: 'github' | 'linkedIn';
 }
 
 const Button: FC<ButtonProps> = ({
@@ -31,69 +31,51 @@ const Button: FC<ButtonProps> = ({
   hoverColor,
   isDark,
   size,
-  buttonType,
+  buttonType = 'Pill',
   onSubmit,
+  fullWidth,
+  iconId,
 }) => {
   const hover = hoverColor && hoverColor.toLowerCase();
   const { as, ...urlProps } = to ? parseUrl(to) : ({ as: undefined } as const);
 
-  const getButtonType = (btnType: ButtonProps['buttonType']) => {
-    switch (btnType) {
-      case 'Icon':
-        return (
-          <IconBtnWrap
-            hoverColor={getColor(hover as ColorKeys) as ColorValues}
-            onClick={onSubmit ?? onSubmit}
-            as={as}
-            {...urlProps}
-            onKeyDown={
-              onSubmit
-                ? (e: KeyboardEvent<HTMLElement | SVGSVGElement>) =>
-                    onKeyDown(e, onSubmit)
-                : null
-            }
-          >
-            <IconBtn isDark={isDark} size={size}>
-              {children}
-            </IconBtn>
-          </IconBtnWrap>
-        );
-      case 'Text':
-        return (
-          <>
-            {to && (
-              <TextLink as={as} {...urlProps}>
-                {children}
-              </TextLink>
-            )}
-          </>
-        );
-      case 'Pill':
-      default:
-        return (
-          <PillWrap
-            hoverColor={getColor(hover as ColorKeys) as ColorValues}
-            size={size}
-            className='pill'
-            as={as}
-            {...urlProps}
-            onClick={onSubmit ?? onSubmit}
-            onKeyDown={
-              onSubmit
-                ? (e: KeyboardEvent<HTMLElement | SVGSVGElement>) =>
-                    onKeyDown(e, onSubmit)
-                : null
-            }
-          >
-            <Pill isDark={isDark} size={size}>
-              <span>{children}</span>
-            </Pill>
-          </PillWrap>
-        );
-    }
-  };
+  if (buttonType === 'Text') {
+    return (
+      <>
+        {to && (
+          <TextLink as={as} {...urlProps}>
+            {children}
+          </TextLink>
+        )}
+      </>
+    );
+  }
 
-  return getButtonType(buttonType);
+  return (
+    <StyledButton
+      as={as}
+      {...urlProps}
+      hoverColor={getColor(hover as ColorKeys) as ColorValues}
+      onClick={onSubmit ?? onSubmit}
+      buttonType={buttonType}
+      fullWidth={fullWidth}
+      onKeyDown={
+        onSubmit
+          ? (e: KeyboardEvent<HTMLElement | SVGSVGElement>) =>
+              onKeyDown(e, onSubmit)
+          : null
+      }
+    >
+      <Btn buttonType={buttonType} size={size} isDark={isDark}>
+        {children}
+        {iconId && buttonType === 'Icon' && (
+          <svg>
+            <use href={`/icons/sprites.svg#${iconId}`} />
+          </svg>
+        )}
+      </Btn>
+    </StyledButton>
+  );
 };
 
 export default Button;

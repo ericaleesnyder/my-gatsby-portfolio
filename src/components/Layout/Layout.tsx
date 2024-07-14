@@ -15,8 +15,8 @@ interface Props {
 }
 
 const Layout: FC<Props> = ({ children, isGradientBackground }) => {
-  const scrollPosition = useScrollPosition();
   const [mobileNavActive, setMobileNavActive] = useState<boolean>(false);
+  const isScrolled = useScrollPosition().isScrolled;
 
   return (
     <>
@@ -25,7 +25,7 @@ const Layout: FC<Props> = ({ children, isGradientBackground }) => {
         mobileNavActive={mobileNavActive}
       />
       <GlobalNav
-        isTransparent={scrollPosition < 30}
+        isTransparent={!isScrolled}
         mobileNavActive={mobileNavActive}
         setMobileNavActive={setMobileNavActive}
       />

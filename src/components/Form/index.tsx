@@ -56,20 +56,12 @@ const ContactForm: FC<FormProps> = () => {
               {
                 link: 'https://www.linkedin.com/in/ericaleesnyder/',
                 buttonType: 'Icon',
-                label: (
-                  <svg>
-                    <use href='/icons/sprites.svg#linkedIn' />
-                  </svg>
-                ),
+                icon: 'linkedIn',
               } as unknown as DatoCmsComponentCallToAction,
               {
                 link: 'https://github.com/ericaleesnyder',
                 buttonType: 'Icon',
-                label: (
-                  <svg>
-                    <use href='/icons/sprites.svg#github' />
-                  </svg>
-                ),
+                icon: 'github',
               } as unknown as DatoCmsComponentCallToAction,
               {
                 link: '#',
@@ -106,6 +98,7 @@ const ContactForm: FC<FormProps> = () => {
                   size='Small'
                   isDark
                   onSubmit={() => setSubmitted(false)}
+                  fullWidth
                 >
                   Back
                 </Button>

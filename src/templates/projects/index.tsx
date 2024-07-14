@@ -87,7 +87,7 @@ const ProjectPage: FC<ProjectProps> = ({ data }) => {
           </Container>
         </Section>
       )}
-      <Container>
+      <Container flex>
         <Icon invert>
           <use href='/icons/sprites.svg#filler' />
         </Icon>

@@ -66,6 +66,7 @@ const ComponentHeading: FC<ComponentHeadingProps> = ({
             size={cta?.size}
             isDark={cta?.isDark}
             buttonType={cta?.buttonType as ButtonProps['buttonType']}
+            iconId={cta?.icon as ButtonProps['iconId']}
           >
             {cta?.label}
           </Button>
