@@ -43,14 +43,6 @@ export const TestimonialWrapper = styled.div<StyledProps>`
   }
 `;
 
-export const QuoteIcon = styled.svg<StyledProps>`
-  width: 56px;
-  height: 56px;
-  ${({ clr }) => clr && css`
-    color: ${color[clr]};
-  `};
-`
-
 export const TextWrap = styled.div`
   position: relative;
   z-index: 2;

@@ -48,13 +48,10 @@ export const ButtonWrap = styled.div`
   }
 `
 
-export const PaginationButton = styled.svg`
-  width: 24px;
-  height: 24px;
+export const PaginationButton = styled.div`
+  cursor: pointer;
   &.swiper-button-disabled {
     opacity: 0.5;
-  }
-  &#test-prev {
-    transform: rotate(180deg);
+    cursor: not-allowed;
   }
 `

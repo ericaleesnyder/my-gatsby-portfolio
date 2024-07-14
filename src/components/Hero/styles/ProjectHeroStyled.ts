@@ -1,10 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { color } from 'atoms/colors';
-
-interface IconProps {
-  invert?: boolean;
-}
 
 export const Wrap = styled.div`
   display: flex;
@@ -49,6 +45,7 @@ export const ContentWrap = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 24px;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 60fr 30fr;
@@ -90,13 +87,8 @@ export const FrameworkWrap = styled.div`
   }
 `;
 
-export const Icon = styled.svg<IconProps>`
-  height: 60px;
-  width: 12px;
+export const IconWrap = styled.div`
   margin: 0 auto;
   display: flex;
-  ${({ invert }) => invert && css`
-    transform: rotate(180deg);
-  `}
 `
 

@@ -112,10 +112,6 @@ export const Btn = styled.div<StyledButtonProps>`
   ${({ buttonType }) => buttonType === 'Icon' && css`
     padding: 12px;
     background-color: ${color.white};
-    svg {
-      height: 32px;
-      width: 32px;
-    }
   `}
 `
 
@@ -126,6 +122,13 @@ export const TextLink = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+
+  svg {
+    margin-left: 4px;
+    height: 12px;
+    width: 12px;
+  }
+
   &:focus, :focus-visible {
     border-radius: 4px;
     outline: 2px solid ${color.black};

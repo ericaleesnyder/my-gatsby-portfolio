@@ -11,10 +11,3 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
 `
-
-export const FooterLogo = styled.svg`
-  height: 30px;
-  width: 30px;
-`
-
-export default FooterLogo;

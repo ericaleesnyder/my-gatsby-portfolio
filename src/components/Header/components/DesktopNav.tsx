@@ -11,6 +11,7 @@ import { Logo, NavItem } from 'components/Header/styles/Nav.styled';
 const DesktopHeader: FC<NavProps> = ({ menuItems }) => (
   <DesktopNav>
     <NavItem to='/'>
+      {/* TODO: use icon component. add responsive sizing. */}
       <Logo>
         <use href='/icons/sprites.svg#logo' />
       </Logo>

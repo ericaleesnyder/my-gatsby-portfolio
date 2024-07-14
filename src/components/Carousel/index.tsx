@@ -12,6 +12,7 @@ import {
   PaginationButton,
   Slide,
 } from 'components/Carousel/styles/Carousel.styled';
+import Icon from 'components/Icon';
 
 interface CarouselProps {
   slides: ReactElement[];
@@ -26,8 +27,8 @@ const Carousel: FC<CarouselProps> = ({ slides, spaceBetween }) => (
       spaceBetween={spaceBetween ?? 25}
       modules={[Navigation, Pagination, A11y]}
       navigation={{
-        nextEl: '#test-next',
-        prevEl: '#test-prev',
+        nextEl: '#next',
+        prevEl: '#prev',
       }}
       grabCursor
       pagination={{
@@ -58,12 +59,22 @@ const Carousel: FC<CarouselProps> = ({ slides, spaceBetween }) => (
       ))}
       <Container>
         <ButtonWrap>
-          <PaginationButton id='test-prev' role='button' tabIndex={0}>
-            <use href='/icons/sprites.svg#right-arrow' />
+          <PaginationButton
+            id='prev'
+            role='button'
+            tabIndex={0}
+            aria-label='Previous Testimonial'
+          >
+            <Icon id='right-arrow' size='24px' invert />
           </PaginationButton>
           <div id='swiper-pagination' />
-          <PaginationButton id='test-next' role='button' tabIndex={0}>
-            <use href='/icons/sprites.svg#right-arrow' />
+          <PaginationButton
+            id='next'
+            role='button'
+            tabIndex={0}
+            aria-label='Next Testimonial'
+          >
+            <Icon id='right-arrow' size='24px' />
           </PaginationButton>
         </ButtonWrap>
       </Container>

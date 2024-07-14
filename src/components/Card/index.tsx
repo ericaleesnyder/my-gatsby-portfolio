@@ -9,9 +9,9 @@ import {
   Blurb,
   CardWrap,
   HeadingWrap,
-  Icon,
   ImageWrap,
 } from 'components/Card/styles/Card.styled';
+import Icon from 'components/Icon';
 import OptimizedImage from 'components/Image';
 
 import type { DatoCmsComponentImage } from 'graphqlTypes';
@@ -49,9 +49,7 @@ const Card: FC<CardProps> = ({
       >
         {title}
       </Heading>
-      <Icon>
-        <use href='/icons/sprites.svg#right-arrow' />
-      </Icon>
+      <Icon id='right-arrow' size='24px' />
     </HeadingWrap>
     {blurb && (
       <Blurb>

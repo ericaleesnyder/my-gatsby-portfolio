@@ -2,8 +2,9 @@ import React, { type FC } from 'react';
 
 import Text from 'atoms/Text/Text';
 
+import Icon, { type IconIds } from 'components/Icon';
 import {
-  Icon,
+  IconWrap,
   Middle,
   RowWrap,
   TimelineWrap,
@@ -30,11 +31,9 @@ const DesktopTimelineInstance: FC<TimelineProps> = ({
 }) => (
   <RowWrap>
     <Middle last={last}>
-      <Icon colorCode={colorCode}>
-        <svg>
-          <use href={`/icons/sprites.svg#${iconId}`} />
-        </svg>
-      </Icon>
+      <IconWrap colorCode={colorCode}>
+        <Icon id={iconId as IconIds} size='32px' />
+      </IconWrap>
     </Middle>
     <TimelineWrap colorCode={colorCode}>
       <Text size='textXl' weight={900}>

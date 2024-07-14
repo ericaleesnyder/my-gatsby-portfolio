@@ -4,11 +4,11 @@ import {
   type StructuredTextGraphQlResponse,
 } from 'react-datocms/structured-text';
 
-import type { ColorKeys } from 'atoms/colors';
+import { type ColorKeys } from 'atoms/colors';
 
+import Icon from 'components/Icon';
 import Author from 'components/Testimonials/components/Author';
 import {
-  QuoteIcon,
   TestimonialWrapper,
   TextWrap,
 } from 'components/Testimonials/styles/TestimonialSlider.styled';
@@ -23,9 +23,7 @@ export interface TestimonialProps {
 
 const Testimonial: FC<TestimonialProps> = ({ quote, author, color }) => (
   <TestimonialWrapper clr={color as ColorKeys}>
-    <QuoteIcon clr={color as ColorKeys}>
-      <use href='/icons/sprites.svg#quote' />
-    </QuoteIcon>
+    <Icon id='quote' color={color as ColorKeys} size='56px' />
     <TextWrap>
       <StructuredText data={quote} />
       {author && <Author {...author} />}

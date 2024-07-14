@@ -6,18 +6,16 @@ import Text from 'atoms/Text/Text';
 
 import {
   FooterContent,
-  FooterLogo,
   FooterWrap,
 } from 'components/Footer/styles/Footer.styled';
+import Icon from 'components/Icon';
 
 const GlobalFooter = () => (
   <FooterWrap>
     <Container>
       <FooterContent>
         <Link to='/'>
-          <FooterLogo>
-            <use href='/icons/sprites.svg#logo' />
-          </FooterLogo>
+          <Icon id='logo' size='30px' />
         </Link>
         <Text color='darkGrey'>© Erica Snyder {new Date().getFullYear()}</Text>
       </FooterContent>

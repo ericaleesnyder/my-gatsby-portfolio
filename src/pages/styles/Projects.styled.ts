@@ -1,8 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-interface IconProps {
-  invert?: boolean;
-}
 
 export const ProjectGrid = styled.div`
   display: grid;
@@ -19,14 +16,10 @@ export const ProjectGrid = styled.div`
 `;
 
 //  TODO: create icon component that accepts id and handles size
-export const Icon = styled.svg<IconProps>`
-  height: 60px;
-  width: 12px;
+export const IconWrap = styled.div`
   margin: 0 auto;
   display: flex;
-  ${({ invert }) => invert && css`
-    transform: rotate(180deg);
-  `}
+  justify-content: center;
   @media (min-width: 768px) {
     margin: none;
     display: inline-block;

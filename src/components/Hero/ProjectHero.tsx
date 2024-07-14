@@ -10,12 +10,13 @@ import {
   ContentWrap,
   FrameworkWrap,
   Group,
-  Icon,
+  IconWrap,
   ImageWrap,
   LinkGroup,
   Right,
   Wrap,
 } from 'components/Hero/styles/ProjectHeroStyled';
+import Icon from 'components/Icon';
 import OptimizedImage from 'components/Image';
 
 import type { DatoCmsComponentImage } from 'graphqlTypes';
@@ -46,17 +47,9 @@ const ProjectHero: FC<ProjectHeroProps> = ({
   const fetchFramework = () => {
     switch (framework) {
       case 'Gatsby':
-        return (
-          <svg aria-label='Gatsby'>
-            <use href='/icons/sprites.svg#gatsby' />
-          </svg>
-        );
+        return <Icon aria-label='Gatsby' id='gatsby' size='32px' />;
       case 'Next.js':
-        return (
-          <svg aria-label='Next.js'>
-            <use href='/icons/sprites.svg#next' />
-          </svg>
-        );
+        return <Icon aria-label='Next.js' id='next' size='32px' />;
       default:
         return null;
     }
@@ -65,17 +58,9 @@ const ProjectHero: FC<ProjectHeroProps> = ({
   const fetchCms = () => {
     switch (cms) {
       case 'DatoCMS':
-        return (
-          <svg aria-label='Dato CMS'>
-            <use href='/icons/sprites.svg#dato' />
-          </svg>
-        );
+        return <Icon aria-label='Dato CMS' id='dato' size='32px' />;
       case 'Contentful':
-        return (
-          <svg aria-label='Contentful'>
-            <use href='/icons/sprites.svg#contentful' />
-          </svg>
-        );
+        return <Icon aria-label='Contentful' id='contentful' size='32px' />;
       case 'Builder.io':
         return <img src='/images/builder.png' alt='Builder.io' />;
       default:
@@ -105,15 +90,12 @@ const ProjectHero: FC<ProjectHeroProps> = ({
               {blurb && <Text>{blurb}</Text>}
               <LinkGroup>
                 {github && (
-                  <Button to={github} buttonType='Icon'>
-                    <svg>
-                      <use href='/icons/sprites.svg#github' />
-                    </svg>
-                  </Button>
+                  <Button to={github} buttonType='Icon' iconId='github' />
                 )}
                 {link && (
                   <Button to={link} buttonType='Text'>
                     View Site
+                    <Icon id='right-arrow' />
                   </Button>
                 )}
               </LinkGroup>
@@ -151,9 +133,9 @@ const ProjectHero: FC<ProjectHeroProps> = ({
         </Wrap>
       </Container>
       <Container flex>
-        <Icon>
-          <use href='/icons/sprites.svg#filler' />
-        </Icon>
+        <IconWrap>
+          <Icon id='filler' width='12px' height='60px' />
+        </IconWrap>
       </Container>
     </Section>
   );

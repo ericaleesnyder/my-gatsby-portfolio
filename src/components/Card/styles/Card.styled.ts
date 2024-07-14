@@ -53,12 +53,6 @@ export const HeadingWrap = styled.div`
   justify-content: space-between;
 `
 
-//  TODO: create icon component that accepts id and handles size
-export const Icon = styled.svg`
-  width: 24px;
-  height: 24px;
-`
-
 export const Blurb = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 3;
