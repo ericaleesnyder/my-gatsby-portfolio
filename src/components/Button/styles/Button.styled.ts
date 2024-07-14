@@ -22,6 +22,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   border-radius: ${({ buttonType }) => buttonType === 'Pill' ? '40px' : '8px'};
   cursor: pointer;
   min-width: fit-content;
+  width: ${({ buttonType }) => buttonType === 'Pill' ? '100%' : 'fit-content'};
   :focus-visible,
   :focus {
     outline: -webkit-focus-ring-color auto 1px;
@@ -29,7 +30,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
     outline-offset: 5px;
   }
   @media (min-width: 768px) {
-    min-width: ${({ fullWidth }) => fullWidth ? '100%' : 'fit-content'};
+    min-width: fit-content;
+    width: ${({ fullWidth }) => fullWidth ? '100%' : 'fit-content'};
   }
 
   :hover:not(:focus-visible) > div {

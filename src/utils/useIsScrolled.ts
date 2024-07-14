@@ -14,7 +14,7 @@ export const useIsScrolled = (offset = 30) => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     
-return () => {
+    return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);

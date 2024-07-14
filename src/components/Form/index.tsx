@@ -86,6 +86,7 @@ const ContactForm: FC<FormProps> = () => {
                   size='Large'
                   isDark
                   onSubmit={() => setSubmitted(true)}
+                  fullWidth
                 >
                   Send Message
                 </Button>
@@ -98,7 +99,6 @@ const ContactForm: FC<FormProps> = () => {
                   size='Small'
                   isDark
                   onSubmit={() => setSubmitted(false)}
-                  fullWidth
                 >
                   Back
                 </Button>
