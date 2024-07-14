@@ -22,6 +22,7 @@ export interface ButtonProps {
   buttonType?: 'Pill' | 'Text' | 'Icon' | null;
   onSubmit?: () => void;
   fullWidth?: boolean;
+  iconId?: 'github' | 'linkedIn';
 }
 
 const Button: FC<ButtonProps> = ({
@@ -33,6 +34,7 @@ const Button: FC<ButtonProps> = ({
   buttonType = 'Pill',
   onSubmit,
   fullWidth,
+  iconId,
 }) => {
   const hover = hoverColor && hoverColor.toLowerCase();
   const { as, ...urlProps } = to ? parseUrl(to) : ({ as: undefined } as const);
@@ -66,6 +68,11 @@ const Button: FC<ButtonProps> = ({
     >
       <Btn buttonType={buttonType} size={size} isDark={isDark}>
         {children}
+        {iconId && buttonType === 'Icon' && (
+          <svg>
+            <use href={`/icons/sprites.svg#${iconId}`} />
+          </svg>
+        )}
       </Btn>
     </StyledButton>
   );
