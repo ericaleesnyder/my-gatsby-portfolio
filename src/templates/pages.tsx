@@ -3,11 +3,18 @@ import React, { type FC } from 'react';
 
 import Layout from 'components/Layout/Layout';
 import LayoutSection from 'components/LayoutSection';
+import SEO from 'components/Seo';
 
 import type { DatoCmsTemplatePage } from 'graphqlTypes';
 
 interface PageProps {
   data: { pageData: DatoCmsTemplatePage };
+}
+
+interface IHead extends PageProps {
+  location: {
+    pathname: string;
+  };
 }
 
 const IndexPage: FC<PageProps> = ({ data }) => {
@@ -34,3 +41,17 @@ export const pageQuery = graphql`
 `;
 
 export default IndexPage;
+
+export const Head: FC<IHead> = ({ data: { pageData }, location }) => {
+  const { searchEngineOptimization: seo } = pageData;
+
+  return (
+    <SEO
+      title={seo?.title || pageData?.title}
+      description={seo?.description}
+      image={seo?.image?.url}
+      indexable={true}
+      location={location}
+    />
+  );
+};

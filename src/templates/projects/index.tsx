@@ -10,17 +10,24 @@ import {
 
 import ProjectHero from 'components/Hero/ProjectHero';
 import { IconWrap } from 'components/Hero/styles/ProjectHeroStyled';
+import Icon from 'components/Icon';
 import OptimizedImage from 'components/Image';
 import Layout from 'components/Layout/Layout';
 import LayoutSection from 'components/LayoutSection';
+import SEO from 'components/Seo';
 
 import type { StructuredTextBlock } from 'utils/structuredTextUtilTypes';
 
 import type { DatoCmsTemplateProject } from 'graphqlTypes';
-import Icon from 'components/Icon';
 
 interface ProjectProps {
   data: { projectData: DatoCmsTemplateProject };
+}
+
+interface IHead extends ProjectProps {
+  location: {
+    pathname: string;
+  };
 }
 
 const ProjectPage: FC<ProjectProps> = ({ data }) => {
@@ -107,3 +114,20 @@ export const projectQuery = graphql`
 `;
 
 export default ProjectPage;
+
+export const Head: FC<IHead> = ({ data: { projectData }, location }) => {
+  const { featuredImage, searchEngineOptimization: seo } = projectData;
+
+  return (
+    <SEO
+      title={seo?.title || projectData?.title}
+      description={
+        seo?.description ||
+        `A description of my roles and responsibilities on ${projectData?.title}`
+      }
+      image={seo?.image?.url || featuredImage?.desktopImage?.url}
+      indexable={true}
+      location={location}
+    />
+  );
+};
