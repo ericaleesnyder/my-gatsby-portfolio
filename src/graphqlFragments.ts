@@ -1,5 +1,31 @@
 import { graphql } from 'gatsby';
 
+export const pageSeoQuery = graphql`
+  fragment pageSeo on DatoCmsTemplatePage {
+    searchEngineOptimization {
+      title
+      description
+      image {
+        gatsbyImageData
+        url
+      }
+    }
+  }
+`
+
+export const projectSeoQuery = graphql`
+  fragment projectSeo on DatoCmsTemplateProject {
+    searchEngineOptimization {
+      title
+      description
+      image {
+        gatsbyImageData
+        url
+      }
+    }
+  }
+`
+
 export const assetQuery = graphql`
   fragment imageAsset on DatoCmsFileField {
     __typename
@@ -216,18 +242,11 @@ export const layoutSectionQuery = graphql`
 export const templatePageQuery = graphql`
   fragment datoCmsTemplatePage on DatoCmsTemplatePage {
     __typename
+    ...pageSeo
     id
     internalName
     title
     slug
-    searchEngineOptimization {
-      title
-      description
-      image {
-        gatsbyImageData
-      }
-      twitterCard
-    }
     layouts {
       ...layoutSection
     }
@@ -237,6 +256,7 @@ export const templatePageQuery = graphql`
 export const templateProjectQuery = graphql`
   fragment datoCmsTemplateProject on DatoCmsTemplateProject {
     __typename
+    ...projectSeo
     id
     internalName
     slug
