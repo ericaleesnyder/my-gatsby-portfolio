@@ -7,6 +7,7 @@ import Card from 'components/Card';
 import Hero from 'components/Hero/Hero';
 import Icon from 'components/Icon';
 import Layout from 'components/Layout/Layout';
+import SEO from 'components/Seo';
 
 import { IconWrap, ProjectGrid } from 'pages/styles/Projects.styled';
 
@@ -79,4 +80,13 @@ export const projectListingQuery = graphql`
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Project Listing Page</title>;
+export const Head: HeadFC = ({ location }) => (
+  <>
+    <SEO
+      title='Project Listing Page'
+      description='A comprehensive list of my projects'
+      indexable={true}
+      location={location}
+    />
+  </>
+);

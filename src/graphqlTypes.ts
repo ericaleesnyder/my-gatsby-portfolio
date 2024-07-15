@@ -6719,7 +6719,11 @@ export interface StringQueryOperatorInput {
 
 
     declare global {
-      export type ImageAssetFragment = { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null };
+      export type PageSeoFragment = { __typename?: 'DatoCmsTemplatePage', searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null, url?: string | null } | null } | null };
+
+export type ProjectSeoFragment = { __typename?: 'DatoCmsTemplateProject', searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null, url?: string | null } | null } | null };
+
+export type ImageAssetFragment = { __typename: 'DatoCmsFileField', url?: string | null, gatsbyImageData?: any | null, isImage?: boolean | null };
 
 export type ImageBlockFragment = { __typename: 'DatoCmsImage', originalId: string, alt?: string | null, id: string, asset?: { __typename?: 'DatoCmsFileField', gatsbyImageData?: any | null, url?: string | null, title?: string | null } | null };
 
@@ -6807,12 +6811,16 @@ export type LayoutSectionFragment = { __typename: 'DatoCmsLayoutSection', id: st
     & DatoCmsComponentTestimonialCarouselFragment
   ) | null };
 
-export type DatoCmsTemplatePageFragment = { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, searchEngineOptimization?: { __typename?: 'DatoCmsSeoField', title?: string | null, description?: string | null, twitterCard?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null } | null } | null, layouts?: Array<(
+export type DatoCmsTemplatePageFragment = (
+  { __typename: 'DatoCmsTemplatePage', id: string, internalName?: string | null, title?: string | null, slug?: string | null, layouts?: Array<(
     { __typename?: 'DatoCmsLayoutSection' }
     & LayoutSectionFragment
-  ) | null> | null };
+  ) | null> | null }
+  & PageSeoFragment
+);
 
-export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, hoverColor?: string | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: (
+export type DatoCmsTemplateProjectFragment = (
+  { __typename: 'DatoCmsTemplateProject', id: string, internalName?: string | null, slug?: string | null, link?: string | null, title?: string | null, year?: string | null, role?: string | null, featured?: boolean | null, hoverColor?: string | null, framework?: string | null, cms?: string | null, github?: string | null, blurb?: string | null, featuredImage?: (
     { __typename?: 'DatoCmsComponentImage' }
     & DatoCmsComponentImageFragment
   ) | null, body?: { __typename?: 'DatoCmsDatoCmsTemplateProjectBodyStructuredText', value?: any | null, links?: Array<string | null> | null, blocks?: Array<(
@@ -6821,7 +6829,9 @@ export type DatoCmsTemplateProjectFragment = { __typename: 'DatoCmsTemplateProje
     ) | null> | null } | null, relatedProjects?: (
     { __typename?: 'DatoCmsComponentFeaturedProjectGrid' }
     & DatoCmsComponentFeaturedProjectGridFragment
-  ) | null };
+  ) | null }
+  & ProjectSeoFragment
+);
 
 export type HomepageQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -6858,5 +6868,10 @@ export type TemplateProjectQueryQuery = { __typename?: 'Query', projectData?: (
     { __typename?: 'DatoCmsTemplateProject' }
     & DatoCmsTemplateProjectFragment
   ) | null };
+
+export type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteMetaQueryQuery = { __typename?: 'Query', datoCmsSite?: { __typename?: 'DatoCmsSite', globalSeo?: { __typename?: 'DatoCmsGlobalSeo', siteName?: string | null, titleSuffix?: string | null, fallbackSeo?: { __typename?: 'DatoCmsSeoField', description?: string | null, title?: string | null, image?: { __typename?: 'DatoCmsAsset', gatsbyImageData?: any | null, url?: string | null } | null } | null } | null } | null };
 
     }
