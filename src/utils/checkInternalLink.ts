@@ -17,7 +17,7 @@ const checkInternalLink = (href: string) => {
   if (res !== null) {
     try {
       url = new URL(href);
-      isInternalLink = url.hostname === `www.${domain}` || url.hostname === domain;
+      isInternalLink = (url.hostname === `www.${domain}` || url.hostname === domain) && !href.includes('.pdf');
     } catch (error) {
       isInternalLink = false;
     }

@@ -24,6 +24,7 @@ export interface ButtonProps {
   onSubmit?: () => void;
   fullWidth?: boolean;
   iconId?: 'github' | 'linkedIn';
+  download?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -36,6 +37,7 @@ const Button: FC<ButtonProps> = ({
   onSubmit,
   fullWidth,
   iconId,
+  download,
 }) => {
   const hover = hoverColor && hoverColor.toLowerCase();
   const { as, ...urlProps } = to ? parseUrl(to) : ({ as: undefined } as const);
@@ -66,6 +68,7 @@ const Button: FC<ButtonProps> = ({
               onKeyDown(e, onSubmit)
           : null
       }
+      download={download}
     >
       <Btn buttonType={buttonType} size={size} isDark={isDark}>
         {children}

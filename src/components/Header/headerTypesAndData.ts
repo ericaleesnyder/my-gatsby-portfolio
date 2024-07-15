@@ -34,11 +34,12 @@ export const menuItems: MenuItemProps[] = [
     size: null,
   },
   {
-    label: 'My Resume',
-    to: '/#',
+    label: 'My CV',
+    to: '/Erica_Snyder_CV.pdf',
     buttonType: 'Pill',
     size: 'Small',
     isDark: false,
+    download: true,
   },
   {
     label: 'Contact Me',
