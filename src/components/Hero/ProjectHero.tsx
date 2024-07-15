@@ -112,7 +112,7 @@ const ProjectHero: FC<ProjectHeroProps> = ({
               {year && (
                 <Group>
                   <Text size='textXl' weight={800}>
-                    Year
+                    Year(s)
                   </Text>
                   <Text size='textLg'>{year}</Text>
                 </Group>

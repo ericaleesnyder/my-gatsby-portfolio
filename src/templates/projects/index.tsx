@@ -97,7 +97,7 @@ const ProjectPage: FC<ProjectProps> = ({ data }) => {
       )}
       <Container flex>
         <IconWrap>
-          <Icon id='filler' width='12px' height='60px' />
+          <Icon id='filler' width='12px' height='60px' invert />
         </IconWrap>
       </Container>
       {relatedProjects && <LayoutSection component={relatedProjects} />}

@@ -421,6 +421,7 @@ export interface DatoCmsComponentCallToAction extends Node {
   __typename?: 'DatoCmsComponentCallToAction';
   buttonType?: Maybe<Scalars['String']>;
   children: Array<Node>;
+  download?: Maybe<Scalars['Boolean']>;
   hoverColor?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -487,6 +488,7 @@ export interface DatoCmsComponentCallToActionEdge {
 export interface DatoCmsComponentCallToActionFieldSelector {
   buttonType?: InputMaybe<FieldSelectorEnum>;
   children?: InputMaybe<NodeFieldSelector>;
+  download?: InputMaybe<FieldSelectorEnum>;
   hoverColor?: InputMaybe<FieldSelectorEnum>;
   icon?: InputMaybe<FieldSelectorEnum>;
   id?: InputMaybe<FieldSelectorEnum>;
@@ -506,6 +508,7 @@ export interface DatoCmsComponentCallToActionFieldSelector {
 export interface DatoCmsComponentCallToActionFilterInput {
   buttonType?: InputMaybe<StringQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  download?: InputMaybe<BooleanQueryOperatorInput>;
   hoverColor?: InputMaybe<StringQueryOperatorInput>;
   icon?: InputMaybe<StringQueryOperatorInput>;
   id?: InputMaybe<StringQueryOperatorInput>;
@@ -571,6 +574,7 @@ export interface DatoCmsComponentCallToActionGroupConnectionSumArgs {
 export interface DatoCmsComponentCallToActionSortInput {
   buttonType?: InputMaybe<SortOrderEnum>;
   children?: InputMaybe<NodeSortInput>;
+  download?: InputMaybe<SortOrderEnum>;
   hoverColor?: InputMaybe<SortOrderEnum>;
   icon?: InputMaybe<SortOrderEnum>;
   id?: InputMaybe<SortOrderEnum>;
@@ -5401,6 +5405,7 @@ export interface QueryDatoCmsAssetArgs {
 export interface QueryDatoCmsComponentCallToActionArgs {
   buttonType?: InputMaybe<StringQueryOperatorInput>;
   children?: InputMaybe<NodeFilterListInput>;
+  download?: InputMaybe<BooleanQueryOperatorInput>;
   fallbackLocales?: InputMaybe<Array<Scalars['String']>>;
   hoverColor?: InputMaybe<StringQueryOperatorInput>;
   icon?: InputMaybe<StringQueryOperatorInput>;
@@ -6739,7 +6744,7 @@ export type DatoCmsEntityPersonFragment = { __typename: 'DatoCmsEntityPerson', i
     & ImageAssetFragment
   ) | null };
 
-export type DatoCmsComponentCallToActionFragment = { __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null };
+export type DatoCmsComponentCallToActionFragment = { __typename: 'DatoCmsComponentCallToAction', internalName?: string | null, id: string, label?: string | null, link?: string | null, isDark?: boolean | null, hoverColor?: string | null, icon?: string | null, buttonType?: string | null, size?: string | null, download?: boolean | null };
 
 export type DatoCmsComponentImageFragment = { __typename?: 'DatoCmsComponentImage', id: string, internalName?: string | null, title?: string | null, alt?: string | null, description?: string | null, caption?: string | null, desktopImage?: (
     { __typename?: 'DatoCmsFileField' }

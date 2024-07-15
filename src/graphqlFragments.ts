@@ -96,6 +96,7 @@ export const callToActionQuery = graphql`
     icon
     buttonType
     size
+    download
   }
 `
 
