@@ -45,7 +45,6 @@ const MobileHeader: FC<NavProps> = ({
                 buttonType={menuItem.buttonType}
                 isDark={menuItem.isDark}
                 size={menuItem.size}
-                download={menuItem.download}
               >
                 {menuItem.label}
               </Button>

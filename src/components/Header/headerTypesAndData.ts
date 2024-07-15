@@ -39,7 +39,6 @@ export const menuItems: MenuItemProps[] = [
     buttonType: 'Pill',
     size: 'Small',
     isDark: false,
-    download: true,
   },
   {
     label: 'Contact Me',
