@@ -4,12 +4,14 @@ import { color } from 'atoms/colors';
 import font from 'atoms/typography';
 
 export const Wrapper = styled.div`
-  display: grid;
+  /* display: grid;
   gap: 24px;
   grid-template-columns: 1fr;
   @media (min-width: 993px) {
     grid-template-columns: repeat(2, 1fr);
-  }
+  } */
+  display: flex;
+  justify-content: center;
 `;
 
 export const Form = styled.form`

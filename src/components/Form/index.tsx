@@ -1,18 +1,23 @@
+/* eslint-disable arrow-body-style */
 import Container from 'basics/Container.styled';
 import Section from 'basics/Section.styled';
-import React, { type FC, useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, {
+  type FC,
+  // useEffect,
+  // useState
+} from 'react';
+// import { useForm } from 'react-hook-form';
 
-import Text from 'atoms/Text/Text';
-import { color } from 'atoms/colors';
+// import Text from 'atoms/Text/Text';
+// import { color } from 'atoms/colors';
 
-import Button from 'components/Button/Button';
+// import Button from 'components/Button/Button';
 import {
-  Form,
-  Input,
-  NameGroup,
-  TextArea,
-  ThankYou,
+  // Form,
+  // Input,
+  // NameGroup,
+  // TextArea,
+  // ThankYou,
   Wrapper,
 } from 'components/Form/styles/Form.styled';
 import ComponentHeading from 'components/Heading/ComponentHeading';
@@ -24,22 +29,22 @@ interface FormProps {}
 // TODO: complete form interaction. SendGrid.
 
 const ContactForm: FC<FormProps> = () => {
-  const [submitted, setSubmitted] = useState<boolean>(false);
+  // const [submitted, setSubmitted] = useState<boolean>(false);
   // const [formData, setFormData] = useState();
 
-  const {
-    // control,
-    // handleSubmit,
-    register,
-    // formState: { isSubmitting, errors },
-    // reset,
-  } = useForm({
-    mode: 'all',
-  });
+  // const {
+  //   // control,
+  //   // handleSubmit,
+  //   // register,
+  //   // formState: { isSubmitting, errors },
+  //   // reset,
+  // } = useForm({
+  //   mode: 'all',
+  // });
 
-  useEffect(() => {
-    console.log('submitted', submitted);
-  }, [submitted]);
+  // useEffect(() => {
+  //   console.log('submitted', submitted);
+  // }, [submitted]);
 
   return (
     <Section id='contact-me-form'>
@@ -49,9 +54,10 @@ const ContactForm: FC<FormProps> = () => {
             heading='Contact Me'
             hTag='h2'
             desktopSize='headLg'
-            subheading="Shoot me a message any time with comments, questions, offers, or just to say hi. While I'm primarily interested in full-time employment, I'm open to opportunities of any kind."
+            subheading='Feel free to send me a message with comments or questions. Or just to say hi!'
             subheadingSize='textLg'
             subheadingWeight={400}
+            alignment='center'
             ctas={[
               {
                 link: 'https://www.linkedin.com/in/ericaleesnyder/',
@@ -59,19 +65,25 @@ const ContactForm: FC<FormProps> = () => {
                 icon: 'linkedIn',
               } as unknown as DatoCmsComponentCallToAction,
               {
-                link: 'https://github.com/ericaleesnyder',
-                buttonType: 'Icon',
-                icon: 'github',
-              } as unknown as DatoCmsComponentCallToAction,
+                link: 'mailto:ericaleesnyder@gmail.com',
+                label: 'My Email',
+                size: 'Large',
+                isDark: false,
+              } as DatoCmsComponentCallToAction,
               {
                 link: '#',
                 label: 'My Resume',
                 size: 'Large',
                 isDark: false,
               } as DatoCmsComponentCallToAction,
+              {
+                link: 'https://github.com/ericaleesnyder',
+                buttonType: 'Icon',
+                icon: 'github',
+              } as unknown as DatoCmsComponentCallToAction,
             ]}
           />
-          <Form>
+          {/* <Form>
             {!submitted ? (
               <>
                 <NameGroup>
@@ -104,7 +116,7 @@ const ContactForm: FC<FormProps> = () => {
                 </Button>
               </ThankYou>
             )}
-          </Form>
+          </Form> */}
         </Wrapper>
       </Container>
     </Section>
