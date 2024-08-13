@@ -34,8 +34,8 @@ export const menuItems: MenuItemProps[] = [
     size: null,
   },
   {
-    label: 'My CV',
-    to: '/Erica_Snyder_CV.pdf',
+    label: 'My Resume',
+    to: '/erica_snyder_resume_2024.pdf',
     buttonType: 'Pill',
     size: 'Small',
     isDark: false,
