@@ -3,7 +3,7 @@ const checkInternalLink = (href: string) => {
   let isInternalLink;
   let isAnchorLink;
 
-  const domain = 'lineup.ai';
+  const domain = 'ericaleesnyder.com';
   if (href[0] === '/') {
     href = `https://${domain}${href}`;
   }
