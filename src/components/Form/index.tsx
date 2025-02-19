@@ -71,7 +71,7 @@ const ContactForm: FC<FormProps> = () => {
                 isDark: false,
               } as DatoCmsComponentCallToAction,
               {
-                link: '/erica_snyder_resume_2024.pdf',
+                link: '/erica_snyder_resume_2025.pdf',
                 label: 'My Resume',
                 size: 'Large',
                 isDark: false,
